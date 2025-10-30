@@ -4,7 +4,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-12" style={{ backgroundColor: '#0C1D2F' }}>
+    <footer className="py-12 bg-navy">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
@@ -13,35 +13,35 @@ export default function Footer() {
                 <span className="text-2xl">🦘</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold" style={{ color: '#F6E3C7' }}>Wesley's CPR</h3>
-                <p className="text-sm" style={{ color: '#F6E3C7' }}>Fresno, CA</p>
+                <h3 className="text-xl font-bold text-cream">Wesley's CPR</h3>
+                <p className="text-sm text-cream">Fresno, CA</p>
               </div>
             </div>
-            <p className="text-sm leading-relaxed" style={{ color: '#F6E3C7' }}>
+            <p className="text-sm leading-relaxed text-cream">
               Empowering our community with life-saving skills since day one.
             </p>
           </div>
 
           <div>
-            <h4 className="font-bold text-lg mb-4" style={{ color: '#F6E3C7' }}>Quick Links</h4>
+            <h4 className="font-bold text-lg mb-4 text-cream">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="transition-colors hover:opacity-70" style={{ color: '#F6E3C7' }}>
+                <a href="#home" className="transition-colors hover:opacity-70 text-cream">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#about" className="transition-colors hover:opacity-70" style={{ color: '#F6E3C7' }}>
+                <a href="#about" className="transition-colors hover:opacity-70 text-cream">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#services" className="transition-colors hover:opacity-70" style={{ color: '#F6E3C7' }}>
+                <a href="#services" className="transition-colors hover:opacity-70 text-cream">
                   Our Classes
                 </a>
               </li>
               <li>
-                <a href="#schedule" className="transition-colors hover:opacity-70" style={{ color: '#F6E3C7' }}>
+                <a href="#schedule" className="transition-colors hover:opacity-70 text-cream">
                   Schedule
                 </a>
               </li>
@@ -49,8 +49,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-lg mb-4" style={{ color: '#F6E3C7' }}>Services</h4>
-            <ul className="space-y-2 text-sm" style={{ color: '#F6E3C7' }}>
+            <h4 className="font-bold text-lg mb-4 text-cream">Services</h4>
+            <ul className="space-y-2 text-sm text-cream">
               <li>CPR & AED Certification</li>
               <li>First Aid Training</li>
               <li>BLS for Healthcare</li>
@@ -61,8 +61,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-lg mb-4" style={{ color: '#F6E3C7' }}>Contact</h4>
-            <ul className="space-y-2 text-sm" style={{ color: '#F6E3C7' }}>
+            <h4 className="font-bold text-lg mb-4 text-cream">Contact</h4>
+            <ul className="space-y-2 text-sm text-cream">
               <li>1477 E. Shaw Ave. Suite 126D</li>
               <li>Fresno, CA 93710</li>
               <li>
@@ -79,39 +79,36 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center" style={{ borderTopColor: 'rgba(198, 66, 59, 0.3)' }}>
-          <p className="text-sm mb-4 md:mb-0" style={{ color: '#F6E3C7' }}>
+        <div className="border-t border-red/30 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-sm mb-4 md:mb-0 text-cream">
             &copy; {currentYear} Wesley's CPR. All rights reserved.
           </p>
 
           <div className="flex items-center space-x-4">
-            <span className="text-sm flex items-center" style={{ color: '#F6E3C7' }}>
-              Made with <Heart size={16} className="mx-1" style={{ color: '#C6423B' }} /> in Fresno
+            <span className="text-sm flex items-center text-cream">
+              Made with <Heart size={16} className="mx-1 text-red" /> in Fresno
             </span>
             <div className="flex space-x-3 ml-4">
               <a
                 href="#"
-                className="p-2 rounded-full transition-colors hover:opacity-70"
-                style={{ backgroundColor: 'rgba(198, 66, 59, 0.3)' }}
+                className="p-2 rounded-full transition-colors hover:opacity-70 bg-red/30"
                 aria-label="Facebook"
               >
-                <Facebook size={20} style={{ color: '#C6423B' }} />
+                <Facebook size={20} className="text-red" />
               </a>
               <a
                 href="#"
-                className="p-2 rounded-full transition-colors hover:opacity-70"
-                style={{ backgroundColor: 'rgba(198, 66, 59, 0.3)' }}
+                className="p-2 rounded-full transition-colors hover:opacity-70 bg-red/30"
                 aria-label="Instagram"
               >
-                <Instagram size={20} style={{ color: '#C6423B' }} />
+                <Instagram size={20} className="text-red" />
               </a>
               <a
                 href="mailto:j.wes@wesleyscprfresno.com"
-                className="p-2 rounded-full transition-colors hover:opacity-70"
-                style={{ backgroundColor: 'rgba(198, 66, 59, 0.3)' }}
+                className="p-2 rounded-full transition-colors hover:opacity-70 bg-red/30"
                 aria-label="Email"
               >
-                <Mail size={20} style={{ color: '#C6423B' }} />
+                <Mail size={20} className="text-red" />
               </a>
             </div>
           </div>

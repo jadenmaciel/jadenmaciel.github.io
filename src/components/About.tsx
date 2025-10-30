@@ -25,13 +25,13 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20" style={{ backgroundColor: '#F6E3C7' }}>
+    <section id="about" className="py-20 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#142131' }}>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-dark">
             Why Choose Wesley's CPR?
           </h2>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: '#142131' }}>
+          <p className="text-xl max-w-3xl mx-auto text-dark">
             We're passionate about empowering our Fresno community with the confidence and skills to save lives.
             Our friendly, supportive approach makes learning CPR accessible and stress-free.
           </p>
@@ -41,29 +41,27 @@ export default function About() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
-              style={{ backgroundColor: '#0C1D2F' }}
+              className="rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow bg-navy"
             >
-              <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#C6423B' }}>
-                <feature.icon style={{ color: '#F6E3C7' }} size={28} />
+              <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 bg-red">
+                <feature.icon className="text-cream" size={28} />
               </div>
-              <h3 className="text-xl font-bold mb-3" style={{ color: '#F6E3C7' }}>{feature.title}</h3>
-              <p className="leading-relaxed" style={{ color: '#F6E3C7' }}>{feature.description}</p>
+              <h3 className="text-xl font-bold mb-3 text-cream">{feature.title}</h3>
+              <p className="leading-relaxed text-cream">{feature.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 rounded-2xl p-8 md:p-12 text-center" style={{ backgroundColor: '#C6423B' }}>
-          <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#F6E3C7' }}>
+        <div className="mt-16 rounded-2xl p-8 md:p-12 text-center bg-red">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4 text-cream">
             Join Thousands of Trained Community Members
           </h3>
-          <p className="text-xl mb-8 max-w-2xl mx-auto" style={{ color: '#F6E3C7' }}>
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-cream">
             Every person trained is another potential life saved. Be ready to make a difference when it matters most.
           </p>
           <a
             href="#contact"
-            className="inline-block px-8 py-4 rounded-lg transition-colors font-semibold text-lg hover:opacity-90"
-            style={{ backgroundColor: '#F6E3C7', color: '#142131' }}
+            className="inline-block px-8 py-4 rounded-lg transition-colors font-semibold text-lg hover:opacity-90 bg-cream text-dark"
           >
             Start Your Training Today
           </a>

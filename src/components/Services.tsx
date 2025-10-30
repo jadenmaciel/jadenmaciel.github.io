@@ -47,13 +47,13 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-20" style={{ backgroundColor: '#0C1D2F' }}>
+    <section id="services" className="py-20 bg-navy">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#F6E3C7' }}>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cream">
             Our Training Programs
           </h2>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: '#F6E3C7' }}>
+          <p className="text-xl max-w-3xl mx-auto text-cream">
             From healthcare professionals to concerned parents, we offer courses tailored to your needs and certification requirements.
           </p>
         </div>
@@ -62,28 +62,26 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="rounded-xl p-8 shadow-lg hover:shadow-xl transition-all border group hover:scale-105 transform"
-              style={{ backgroundColor: '#F6E3C7', borderColor: '#C6423B' }}
+              className="rounded-xl p-8 shadow-lg hover:shadow-xl transition-all border border-red group hover:scale-105 transform bg-cream"
             >
-              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style={{ backgroundColor: '#C6423B' }}>
-                <service.icon style={{ color: '#F6E3C7' }} size={32} />
+              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform bg-red">
+                <service.icon className="text-cream" size={32} />
               </div>
-              <h3 className="text-2xl font-bold mb-3" style={{ color: '#142131' }}>{service.title}</h3>
-              <p className="leading-relaxed mb-4" style={{ color: '#142131' }}>{service.description}</p>
+              <h3 className="text-2xl font-bold mb-3 text-dark">{service.title}</h3>
+              <p className="leading-relaxed mb-4 text-dark">{service.description}</p>
               <div className="space-y-2">
-                <div className="flex items-center text-sm" style={{ color: '#142131' }}>
+                <div className="flex items-center text-sm text-dark">
                   <span className="font-semibold mr-2">Duration:</span>
                   <span>{service.duration}</span>
                 </div>
-                <div className="flex items-center text-sm" style={{ color: '#142131' }}>
+                <div className="flex items-center text-sm text-dark">
                   <span className="font-semibold mr-2">Certification:</span>
                   <span>{service.certification}</span>
                 </div>
               </div>
               <a
                 href="#contact"
-                className="mt-6 inline-block w-full text-center px-6 py-3 rounded-lg transition-colors font-medium hover:opacity-90"
-                style={{ backgroundColor: '#C6423B', color: '#F6E3C7' }}
+                className="mt-6 inline-block w-full text-center px-6 py-3 rounded-lg transition-colors font-medium hover:opacity-90 bg-red text-cream"
               >
                 Learn More
               </a>
