@@ -58,9 +58,9 @@ npm run preview
 - Recommendation: Add component/UI snapshot tests and accessibility checks (TODO: see TASKS.md).
 
 ### Deployment
-- **Current**: Live on GitHub Pages at https://jadenmaciel.github.io/wesleys-cpy/
+- **Current**: Live on GitHub Pages at https://jadenmaciel.github.io/wesleys-cpr/
 - **Automation**: GitHub Actions workflow builds and deploys on push to main.
-- **Configuration**: Base path `/wesleys-cpy/` configured in `vite.config.ts`.
+- **Configuration**: Base path `/wesleys-cpr/` configured in `vite.config.ts`.
 - **Future**: Migrate to AWS S3/CloudFront with Route 53 custom domain.
 
 ### Status
@@ -81,4 +81,4 @@ npm run preview
 ### Ownership / Contact
 - **Business**: Wesley's CPR, Fresno, CA
 - **Contact**: j.wes@wesleyscprfresno.com, (559) 360-1016
-- **Live Site**: https://jadenmaciel.github.io/wesleys-cpy/
+- **Live Site**: https://jadenmaciel.github.io/wesleys-cpr/
