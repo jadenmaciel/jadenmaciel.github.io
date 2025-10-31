@@ -1,3 +1,5 @@
+# README.md (Draft)
+
 ## Wesley's CPR — Marketing Site
 A static marketing website for Wesley's CPR built with React, Vite, and Tailwind CSS.
 
@@ -7,10 +9,14 @@ A static marketing website for Wesley's CPR built with React, Vite, and Tailwind
 - **Why it exists**: Promote services, convey credibility (AHA), and provide clear contact info and calls to action.
 
 ### Key Features
-- **Responsive SPA** with semantic sections: Header, Hero, About, Services, Schedule, Testimonials, Contact, Footer.
-- **Brand-consistent UI** using defined colors: `navy`, `red`, `cream`, `dark`.
-- **CTA flow**: “View Classes” and “Book a Session”.
-- **Contact details**: Address, phone, and email visible and linked.
+- **Responsive SPA** with semantic sections: SkipLink, Header, Hero, About, Services, Pricing, Schedule, Booking, Testimonials, Contact, Footer.
+- **Brand-consistent UI** using defined colors: `navy` (#0C1D2F), `red` (#C6423B), `cream` (#F6E3C7), `dark` (#142131).
+- **Reusable UI components**: PrimaryButton, SecondaryButton, TrustBadge.
+- **CTA flow**: "View Classes" and "Book a Session".
+- **Pricing transparency**: AHA-aligned pricing cards for all training programs.
+- **Online booking**: Booky Buzz widget embedded with secure postMessage communication.
+- **Contact details**: Address, phone, and email visible and linked; social media links in footer.
+- **Accessibility**: Skip link, semantic landmarks, keyboard navigation, mobile menu, focus management, reduced motion support.
 - **Simple contact form** (client-side only; logs to console, no backend submission).
 
 ### Tech Stack
@@ -65,11 +71,23 @@ npm run preview
 - Working today:
   - All visual sections render with brand colors and responsive layout.
   - Navigation anchors, CTAs, and contact links function.
+  - Mobile-responsive navigation with accessible hamburger menu.
+  - Keyboard navigation and focus management.
+  - Skip link for screen readers.
   - Contact form captures inputs and logs to console.
+  - Booky Buzz booking widget integrated with secure messaging.
+  - Logo and favicon display correctly on all devices.
+  - Deployed to GitHub Pages: https://jadenmaciel.github.io/wesleys-cpy/
 - WIP / Not implemented:
-  - No backend form handling or scheduling integration.
+  - No backend form handling.
   - No analytics or tracking.
   - No automated tests.
 
+### Git Hygiene
+- `.gitignore`: Node modules, build artifacts, env files, IDE cruft, `.cursor/` folder.
+- `.editorconfig`: Consistent formatting across editors.
+- `.env.example`: Template for future environment variables.
+
 ### Ownership / Contact
-- TODO: Add engineering owner, product owner, and escalation contacts.
+- Business: Wesley's CPR, Fresno, CA
+- Contact: j.wes@wesleyscprfresno.com, (559) 360-1016

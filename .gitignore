@@ -1,81 +1,34 @@
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
-
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-.env
-
-# --- Node / JS ---
+# Node / package managers
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-package-lock.json
 
-# Lockfile note:
-# If you want reproducible builds, you can choose to allow package-lock.json.
-# For now we ignore the lockfile at the OUTER level to avoid committing the accidental root init.
-# The inner app's lockfile (wesleys-cpy/package-lock.json) SHOULD be committed.
-# So we selectively allow that:
-!wesleys-cpy/package-lock.json
-
-# --- Build output ---
+# Vite / build output
 dist/
-build/
-.tmp/
-.temp/
-.cache/
 .vite/
-.vscode/**/workspaceStorage/
+.cache/
 
-# --- OS / editor cruft ---
-.DS_Store
-Thumbs.db
-
-# --- Environment / secrets ---
+# Env / secrets
 .env
 .env.*.local
 *.local
 
-# --- Bolt export artifacts ---
-project-bolt-*.zip
+# OS/editor cruft
+.DS_Store
+Thumbs.db
 
-# --- Log files ---
-*.log
-*.log.*
-logs/
-
-# --- IDE state ---
+# IDE
 .vscode/
 .history/
 *.swp
 *.swo
+.cursor/
 
-# --- Backup files ---
-*.orig
-*.tmp
-*.bak
-*.backup
-*~
+# Logs
+*.log
+logs/
 
-# --- OneDrive sync temp (Windows sometimes leaves these) ---
-*.lnk
-~$*
+# TypeScript
+*.tsbuildinfo

@@ -1,117 +1,125 @@
-import { Heart, Facebook, Instagram, Mail } from 'lucide-react';
-
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-12 bg-navy">
+    <footer className="bg-navy text-cream pt-12 pb-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
+          {/* Brand / About */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center">
-                <span className="text-2xl">🦘</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-cream">Wesley's CPR</h3>
-                <p className="text-sm text-cream">Fresno, CA</p>
-              </div>
-            </div>
-            <p className="text-sm leading-relaxed text-cream">
-              Empowering our community with life-saving skills since day one.
+            <h2 className="text-xl font-semibold mb-3">Wesley&apos;s CPR</h2>
+            <p className="text-cream/70 text-sm mb-3">
+              CPR & safety training for Fresno&apos;s students, healthcare workers, and workplaces.
+            </p>
+            <p className="text-cream/70 text-sm">
+              We are an American Heart Association (AHA) Training Site. Group and student discounts available. American Red Cross pricing may differ.
             </p>
           </div>
 
+          {/* Contact */}
           <div>
-            <h4 className="font-bold text-lg mb-4 text-cream">Quick Links</h4>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-semibold mb-3">Contact</h3>
+            <p className="text-sm">1477 E. Shaw Ave. Suite 126D</p>
+            <p className="text-sm mb-2">Fresno, CA 93710</p>
+            <p className="text-sm">
+              Phone/Text:{' '}
+              <a href="tel:15593601016" className="text-cream underline-offset-2 hover:underline">
+                (559) 360-1016
+              </a>
+            </p>
+            <p className="text-sm">
+              Email:{' '}
+              <a
+                href="mailto:j.wes@wesleyscprfresno.com"
+                className="text-cream underline-offset-2 hover:underline"
+              >
+                j.wes@wesleyscprfresno.com
+              </a>
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
+            <ul className="space-y-2 text-sm">
               <li>
-                <a href="#home" className="transition-colors hover:opacity-70 text-cream">
+                <a href="#home" className="hover:text-cream/80 transition-colors">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#about" className="transition-colors hover:opacity-70 text-cream">
-                  About Us
+                <a href="#about" className="hover:text-cream/80 transition-colors">
+                  About
                 </a>
               </li>
               <li>
-                <a href="#services" className="transition-colors hover:opacity-70 text-cream">
-                  Our Classes
+                <a href="#classes" className="hover:text-cream/80 transition-colors">
+                  Classes
                 </a>
               </li>
               <li>
-                <a href="#schedule" className="transition-colors hover:opacity-70 text-cream">
+                <a href="#pricing" className="hover:text-cream/80 transition-colors">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a href="#schedule" className="hover:text-cream/80 transition-colors">
                   Schedule
                 </a>
               </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-lg mb-4 text-cream">Services</h4>
-            <ul className="space-y-2 text-sm text-cream">
-              <li>CPR & AED Certification</li>
-              <li>First Aid Training</li>
-              <li>BLS for Healthcare</li>
-              <li>Heartsaver Courses</li>
-              <li>Workplace Training</li>
-              <li>Private Classes</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-lg mb-4 text-cream">Contact</h4>
-            <ul className="space-y-2 text-sm text-cream">
-              <li>1477 E. Shaw Ave. Suite 126D</li>
-              <li>Fresno, CA 93710</li>
               <li>
-                <a href="tel:5593601016" className="hover:opacity-70 transition-colors">
-                  (559) 360-1016
+                <a href="#contact" className="hover:text-cream/80 transition-colors">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Connect */}
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Connect</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a
+                  href="https://www.facebook.com/p/Wesleys-CPR-LLC-61576489035954/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open Wesley's CPR on Facebook (opens in new tab)"
+                  className="hover:text-cream/80 transition-colors"
+                >
+                  Facebook
                 </a>
               </li>
               <li>
-                <a href="mailto:j.wes@wesleyscprfresno.com" className="hover:opacity-70 transition-colors break-all">
-                  j.wes@wesleyscprfresno.com
+                <a
+                  href="https://instagram.com/wesleycpr559"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open Wesley's CPR on Instagram (opens in new tab)"
+                  className="hover:text-cream/80 transition-colors"
+                >
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.yelp.com/biz/wesley-s-cpr-fresno"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open Wesley's CPR on Yelp (opens in new tab)"
+                  className="hover:text-cream/80 transition-colors"
+                >
+                  Yelp
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-red/30 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm mb-4 md:mb-0 text-cream">
-            &copy; {currentYear} Wesley's CPR. All rights reserved.
-          </p>
-
-          <div className="flex items-center space-x-4">
-            <span className="text-sm flex items-center text-cream">
-              Made with <Heart size={16} className="mx-1 text-red" /> in Fresno
-            </span>
-            <div className="flex space-x-3 ml-4">
-              <a
-                href="#"
-                className="p-2 rounded-full transition-colors hover:opacity-70 bg-red/30"
-                aria-label="Facebook"
-              >
-                <Facebook size={20} className="text-red" />
-              </a>
-              <a
-                href="#"
-                className="p-2 rounded-full transition-colors hover:opacity-70 bg-red/30"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} className="text-red" />
-              </a>
-              <a
-                href="mailto:j.wes@wesleyscprfresno.com"
-                className="p-2 rounded-full transition-colors hover:opacity-70 bg-red/30"
-                aria-label="Email"
-              >
-                <Mail size={20} className="text-red" />
-              </a>
-            </div>
-          </div>
+        {/* Bottom bar */}
+        <div className="border-t border-cream/10 pt-6 mt-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-cream/60">
+          <p>© {currentYear} Wesley&apos;s CPR. All rights reserved.</p>
+          <p>Confidence starts with training.</p>
         </div>
       </div>
     </footer>
