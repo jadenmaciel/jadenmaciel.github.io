@@ -7,10 +7,14 @@ A static marketing website for Wesley's CPR built with React, Vite, and Tailwind
 - **Why it exists**: Promote services, convey credibility (AHA), and provide clear contact info and calls to action.
 
 ### Key Features
-- **Responsive SPA** with semantic sections: Header, Hero, About, Services, Schedule, Testimonials, Contact, Footer.
-- **Brand-consistent UI** using defined colors: `navy`, `red`, `cream`, `dark`.
-- **CTA flow**: “View Classes” and “Book a Session”.
-- **Contact details**: Address, phone, and email visible and linked.
+- **Responsive SPA** with semantic sections: SkipLink, Header, Hero, About, Services, Pricing, Schedule, Booking, Testimonials, Contact, Footer.
+- **Brand-consistent UI** using defined colors: `navy` (#0C1D2F), `red` (#C6423B), `cream` (#F6E3C7), `dark` (#142131).
+- **Reusable UI components**: PrimaryButton, SecondaryButton, TrustBadge.
+- **CTA flow**: "View Classes" and "Book a Session".
+- **Pricing transparency**: AHA-aligned pricing cards for all training programs.
+- **Online booking**: Booky Buzz widget embedded with secure postMessage communication.
+- **Contact details**: Address, phone, and email visible and linked; social media links in footer.
+- **Accessibility**: Skip link, semantic landmarks, keyboard navigation, mobile menu, focus management, reduced motion support.
 - **Simple contact form** (client-side only; logs to console, no backend submission).
 
 ### Tech Stack
@@ -54,22 +58,27 @@ npm run preview
 - Recommendation: Add component/UI snapshot tests and accessibility checks (TODO: see TASKS.md).
 
 ### Deployment
-- The output is a static bundle in `dist/` created by Vite.
-- Works on any static hosting provider:
-  - Vercel: Connect repo and deploy (zero-config for Vite).
-  - Netlify: `npm run build` then serve `dist/`.
-  - S3/CloudFront: Upload `dist/` and configure distribution.
-- No containers or Dockerfiles exist in this repo. Containerization is optional and not required.
+- **Current**: Live on GitHub Pages at https://jadenmaciel.github.io/wesleys-cpy/
+- **Automation**: GitHub Actions workflow builds and deploys on push to main.
+- **Configuration**: Base path `/wesleys-cpy/` configured in `vite.config.ts`.
+- **Future**: Migrate to AWS S3/CloudFront with Route 53 custom domain.
 
 ### Status
-- Working today:
+- **Production-ready**:
   - All visual sections render with brand colors and responsive layout.
+  - Logo and favicon display correctly on all devices.
   - Navigation anchors, CTAs, and contact links function.
+  - Mobile-responsive navigation with accessible hamburger menu.
+  - Keyboard navigation and focus management.
+  - Skip link for screen readers.
   - Contact form captures inputs and logs to console.
-- WIP / Not implemented:
-  - No backend form handling or scheduling integration.
-  - No analytics or tracking.
-  - No automated tests.
+  - Booky Buzz booking widget integrated with secure messaging.
+- **Future enhancements**:
+  - Backend form handling or email service integration.
+  - Privacy-respectful analytics.
+  - Automated accessibility and performance tests.
 
 ### Ownership / Contact
-- TODO: Add engineering owner, product owner, and escalation contacts.
+- **Business**: Wesley's CPR, Fresno, CA
+- **Contact**: j.wes@wesleyscprfresno.com, (559) 360-1016
+- **Live Site**: https://jadenmaciel.github.io/wesleys-cpy/
