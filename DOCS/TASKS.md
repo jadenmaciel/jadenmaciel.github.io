@@ -1,8 +1,4 @@
 ## Current Work
-- Service Area Copy Update
-  - Why: Reflect broader service area; replace "Fresno" with "Central Valley" in marketing copy.
-  - Scope: Update `Hero.tsx`, `About.tsx`, `Footer.tsx`, `README.md`, `DOCS/PLANNING.md`, and `index.html` (titles/meta). Keep postal address lines unchanged.
-  - Priority: High
 - Contact Form Submission Strategy
   - Why: Currently logs to console; needs safe handling and user feedback.
   - Scope: Decide backend (serverless or email service) vs. mailto-only; if backend, add API endpoint and validation; add loading/error/success states in `Contact.tsx`.
@@ -14,6 +10,15 @@
   - Priority: Mid
 
 ## Recently Completed
+- Service Area Copy Update & Centralized Course Catalog
+  - Updated all service area references from "Fresno" to "Central Valley" across components and documentation.
+  - Created centralized course catalog in `src/data/courses.ts` with all pricing and course details.
+  - Refactored Pricing component to render from centralized data source.
+  - Added AHA e-learning section with external links (no price/time display).
+  - Updated header location to "Central Valley, CA".
+  - Added Troute payment processing disclosure to Booking component.
+  - Created `DOCS/OWNER_NOTES.md` with owner operational policies (Sunday policy, payment processing, service area).
+  - Added Maintainers' Notes section to README with link to OWNER_NOTES.
 - Brand Foundation Complete
   - Tailwind theme extended with brand colors (`navy`, `red`, `cream`, `dark`).
   - Logo and favicon implemented with proper base-path handling for GitHub Pages.

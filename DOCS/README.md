@@ -13,8 +13,11 @@ A static marketing website for Wesley's CPR built with React, Vite, and Tailwind
 - **Brand-consistent UI** using defined colors: `navy` (#0C1D2F), `red` (#C6423B), `cream` (#F6E3C7), `dark` (#142131).
 - **Reusable UI components**: PrimaryButton, SecondaryButton, TrustBadge.
 - **CTA flow**: "View Classes" and "Book a Session".
-- **Pricing transparency**: AHA-aligned pricing cards for all training programs.
+- **Centralized course catalog**: Course data and pricing managed in `src/data/courses.ts` as single source of truth.
+- **Pricing transparency**: AHA-aligned pricing cards for all training programs with notes for special conditions.
+- **AHA e-learning integration**: Separate section with links to AHA site (no price/time displayed).
 - **Online booking**: Booky Buzz widget embedded with secure postMessage communication.
+- **Payment processing**: Troute payment disclosure in Booking component.
 - **Contact details**: Address, phone, and email visible and linked; social media links in footer.
 - **Accessibility**: Skip link, semantic landmarks, keyboard navigation, mobile menu, focus management, reduced motion support.
 - **Simple contact form** (client-side only; logs to console, no backend submission).
@@ -77,7 +80,7 @@ npm run preview
   - Contact form captures inputs and logs to console.
   - Booky Buzz booking widget integrated with secure messaging.
   - Logo and favicon display correctly on all devices.
-  - Deployed to GitHub Pages: https://jadenmaciel.github.io/wesleys-cpy/
+  - Deployed to GitHub Pages: https://jadenmaciel.github.io/wesleys-cpr/
 - WIP / Not implemented:
   - No backend form handling.
   - No analytics or tracking.
@@ -87,6 +90,10 @@ npm run preview
 - `.gitignore`: Node modules, build artifacts, env files, IDE cruft, `.cursor/` folder.
 - `.editorconfig`: Consistent formatting across editors.
 - `.env.example`: Template for future environment variables.
+
+### Maintainers' Notes
+
+For operational decisions, owner policies, and source-of-truth documentation, see [`DOCS/OWNER_NOTES.md`](DOCS/OWNER_NOTES.md).
 
 ### Ownership / Contact
 - Business: Wesley's CPR, Fresno, CA
