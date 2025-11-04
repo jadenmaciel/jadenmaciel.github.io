@@ -83,6 +83,10 @@ npm run preview
   - Privacy-respectful analytics.
   - Automated accessibility and performance tests.
 
+### Maintainers' Notes
+
+For operational decisions, owner policies, and source-of-truth documentation, see [`DOCS/OWNER_NOTES.md`](DOCS/OWNER_NOTES.md).
+
 ### Ownership / Contact
 - **Business**: Wesley's CPR, Fresno, CA
 - **Contact**: j.wes@wesleyscprfresno.com, (559) 360-1016
