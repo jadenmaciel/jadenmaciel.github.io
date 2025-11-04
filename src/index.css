@@ -2,9 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scrolling for anchor navigation */
+/* --- Global compact sizing --- */
+:root {
+  /* Base size for the whole site. (16px → 15px = ~6.25% smaller) */
+  --site-font-size: 15px;
+}
+
+/* Smooth scrolling for anchor navigation + global font size */
 html {
   scroll-behavior: smooth;
+  font-size: var(--site-font-size);
+}
+
+/* Slightly smaller on very large screens */
+@media (min-width: 1280px) {
+  :root { --site-font-size: 14.5px; } /* ~9% smaller than 16px */
+}
+
+/* Keep text comfortable on small phones */
+@media (max-width: 380px) {
+  :root { --site-font-size: 15.5px; }
 }
 
 /* Remove border/outline from logo images */

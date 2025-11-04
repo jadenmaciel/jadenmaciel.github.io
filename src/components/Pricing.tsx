@@ -1,92 +1,151 @@
-import PrimaryButton from './ui/PrimaryButton';
-import { COURSES } from '../data/courses';
+import React from "react";
+import s from "./PricingTable.module.css";
 
-export default function Pricing() {
-  const paid = COURSES.filter((c) => !c.isELearning);
-  const elearn = COURSES.filter((c) => c.isELearning);
+type Row = {
+  name: string;
+  price?: string;           // "—" or "$85"
+  desc: string;
+  badge?: "Popular" | "Best Value" | string;
+  priceNote?: string;       // e.g., "Contact for pricing"
+};
 
+const rows: Row[] = [
+  {
+    name: "HSV-First Aid",
+    price: "$85",
+    desc: "AHA-aligned certification • 2-year validity • 4-hour comprehensive training",
+    badge: "Popular",
+  },
+  {
+    name: "HSV-CPR-AED",
+    price: "$85",
+    desc: "CPR & AED training • 2-year certification • Hands-on practice",
+  },
+  {
+    name: "HSV-First Aid, CPR-AED Combo",
+    price: "$130",
+    desc: "Complete certification package • Save $40 with combo • 6-hour comprehensive course",
+    badge: "Best Value",
+  },
+  {
+    name: "HSV Skill Only Session",
+    price: "$75",
+    desc: "Skills validation only • Online course pre-required • 90-minute session",
+  },
+  {
+    name: "Heartcode BLS (Skills only)",
+    price: "$70",
+    desc: "Proof of online certification required • Healthcare provider level • 2-hour skills check",
+  },
+  {
+    name: "BLS Provider",
+    price: "$100",
+    desc: "Healthcare professionals • 2-year certification • In-depth clinical training",
+  },
+  {
+    name: "BLS Renewal",
+    price: "$100",
+    desc: "Returning customers receive a 10% discount • Refresher course • 3-hour session",
+  },
+  {
+    name: "Heartsaver",
+    price: "$125",
+    desc: "Comprehensive training • First Aid + CPR + AED • Full-day certification",
+  },
+  {
+    name: "American Red Cross BLS",
+    price: "$110",
+    desc: "Red Cross certification • 2-year validity • Professional credential",
+  },
+  {
+    name: "Heartsaver CPR AED",
+    price: "$130",
+    desc: "Essential life-saving skills • 2-year certification • 5-hour training",
+  },
+  {
+    name: "Friends and Family",
+    price: "—",
+    priceNote: "Contact for pricing",
+    desc: "Casual learning environment • No certification issued • Basic life-saving skills",
+  },
+];
+
+const Pricing: React.FC = () => {
   return (
-    <section id="pricing" className="bg-navy text-cream py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cream">
-            Courses & Pricing
-          </h2>
-          <p className="text-xl max-w-3xl mx-auto text-cream/80">
+    <section id="pricing" className={s.wrap}>
+      <div className={s.container}>
+        <header className={s.header}>
+          <h2 className={s.h1}>Courses &amp; Pricing</h2>
+          <p className={s.sub}>
             Transparent, AHA-aligned training for individuals, students, and workplaces.
           </p>
-        </div>
+        </header>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {paid.map((c) => (
-            <article
-              key={c.code}
-              className="bg-cream/5 border border-cream/10 rounded-xl p-8 flex flex-col shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold mb-3 text-cream">{c.name}</h3>
-                {c.notes && c.notes.length > 0 && (
-                  <ul className="mt-2 mb-6 list-disc pl-5 text-sm text-cream/70 space-y-1">
-                    {c.notes.map((n, i) => (
-                      <li key={i}>{n}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-              <div className="border-t border-cream/20 pt-6">
-                {c.price && <p className="text-3xl font-bold mb-6 text-red">${c.price}</p>}
-                <PrimaryButton href="#booking" className="w-full">
-                  Book Skills Session
-                </PrimaryButton>
-              </div>
-            </article>
-          ))}
-        </div>
+        <div className={s.card}>
+          <div className={s.cardTop} />
 
-        {elearn.length > 0 && (
-          <div className="mt-12">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-cream text-center">
-              AHA e-Learning
-            </h3>
-            <p className="text-sm text-cream/80 mb-8 text-center max-w-3xl mx-auto">
-              Complete the online portion on AHA. You&apos;ll schedule a separate in-person skills check
-              here.
-            </p>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {elearn.map((c) => (
-                <article
-                  key={c.code}
-                  className="bg-cream/5 border border-cream/10 rounded-xl p-8 flex flex-col shadow-lg hover:shadow-xl transition-shadow"
+          <table className={s.table}>
+            <thead className={s.thead}>
+              <tr>
+                <th className={`${s.th} ${s.thFirst}`}>Course</th>
+                <th className={`${s.th} ${s.thLast}`}>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr
+                  key={r.name}
+                  className={`${s.tr} ${i === rows.length - 1 ? s.trLast : ""}`}
                 >
-                  <div className="flex-1">
-                    <h4 className="text-2xl font-bold mb-3 text-cream">{c.name}</h4>
-                  </div>
-                  <div className="border-t border-cream/20 pt-6">
-                    <a
-                      href={c.elink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-cream text-navy px-5 py-3 rounded-md font-semibold inline-flex items-center justify-center gap-2 border border-cream/60 transition-colors hover:opacity-90 w-full text-center"
-                    >
-                      Start on AHA site
-                    </a>
-                  </div>
-                </article>
+                  <td className={s.td}>
+                    <div className={s.name}>
+                      {r.name}
+                      {r.badge ? <span className={s.badge}>{r.badge}</span> : null}
+                    </div>
+                    <div className={s.desc}>{r.desc}</div>
+                  </td>
+                  <td className={s.td}>
+                    <div className={s.price}>
+                      {r.price ?? "—"}
+                      {r.priceNote ? <span className={s.priceNote}>{r.priceNote}</span> : null}
+                    </div>
+                  </td>
+                </tr>
               ))}
-            </div>
-          </div>
-        )}
+            </tbody>
+          </table>
 
-        <div className="mt-16 text-center">
-          <div className="inline-block rounded-xl p-6 bg-cream/5 border border-cream/10 max-w-4xl">
-            <p className="text-cream/80 text-sm leading-relaxed">
-              We are an American Heart Association (AHA) Training Site. Group rates and student
-              discounts available. American Red Cross pricing may differ.
-            </p>
+          <div className={s.cta}>
+            <div className={s.ctaText}>Ready to get certified?</div>
+            <a href="#booking" className={s.btn}>
+              <span>Book Your Skills Session</span>
+            </a>
+          </div>
+        </div>
+
+        <div className={s.trust}>
+          <h3 style={{ marginBottom: 10, fontSize: "2rem" }}>AHA-Aligned Training</h3>
+          <p style={{ color: "#94a3b8", marginBottom: 20 }}>
+            Trusted by thousands of healthcare professionals and individuals
+          </p>
+          <div className={s.stats}>
+            <div>
+              <div className={s.statNum}>5,000+</div>
+              <div className={s.statLabel}>Students Trained</div>
+            </div>
+            <div>
+              <div className={s.statNum}>98%</div>
+              <div className={s.statLabel}>Pass Rate</div>
+            </div>
+            <div>
+              <div className={s.statNum}>2-Year</div>
+              <div className={s.statLabel}>Certification Validity</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
 
+export default Pricing;

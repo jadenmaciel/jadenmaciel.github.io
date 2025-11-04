@@ -15,7 +15,7 @@ Browser → Vite-built static bundle → React SPA renders sections
   - `Hero.tsx`: Headline, subheadline, primary/secondary CTAs, hero image, trust badges.
   - `About.tsx`: Feature highlights with icons.
   - `Services.tsx`: Grid of training programs.
-  - `Pricing.tsx`: AHA-aligned pricing cards with transparent rates.
+  - `Pricing.tsx`: AHA-aligned pricing table with detailed descriptions, badges, and transparent rates (uses CSS Modules for styling).
   - `Schedule.tsx`: Upcoming classes (static data).
   - `Booking.tsx`: Booky Buzz widget embed with auto-resize messaging.
   - `Testimonials.tsx`: Social proof (static data).
@@ -75,6 +75,8 @@ Browser → Vite-built static bundle → React SPA renders sections
 ## Build & Tooling
 - `vite` for dev and build; `typescript` project refs enabled for build.
 - Tailwind configured in `tailwind.config.js` with brand colors.
+- CSS Modules used for component-specific styles (e.g., `PricingTable.module.css`).
+- Global compact sizing via root font-size reduction (15px base, responsive breakpoints).
 - Base path configured for GitHub Pages: `/wesleys-cpr/`.
 - Scripts:
   - `npm run dev` — start dev server on http://localhost:5173

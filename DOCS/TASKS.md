@@ -10,6 +10,13 @@
   - Priority: Mid
 
 ## Recently Completed
+- Pricing Section Redesign & Global Compact Sizing
+  - Redesigned Pricing section from card layout to modern table design with detailed course descriptions.
+  - Added badge support (Popular, Best Value) for highlighting key courses.
+  - Implemented global font-size reduction (15px base, 14.5px on large screens, 15.5px on small phones) for compact, efficient layout.
+  - Tightened spacing and typography in Pricing section for better density.
+  - Removed scrollbars from pricing table; table displays fully without internal scrolling.
+  - Uses CSS Modules (`PricingTable.module.css`) for scoped, component-specific styling.
 - Service Area Copy Update & Centralized Course Catalog
   - Updated all service area references from "Fresno" to "Central Valley" across components and documentation.
   - Created centralized course catalog in `src/data/courses.ts` with all pricing and course details.

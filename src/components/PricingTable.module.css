@@ -1,0 +1,234 @@
+/* src/components/PricingTable.module.css */
+
+/* Scoped styles to avoid global collisions. Do not import globally. */
+
+.wrap {
+  padding: 36px 16px;
+  background: linear-gradient(135deg, #0a1929 0%, #1a2332 100%);
+  color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeInDown 0.8s ease;
+}
+
+.h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #fff 0%, #a0aec0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sub {
+  font-size: 1rem;
+  color: #94a3b8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 22px;
+  position: relative;
+  overflow: visible;
+  animation: fadeInUp 0.8s ease;
+  margin-bottom: 28px;
+}
+
+.cardTop {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 40px;
+}
+
+.thead {
+  background: rgba(231, 76, 60, 0.1);
+}
+
+.th {
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #e74c3c;
+  border-bottom: 2px solid rgba(231, 76, 60, 0.3);
+}
+
+.thFirst { border-radius: 12px 0 0 0; }
+
+.thLast { border-radius: 0 12px 0 0; text-align: right; }
+
+.tr {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tr:hover { background: rgba(231, 76, 60, 0.05); transform: translateX(5px); }
+
+.trLast { border-bottom: none; }
+
+.td { padding: 10px 12px; }
+
+.name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.desc {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  line-height: 1.35;
+}
+
+.badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 12px;
+  margin-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #e74c3c;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.priceNote {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 400;
+  display: block;
+  margin-top: 4px;
+}
+
+.cta {
+  text-align: center;
+  padding: 18px 0 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ctaText {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-bottom: 24px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(231, 76, 60, 0.3);
+  text-decoration: none;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before { width: 400px; height: 400px; }
+
+.btn:hover { transform: translateY(-3px); box-shadow: 0 15px 50px rgba(231, 76, 60, 0.5); }
+
+.btn span { position: relative; z-index: 1; }
+
+.trust {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 40px;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.statNum {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #e74c3c;
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .h1 { font-size: 2rem; }
+  .card { padding: 20px; }
+  .table { font-size: 0.9rem; }
+  .th, .td { padding: 10px 10px; }
+  .name { font-size: 0.98rem; }
+  .desc { font-size: 0.8rem; }
+  .price { font-size: 1.3rem; }
+  .btn { padding: 12px 28px; font-size: 0.95rem; }
+}
+

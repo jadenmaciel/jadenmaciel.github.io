@@ -12,8 +12,8 @@ A static marketing website for Wesley's CPR built with React, Vite, and Tailwind
 - **Reusable UI components**: PrimaryButton, SecondaryButton, TrustBadge.
 - **CTA flow**: "View Classes" and "Book a Session".
 - **Centralized course catalog**: Course data and pricing managed in `src/data/courses.ts` as single source of truth.
-- **Pricing transparency**: AHA-aligned pricing cards for all training programs with notes for special conditions.
-- **AHA e-learning integration**: Separate section with links to AHA site (no price/time displayed).
+- **Pricing transparency**: AHA-aligned pricing table with detailed course descriptions, badges (Popular, Best Value), and transparent rates.
+- **Compact design**: Global font-size reduction (15px base) for a tighter, more efficient layout across all sections.
 - **Online booking**: Booky Buzz widget embedded with secure postMessage communication.
 - **Payment processing**: Troute payment disclosure in Booking component.
 - **Contact details**: Address, phone, and email visible and linked; social media links in footer.
@@ -23,7 +23,7 @@ A static marketing website for Wesley's CPR built with React, Vite, and Tailwind
 ### Tech Stack
 - **Framework**: React 18, Vite 5
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS 3
+- **Styling**: Tailwind CSS 3 + CSS Modules (for component-specific styles like Pricing table)
 - **Icons**: lucide-react
 - **Deployment target**: Static hosting (e.g., Vercel, Netlify, S3/CloudFront, GitHub Pages)
 
@@ -74,6 +74,8 @@ npm run preview
 ### Status
 - **Production-ready**:
   - All visual sections render with brand colors and responsive layout.
+  - Pricing section redesigned with modern table layout, badges, and detailed descriptions.
+  - Global compact sizing implemented (15px base font) for improved space efficiency.
   - Logo and favicon display correctly on all devices.
   - Navigation anchors, CTAs, and contact links function.
   - Mobile-responsive navigation with accessible hamburger menu.
