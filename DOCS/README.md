@@ -5,7 +5,7 @@ A static marketing website for Wesley's CPR built with React, Vite, and Tailwind
 
 ### Overview
 - **What it is**: A single-page marketing site showcasing CPR and safety training services.
-- **Who uses it**: Prospective customers in Fresno seeking CPR/BLS/First Aid training.
+- **Who uses it**: Prospective customers in the Central Valley seeking CPR/BLS/First Aid training.
 - **Why it exists**: Promote services, convey credibility (AHA), and provide clear contact info and calls to action.
 
 ### Key Features

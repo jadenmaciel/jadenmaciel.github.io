@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <h2 className="text-xl font-semibold mb-3">Wesley&apos;s CPR</h2>
             <p className="text-cream/70 text-sm mb-3">
-              CPR & safety training for Fresno&apos;s students, healthcare workers, and workplaces.
+              CPR & safety training for the Central Valley&apos;s students, healthcare workers, and workplaces.
             </p>
             <p className="text-cream/70 text-sm">
               We are an American Heart Association (AHA) Training Site. Group and student discounts available. American Red Cross pricing may differ.

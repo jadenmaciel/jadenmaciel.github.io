@@ -20,7 +20,7 @@ export default function Hero() {
               CPR & Safety Training You Can Trust
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-cream">
-              Empowering Fresno's community with life-saving skills and confidence in emergency situations.
+              Empowering the Central Valley community with life-saving skills and confidence in emergency situations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <PrimaryButton href="#classes">View Classes</PrimaryButton>

@@ -32,7 +32,7 @@ export default function About() {
             Why Choose Wesley's CPR?
           </h2>
           <p className="text-xl max-w-3xl mx-auto text-dark">
-            We're passionate about empowering our Fresno community with the confidence and skills to save lives.
+            We're passionate about empowering our Central Valley community with the confidence and skills to save lives.
             Our friendly, supportive approach makes learning CPR accessible and stress-free.
           </p>
         </div>

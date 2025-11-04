@@ -37,7 +37,7 @@ export default function Header() {
             />
             <div>
               <h1 className="text-xl font-bold text-cream group-hover:text-cream/90 transition-colors">Wesley's CPR</h1>
-              <p className="text-xs text-cream">Fresno, CA</p>
+              <p className="text-xs text-cream">Central Valley, CA</p>
             </div>
           </a>
 

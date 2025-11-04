@@ -1,5 +1,5 @@
 ## Problem & Business Value
-Prospects need a credible, clear way to discover and book CPR and safety training in Fresno. The site should instill trust, clarify offerings, and drive conversions to calls or bookings.
+Prospects need a credible, clear way to discover and book CPR and safety training in the Central Valley. The site should instill trust, clarify offerings, and drive conversions to calls or bookings.
 
 ## Users
 - Primary: Prospective students (individuals, parents, healthcare workers).

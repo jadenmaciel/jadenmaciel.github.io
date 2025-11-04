@@ -1,4 +1,8 @@
 ## Current Work
+- Service Area Copy Update
+  - Why: Reflect broader service area; replace "Fresno" with "Central Valley" in marketing copy.
+  - Scope: Update `Hero.tsx`, `About.tsx`, `Footer.tsx`, `README.md`, `DOCS/PLANNING.md`, and `index.html` (titles/meta). Keep postal address lines unchanged.
+  - Priority: High
 - Contact Form Submission Strategy
   - Why: Currently logs to console; needs safe handling and user feedback.
   - Scope: Decide backend (serverless or email service) vs. mailto-only; if backend, add API endpoint and validation; add loading/error/success states in `Contact.tsx`.
