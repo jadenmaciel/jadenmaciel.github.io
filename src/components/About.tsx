@@ -33,7 +33,7 @@ export default function About() {
           </h2>
           <p className="text-xl max-w-3xl mx-auto text-dark">
             We're passionate about empowering our Central Valley community with the confidence and skills to save lives.
-            Our friendly, supportive approach makes learning CPR accessible and stress-free.
+            Our friendly, supportive approach makes learning CPR accessible and stress-free. Serving individuals, healthcare workers, and schools across the Central Valley.
           </p>
         </div>
 

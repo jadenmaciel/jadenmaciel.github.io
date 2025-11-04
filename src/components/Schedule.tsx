@@ -1,5 +1,6 @@
 import { Calendar, Clock, MapPin, Users } from 'lucide-react';
 
+// NOTE: Do not auto-block Sundays. Owner manages Sunday availability manually. (See docs/OWNER_NOTES.md)
 export default function Schedule() {
   const upcomingClasses = [
     {
