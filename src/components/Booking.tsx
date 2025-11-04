@@ -49,6 +49,9 @@ export default function Booking() {
             loading="lazy"
           />
         </div>
+        <p className="mt-4 text-sm text-navy/70 text-center">
+          Secure payments are processed by Troute.
+        </p>
       </div>
     </section>
   );
