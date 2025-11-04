@@ -10,7 +10,6 @@ export default function Header() {
     { name: 'Classes', href: '#classes' },
     { name: 'Book Online', href: '#booking' },
     { name: 'Pricing', href: '#pricing' },
-    { name: 'Schedule', href: '#schedule' },
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -51,7 +50,7 @@ export default function Header() {
                 {item.name}
               </a>
             ))}
-            <PrimaryButton href="#contact">Book Now</PrimaryButton>
+            <PrimaryButton href="#booking">Book Now</PrimaryButton>
           </nav>
 
           <button
@@ -82,7 +81,7 @@ export default function Header() {
                 </a>
               ))}
               <PrimaryButton
-                href="#contact"
+                href="#booking"
                 className="w-full text-center"
                 onClick={() => setIsMenuOpen(false)}
               >

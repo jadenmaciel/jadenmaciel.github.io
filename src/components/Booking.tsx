@@ -30,7 +30,7 @@ export default function Booking() {
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold mb-4">Book a Class Online</h2>
         <p className="mb-6 text-navy/80">
-          Use the booking widget below to reserve your CPR, BLS, or First Aid session with Wesley&apos;s CPR. If the widget does not load,
+          Choose your preferred date/time. You can also select an instructor: <strong>Jacqueline</strong>, <strong>Debbie Scott</strong>, <strong>Tum Poston</strong>. We prefer no same-day bookings; if you need today, <a href="#contact" className="text-red font-semibold underline underline-offset-2">contact us</a> to check availability. If the widget does not load,
           <a
             href={PUBLIC_BOOKING_URL}
             className="text-red font-semibold underline underline-offset-2 ml-1"
@@ -49,8 +49,8 @@ export default function Booking() {
             loading="lazy"
           />
         </div>
-        <p className="mt-4 text-sm text-navy/70 text-center">
-          Secure payments are processed by Troute.
+        <p className="mt-4 text-xs text-navy/70 text-center">
+          Payment is due within 24 hours to hold your seat. 20% deposit is non-refundable. AHA e-card provided upon completion. Secure payments are processed by Troute.
         </p>
       </div>
     </section>

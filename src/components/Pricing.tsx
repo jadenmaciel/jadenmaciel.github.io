@@ -13,18 +13,18 @@ const rows: Row[] = [
   {
     name: "HSV-First Aid",
     price: "$85",
-    desc: "AHA-aligned certification • 2-year validity • 4-hour comprehensive training",
+    desc: "AHA-aligned certification • 2-year validity • 4-hour comprehensive training (AHA minimum)",
     badge: "Popular",
   },
   {
     name: "HSV-CPR-AED",
     price: "$85",
-    desc: "CPR & AED training • 2-year certification • Hands-on practice",
+    desc: "CPR & AED training • 2-year certification • 4-hour comprehensive training (AHA minimum) • Hands-on practice",
   },
   {
     name: "HSV-First Aid, CPR-AED Combo",
     price: "$130",
-    desc: "Complete certification package • Save $40 with combo • 6-hour comprehensive course",
+    desc: "Complete certification package • Save $40 with combo • 6-hour comprehensive course (reflects real pacing for groups)",
     badge: "Best Value",
   },
   {
@@ -40,33 +40,32 @@ const rows: Row[] = [
   {
     name: "BLS Provider",
     price: "$100",
-    desc: "Healthcare professionals • 2-year certification • In-depth clinical training",
+    desc: "Healthcare professionals • 2-year certification • 4-hour comprehensive training (AHA minimum) • In-depth clinical training",
   },
   {
     name: "BLS Renewal",
     price: "$100",
-    desc: "Returning customers receive a 10% discount • Refresher course • 3-hour session",
+    desc: "Returning customers receive a 10% discount • Refresher course • 4-hour comprehensive training (AHA minimum)",
   },
   {
     name: "Heartsaver",
     price: "$125",
-    desc: "Comprehensive training • First Aid + CPR + AED • Full-day certification",
+    desc: "Comprehensive training • First Aid + CPR + AED • 4-hour comprehensive training (AHA minimum)",
   },
   {
     name: "American Red Cross BLS",
     price: "$110",
-    desc: "Red Cross certification • 2-year validity • Professional credential",
+    desc: "Red Cross certification • 2-year validity • Professional credential • +$12 surcharge per certification (ARC charges us $42/card)",
   },
   {
     name: "Heartsaver CPR AED",
     price: "$130",
-    desc: "Essential life-saving skills • 2-year certification • 5-hour training",
+    desc: "Essential life-saving skills • 2-year certification • 4-hour comprehensive training (AHA minimum)",
   },
   {
     name: "Friends and Family",
-    price: "—",
-    priceNote: "Contact for pricing",
-    desc: "Casual learning environment • No certification issued • Basic life-saving skills",
+    price: "$25 / person",
+    desc: "Non-certification group training • Min 6 / Max 12 • Ages 12+ may upgrade to certification at standard course rates (AHA e-card required)",
   },
 ];
 

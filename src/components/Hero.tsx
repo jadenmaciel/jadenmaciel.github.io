@@ -24,7 +24,7 @@ export default function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <PrimaryButton href="#classes">View Classes</PrimaryButton>
-              <SecondaryButton href="#contact">Book a Session</SecondaryButton>
+              <SecondaryButton href="#booking">Book a Session</SecondaryButton>
             </div>
 
             <div className="flex flex-wrap gap-2 mt-6">

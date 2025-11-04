@@ -7,35 +7,40 @@ export default function Services() {
       title: 'CPR & AED',
       description: 'Learn life-saving CPR techniques and automated external defibrillator use for adults, children, and infants.',
       duration: '4 hours',
-      certification: 'AHA Certification',
+      certification: 'AHA e-card (ARC on request, +$12)',
+      details: 'Min 3 / Max 19 • Ages 12+ • Location varies by group size',
     },
     {
       icon: Briefcase,
       title: 'First Aid',
       description: 'Comprehensive training in emergency response, wound care, and medical emergency recognition.',
-      duration: '3-4 hours',
-      certification: 'AHA Certification',
+      duration: '4 hours',
+      certification: 'AHA e-card (ARC on request, +$12)',
+      details: 'Min 3 / Max 19 • Ages 12+ • Location varies by group size',
     },
     {
       icon: Users,
-      title: 'Heartsaver',
+      title: 'Heartsaver First Aid/CPR/AED',
       description: 'Perfect for childcare workers, teachers, and those who need workplace certification.',
-      duration: '5-6 hours',
-      certification: 'AHA Heartsaver',
+      duration: '6 hours',
+      certification: 'AHA e-card (ARC on request, +$12)',
+      details: 'Min 3 / Max 19 • Ages 12+ • Location varies by group size',
     },
     {
       icon: Stethoscope,
       title: 'BLS for Healthcare Providers',
       description: 'Advanced training for medical professionals including high-quality CPR and team dynamics.',
-      duration: '4-5 hours',
-      certification: 'BLS Provider Card',
+      duration: '4 hours',
+      certification: 'AHA e-card (ARC on request, +$12)',
+      details: 'Min 3 / Max 19 • Ages 12+ • Location varies by group size',
     },
     {
       icon: Home,
-      title: 'Friends & Family',
+      title: 'Family & Friends (Non-Certification)',
       description: 'Informal, relaxed CPR training perfect for parents, grandparents, and community groups.',
-      duration: '2-3 hours',
-      certification: 'Completion Card',
+      duration: 'Approx. 2–3 hours',
+      certification: 'Non-certification group',
+      details: '$25/person • Min 6 / Max 12 • Ages 12+ • Upgrade to certification at standard rates',
     },
     {
       icon: Building2,
@@ -43,6 +48,7 @@ export default function Services() {
       description: 'We bring our certified instruction to your office, school, or organization. Group discounts available.',
       duration: 'Flexible',
       certification: 'Custom Options',
+      details: 'Min 3 / Max 19 • Ages 12+ • Location varies by group size',
     },
   ];
 
@@ -78,9 +84,14 @@ export default function Services() {
                   <span className="font-semibold mr-2">Certification:</span>
                   <span>{service.certification}</span>
                 </div>
+                {service.details && (
+                  <div className="text-xs text-dark/80 mt-2">
+                    {service.details}
+                  </div>
+                )}
               </div>
               <a
-                href="#contact"
+                href="#booking"
                 className="mt-6 inline-block w-full text-center px-6 py-3 rounded-lg transition-colors font-medium hover:opacity-90 bg-red text-cream"
               >
                 Learn More

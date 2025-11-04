@@ -4,8 +4,8 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
 import Pricing from './components/Pricing';
-import Schedule from './components/Schedule';
 import Booking from './components/Booking';
+import Policies from './components/Policies';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -20,9 +20,9 @@ function App() {
         <About />
         <Services />
         <Pricing />
-        <Schedule />
         <Booking />
         <Testimonials />
+        <Policies />
         <Contact />
       </main>
       <Footer />

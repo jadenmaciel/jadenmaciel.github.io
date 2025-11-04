@@ -172,6 +172,9 @@ export default function Contact() {
                 Send Message
               </button>
             </form>
+            <p className="text-xs opacity-80 mt-2 text-dark">
+              A Release of Liability is required for all students. Parent/guardian must sign for minors (ages 12–17).
+            </p>
           </div>
         </div>
       </div>
