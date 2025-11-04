@@ -57,7 +57,12 @@ Prospects need a credible, clear way to discover and book CPR and safety trainin
 - ✅ Compliance: AHA note added to Footer and Pricing sections.
 
 ## Deployment Status
-- Current: GitHub Pages at https://jadenmaciel.github.io/wesleys-cpy/
+- Current: GitHub Pages at https://jadenmaciel.github.io/wesleys-cpr/
 - Automation: GitHub Actions workflow on push to main.
-- Base path: `/wesleys-cpy/` configured in Vite.
+- Base path: `/wesleys-cpr/` configured in Vite.
 - Asset handling: All images and icons use proper BASE_URL resolution.
+
+## SEO Polish (Current)
+- Open Graph/Twitter image configured (`public/images/og.jpg`).
+- `robots.txt` added with sitemap reference.
+- `sitemap.xml` published with homepage entry.

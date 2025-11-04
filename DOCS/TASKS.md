@@ -31,10 +31,15 @@
   - Social media links added to Footer.
 
 - GitHub Pages Deployment
-  - Vite base path configured for `/wesleys-cpy/`.
+  - Vite base path configured for `/wesleys-cpr/`.
   - GitHub Actions workflow created for automated deployment.
   - All asset paths use proper BASE_URL handling.
-  - Site live at: https://jadenmaciel.github.io/wesleys-cpy/
+  - Site live at: https://jadenmaciel.github.io/wesleys-cpr/
+
+- SEO Polish
+  - Open Graph/Twitter image configured (`public/images/og.jpg`).
+  - `robots.txt` added with sitemap reference.
+  - `sitemap.xml` published with homepage entry.
 
 - Git Hygiene
   - `.gitignore`, `.editorconfig`, `.env.example` added.

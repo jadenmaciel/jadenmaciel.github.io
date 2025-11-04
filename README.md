@@ -63,6 +63,11 @@ npm run preview
 - **Configuration**: Base path `/wesleys-cpr/` configured in `vite.config.ts`.
 - **Future**: Migrate to AWS S3/CloudFront with Route 53 custom domain.
 
+### SEO
+- **Open Graph/Twitter image**: `public/images/og.jpg` (1200×630) referenced via meta tags.
+- **Robots**: `public/robots.txt` allows all and points to sitemap.
+- **Sitemap**: `public/sitemap.xml` includes homepage URL.
+
 ### Status
 - **Production-ready**:
   - All visual sections render with brand colors and responsive layout.

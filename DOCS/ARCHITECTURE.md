@@ -75,7 +75,7 @@ Browser → Vite-built static bundle → React SPA renders sections
 ## Build & Tooling
 - `vite` for dev and build; `typescript` project refs enabled for build.
 - Tailwind configured in `tailwind.config.js` with brand colors.
-- Base path configured for GitHub Pages: `/wesleys-cpy/`.
+- Base path configured for GitHub Pages: `/wesleys-cpr/`.
 - Scripts:
   - `npm run dev` — start dev server on http://localhost:5173
   - `npm run build` — type-check then bundle to `dist/`
@@ -84,6 +84,11 @@ Browser → Vite-built static bundle → React SPA renders sections
 
 ## Deployment
 - Output: `dist/` static assets.
-- Current: GitHub Pages at https://jadenmaciel.github.io/wesleys-cpy/
+- Current: GitHub Pages at https://jadenmaciel.github.io/wesleys-cpr/
 - GitHub Actions workflow: `.github/workflows/gh-pages.yml` builds and deploys on push to main.
 - Future: Migrate to AWS S3/CloudFront with Route 53 domain.
+
+## SEO Assets (Static)
+- Social share image: `public/images/og.jpg` referenced via Open Graph/Twitter meta.
+- Robots: `public/robots.txt` allowing all and pointing to sitemap.
+- Sitemap: `public/sitemap.xml` with homepage URL.
