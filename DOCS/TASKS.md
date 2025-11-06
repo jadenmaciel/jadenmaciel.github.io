@@ -11,6 +11,14 @@
   - Priority: Mid
 
 ## Recently Completed
+- Fee Disclosure Visibility & Waiver Removal
+  - Removed waiver UI components and routes (Waiver.tsx, WaiverForm.tsx).
+  - Removed React Router (back to simple SPA without routing).
+  - Added high-contrast fee disclosure notice above "AHA-Aligned Training" section in Pricing component.
+  - Created PaymentNotice component with pure white text for visibility on dark backgrounds.
+  - Updated fee disclosure placement: removed from Hero, added to Pricing section below booking CTA.
+  - Excluded Lambda backend code from TypeScript app build to fix CI (Lambda code remains but unused).
+  - Removed all waiver references from Booking component and email templates.
 - Policies Section & Booking Flow Updates
   - Removed Schedule component and nav link (replaced by direct booking).
   - Created Policies component with comprehensive policy information (age requirements, class sizes, payment terms, deposit, cancellation, late arrival, certification details, waiver).
@@ -19,7 +27,6 @@
   - Updated Pricing component with durations (4h AHA minimum, 6h Heartsaver combo) and ARC surcharge notes.
   - Enhanced Booking component with instructor list (Jacqueline, Debbie Scott, Tum Poston) and same-day booking policy.
   - Updated Services component with policy details (class size, age limits, location, certification options).
-  - Added waiver reminder to Contact form.
 - Pricing Section Redesign & Global Compact Sizing
   - Redesigned Pricing section from card layout to modern table design with detailed course descriptions.
   - Added badge support (Popular, Best Value) for highlighting key courses.
@@ -75,11 +82,8 @@
 - (Future) Reintroduce waiver flow via PandaDoc or serverless when account is ready
   - Why: Customers need to complete waivers after booking.
   - Scope: Implement waiver capture via PandaDoc or serverless backend; maintain fee disclosure visibility on pricing CTA section (white text on dark background).
+  - Note: Lambda backend infrastructure exists in repo (`src/lambda/`, `infra/`) but is currently unused and excluded from app build.
   - Priority: Low (Future enhancement)
-- Keep fee disclosure visible on pricing CTA section
-  - Why: Ensure payment fee policy is clearly visible to customers.
-  - Scope: Maintain high-contrast white text on dark background above "AHA-Aligned Training" section.
-  - Priority: High
 
 - Basic Analytics (Privacy-Respectful)
   - Why: Understand traffic and conversions while respecting privacy.

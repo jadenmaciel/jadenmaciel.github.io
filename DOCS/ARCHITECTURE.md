@@ -1,6 +1,7 @@
 ## High-Level Architecture
 - Static single-page application (SPA) built with React and Vite.
-- No backend, database, or external services configured.
+- No routing (removed React Router); simple anchor-link navigation within SPA.
+- No active backend; Lambda/infra code exists in repo but is unused and excluded from app build.
 - Tailwind CSS provides utility-first styling with brand colors.
 
 ```
@@ -8,23 +9,29 @@ Browser → Vite-built static bundle → React SPA renders sections
 ```
 
 ## Modules / Components
-- `src/App.tsx`: Composes top-level sections with SkipLink, Header, main content, Footer.
+- `src/App.tsx`: Composes top-level sections with SkipLink, Header, main content, Footer (no routing).
 - `src/components/`:
   - `SkipLink.tsx`: Keyboard-accessible skip to main content link.
   - `Header.tsx`: Fixed header with logo, navigation, mobile menu, and "Book Now" CTA (links to booking section).
   - `Hero.tsx`: Headline, subheadline, primary/secondary CTAs, hero image, trust badges.
   - `About.tsx`: Feature highlights with icons.
   - `Services.tsx`: Grid of training programs with policy details (class size, age, location, certification).
-  - `Pricing.tsx`: AHA-aligned pricing table with detailed descriptions, badges, transparent rates, durations, and Family & Friends pricing (uses CSS Modules for styling).
+  - `Pricing.tsx`: AHA-aligned pricing table with detailed descriptions, badges, transparent rates, durations, Family & Friends pricing, booking CTA, and fee disclosure notice above "AHA-Aligned Training" section (uses CSS Modules for styling).
   - `Booking.tsx`: Booky Buzz widget embed with auto-resize messaging, instructor list, same-day booking policy, and payment reminders.
   - `Policies.tsx`: Comprehensive policy information (age, class size, location, payment, deposit, cancellation, certification, waiver).
   - `Testimonials.tsx`: Social proof (static data).
-  - `Contact.tsx`: Contact info and client-only form with waiver reminder.
+  - `Contact.tsx`: Contact info and client-only form.
   - `Footer.tsx`: Business info, AHA note, quick links, social media links.
+  - `PaymentNotice.tsx`: Reusable fee disclosure component with high-contrast white text for dark backgrounds.
+  - `PricingCard.tsx`: Pricing card component with fee disclosure (for future use).
 - `src/components/ui/`:
   - `PrimaryButton.tsx`: Red CTA button component.
   - `SecondaryButton.tsx`: Cream CTA button component.
   - `TrustBadge.tsx`: Trust indicator pill badge.
+- `src/lib/`:
+  - `fees.ts`: Fee calculation utility (3.00% + $0.15 for online/card payments).
+- `src/lambda/`: AWS Lambda handler code (unused, excluded from app build).
+- `infra/`: Terraform infrastructure code (unused, for future waiver backend).
 
 ## Request / Data Flow
 - Initial load:
@@ -61,6 +68,7 @@ Browser → Vite-built static bundle → React SPA renders sections
 
 ## Persistence / Data Model
 - None. All data shown is static within components.
+- Lambda backend infrastructure exists (`src/lambda/`, `infra/`) but is unused and not called by the UI.
 
 ## Testing Strategy
 - Current coverage: None.
@@ -74,16 +82,18 @@ Browser → Vite-built static bundle → React SPA renders sections
   - Consider snapshot tests for critical sections.
 
 ## Build & Tooling
-- `vite` for dev and build; `typescript` project refs enabled for build.
+- `vite` for dev and build; TypeScript configured with project references.
+- `tsconfig.app.json` excludes `src/lambda/**` from app build (Lambda code remains but unused).
 - Tailwind configured in `tailwind.config.js` with brand colors.
 - CSS Modules used for component-specific styles (e.g., `PricingTable.module.css`).
 - Global compact sizing via root font-size reduction (15px base, responsive breakpoints).
 - Base path configured for GitHub Pages: `/wesleys-cpr/`.
 - Scripts:
   - `npm run dev` — start dev server on http://localhost:5173
-  - `npm run build` — type-check then bundle to `dist/`
+  - `npm run build` — type-check (app only) then bundle to `dist/`
   - `npm run preview` — preview built app on http://localhost:4173
-  - `npm run typecheck` — run TypeScript checks without building
+  - `npm run typecheck` — run TypeScript checks without building (app only)
+  - `npm run build:lambda` — type-check Lambda code separately (optional)
 
 ## Deployment
 - Output: `dist/` static assets.
