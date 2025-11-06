@@ -1,0 +1,8 @@
+aws_region     = "us-west-2"
+project_name    = "wesleys-cpr"
+s3_bucket_name  = "wesleys-cpr-waivers-UNIQUE-ID"
+ses_from_email  = "noreply@wesleyscprfresno.com"
+ses_to_email    = "j.wes@wesleyscprfresno.com"
+allowed_origin   = "https://jadenmaciel.github.io"
+retention_days   = 1095
+

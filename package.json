@@ -8,7 +8,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview --port 4173",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lambda:build": "cd src/lambda && npm install && npm run build",
+    "lambda:package": "cd src/lambda && npm run package",
+    "lambda:deploy": "npm run lambda:package && cd infra && terraform apply"
   },
   "keywords": [
     "react",
@@ -22,11 +25,14 @@
   "dependencies": {
     "lucide-react": "^0.263.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.9.5",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
+    "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",

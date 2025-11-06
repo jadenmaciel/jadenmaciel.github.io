@@ -11,15 +11,15 @@ Browser → Vite-built static bundle → React SPA renders sections
 - `src/App.tsx`: Composes top-level sections with SkipLink, Header, main content, Footer.
 - `src/components/`:
   - `SkipLink.tsx`: Keyboard-accessible skip to main content link.
-  - `Header.tsx`: Fixed header with logo, navigation, mobile menu, and "Book Now" CTA.
+  - `Header.tsx`: Fixed header with logo, navigation, mobile menu, and "Book Now" CTA (links to booking section).
   - `Hero.tsx`: Headline, subheadline, primary/secondary CTAs, hero image, trust badges.
   - `About.tsx`: Feature highlights with icons.
-  - `Services.tsx`: Grid of training programs.
-  - `Pricing.tsx`: AHA-aligned pricing table with detailed descriptions, badges, and transparent rates (uses CSS Modules for styling).
-  - `Schedule.tsx`: Upcoming classes (static data).
-  - `Booking.tsx`: Booky Buzz widget embed with auto-resize messaging.
+  - `Services.tsx`: Grid of training programs with policy details (class size, age, location, certification).
+  - `Pricing.tsx`: AHA-aligned pricing table with detailed descriptions, badges, transparent rates, durations, and Family & Friends pricing (uses CSS Modules for styling).
+  - `Booking.tsx`: Booky Buzz widget embed with auto-resize messaging, instructor list, same-day booking policy, and payment reminders.
+  - `Policies.tsx`: Comprehensive policy information (age, class size, location, payment, deposit, cancellation, certification, waiver).
   - `Testimonials.tsx`: Social proof (static data).
-  - `Contact.tsx`: Contact info and client-only form.
+  - `Contact.tsx`: Contact info and client-only form with waiver reminder.
   - `Footer.tsx`: Business info, AHA note, quick links, social media links.
 - `src/components/ui/`:
   - `PrimaryButton.tsx`: Red CTA button component.
@@ -31,6 +31,7 @@ Browser → Vite-built static bundle → React SPA renders sections
   - `index.html` → loads `src/main.tsx` → renders `App.tsx`.
 - Internal navigation:
   - Anchor links jump to sections within the SPA.
+  - All "Book Now" CTAs direct to booking section (#booking).
 - Contact form (current):
   - Submit → prevents default → console.log form data → no network request.
   - No stateful backend, no storage, no API calls.
