@@ -48,6 +48,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="#policies" className="hover:text-cream/80 transition-colors">
+                  Policies & FAQ
+                </a>
+              </li>
+              <li>
                 <a href="#about" className="hover:text-cream/80 transition-colors">
                   About
                 </a>
