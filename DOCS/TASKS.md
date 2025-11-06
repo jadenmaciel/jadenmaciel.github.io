@@ -76,6 +76,10 @@
   - Why: Customers need to complete waivers after booking.
   - Scope: Implement waiver capture via PandaDoc or serverless backend; maintain fee disclosure visibility on pricing CTA section (white text on dark background).
   - Priority: Low (Future enhancement)
+- Keep fee disclosure visible on pricing CTA section
+  - Why: Ensure payment fee policy is clearly visible to customers.
+  - Scope: Maintain high-contrast white text on dark background above "AHA-Aligned Training" section.
+  - Priority: High
 
 - Basic Analytics (Privacy-Respectful)
   - Why: Understand traffic and conversions while respecting privacy.

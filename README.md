@@ -116,7 +116,9 @@ npm run preview
 - The site shows a fee notice below the main booking CTA in the pricing section (above "AHA-Aligned Training").
 - Copy: "Online/card payments add **3.00% + $0.15**; cash has **no fee**. You'll see any fee and your grand total before paying online."
 
-**Note**: Waiver capture is currently disabled. Any Lambda/infra added earlier remains in the repo but is not called by the UI.
+### Waiver Flow
+
+**Note**: Waiver capture is currently disabled. Any Lambda/infra added earlier (`src/lambda/`, `infra/`) remains in the repo but is not called by the UI.
 
 ### Maintainers' Notes
 
