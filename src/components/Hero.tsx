@@ -22,7 +22,7 @@ export default function Hero() {
             <p className="text-xl md:text-2xl mb-8 text-cream">
               Empowering the Central Valley community with life-saving skills and confidence in emergency situations.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 mb-4">
               <PrimaryButton href="#classes">View Classes</PrimaryButton>
               <SecondaryButton href="#booking">Book a Session</SecondaryButton>
             </div>

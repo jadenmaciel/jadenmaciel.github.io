@@ -1,5 +1,6 @@
 import React from "react";
 import s from "./PricingTable.module.css";
+import PaymentNotice from "./PaymentNotice";
 
 type Row = {
   name: string;
@@ -120,6 +121,10 @@ const Pricing: React.FC = () => {
               <span>Book Your Skills Session</span>
             </a>
           </div>
+        </div>
+
+        <div className="relative z-10 opacity-100">
+          <PaymentNotice className="mt-8" />
         </div>
 
         <div className={s.trust}>
