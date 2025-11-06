@@ -7,10 +7,11 @@ Prospects need a credible, clear way to discover and book CPR and safety trainin
 
 ## Core Functional Requirements
 - Present training programs with clear descriptions and certification details.
-- Display schedule highlights and calls to action to contact or book.
+- Display policies and important information (age requirements, class sizes, payment terms, cancellation policies).
+- Provide clear calls to action to book classes directly.
 - Provide contact info with actionable links (call, email).
 - Maintain brand consistency and accessible UI.
-- Optional future: basic booking integration.
+- Booking integration via Booky Buzz widget.
 
 ## Non-Functional Requirements
 - Static, fast, and reliable delivery.

@@ -1,0 +1,27 @@
+{
+  "name": "wesleys-cpr-waiver-handler",
+  "version": "1.0.0",
+  "description": "AWS Lambda handler for waiver submissions",
+  "type": "module",
+  "main": "waiver-handler.js",
+  "scripts": {
+    "build": "esbuild waiver-handler.ts --bundle --platform=node --target=node20 --format=esm --outfile=waiver-handler.js --external:@aws-sdk/* --loader:.json=json",
+    "package": "npm run build && node package-zip.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.490.0",
+    "@aws-sdk/client-ses": "^3.490.0",
+    "@aws-sdk/client-ssm": "^3.490.0",
+    "ajv": "^8.12.0",
+    "ajv-formats": "^3.0.1",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.130",
+    "@types/node": "^20.10.0",
+    "@types/uuid": "^9.0.7",
+    "esbuild": "^0.19.8",
+    "typescript": "^5.3.3"
+  }
+}
+

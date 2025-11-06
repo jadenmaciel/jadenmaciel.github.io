@@ -1,4 +1,5 @@
 ## Current Work
+
 - Contact Form Submission Strategy
   - Why: Currently logs to console; needs safe handling and user feedback.
   - Scope: Decide backend (serverless or email service) vs. mailto-only; if backend, add API endpoint and validation; add loading/error/success states in `Contact.tsx`.
@@ -10,6 +11,15 @@
   - Priority: Mid
 
 ## Recently Completed
+- Policies Section & Booking Flow Updates
+  - Removed Schedule component and nav link (replaced by direct booking).
+  - Created Policies component with comprehensive policy information (age requirements, class sizes, payment terms, deposit, cancellation, late arrival, certification details, waiver).
+  - Updated all "Book Now" CTAs to point to booking section instead of contact form.
+  - Added Family & Friends pricing ($25/person) with Min 6/Max 12 constraints and certification upgrade path.
+  - Updated Pricing component with durations (4h AHA minimum, 6h Heartsaver combo) and ARC surcharge notes.
+  - Enhanced Booking component with instructor list (Jacqueline, Debbie Scott, Tum Poston) and same-day booking policy.
+  - Updated Services component with policy details (class size, age limits, location, certification options).
+  - Added waiver reminder to Contact form.
 - Pricing Section Redesign & Global Compact Sizing
   - Redesigned Pricing section from card layout to modern table design with detailed course descriptions.
   - Added badge support (Popular, Best Value) for highlighting key courses.
@@ -62,6 +72,15 @@
   - npm scripts standardized (dev, build, preview, typecheck).
 
 ## Backlog / Next Up
+- (Future) Reintroduce waiver flow via PandaDoc or serverless when account is ready
+  - Why: Customers need to complete waivers after booking.
+  - Scope: Implement waiver capture via PandaDoc or serverless backend; maintain fee disclosure visibility on pricing CTA section (white text on dark background).
+  - Priority: Low (Future enhancement)
+- Keep fee disclosure visible on pricing CTA section
+  - Why: Ensure payment fee policy is clearly visible to customers.
+  - Scope: Maintain high-contrast white text on dark background above "AHA-Aligned Training" section.
+  - Priority: High
+
 - Basic Analytics (Privacy-Respectful)
   - Why: Understand traffic and conversions while respecting privacy.
   - Scope: Add lightweight, privacy-first analytics (e.g., self-hosted or cookieless option) with a clear consent approach; document in README.
