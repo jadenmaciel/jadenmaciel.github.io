@@ -67,6 +67,9 @@ Prospects need a credible, clear way to discover and book CPR and safety trainin
 - Asset handling: All images and icons use proper BASE_URL resolution.
 
 ## SEO Polish (Current)
-- Open Graph/Twitter image configured (`public/images/og.jpg`).
+- Open Graph meta tags: Title, description, image, URL, type configured in `index.html`.
+- Twitter Card meta tags: Summary large image card with title, description, image.
+- Apple touch icon: 180×180 icon configured for iOS home screen.
+- Social share image: `public/images/og.jpg` (1200×630 JPG) referenced in meta tags (needs to be created).
 - `robots.txt` added with sitemap reference.
 - `sitemap.xml` published with homepage entry.
