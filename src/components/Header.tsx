@@ -10,6 +10,7 @@ export default function Header() {
     { name: 'Classes', href: '#classes' },
     { name: 'Book Online', href: '#booking' },
     { name: 'Pricing', href: '#pricing' },
+    { name: 'Policies & FAQ', href: '#policies' },
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' },
   ];
