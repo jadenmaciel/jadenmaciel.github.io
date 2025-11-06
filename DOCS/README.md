@@ -9,15 +9,17 @@ A static marketing website for Wesley's CPR built with React, Vite, and Tailwind
 - **Why it exists**: Promote services, convey credibility (AHA), and provide clear contact info and calls to action.
 
 ### Key Features
-- **Responsive SPA** with semantic sections: SkipLink, Header, Hero, About, Services, Pricing, Booking, Testimonials, Policies, Contact, Footer.
-- **No routing**: Simple anchor-link navigation within single page (React Router removed).
+- **Responsive SPA** with semantic sections: SkipLink, Header, Hero, About, Services, Pricing, Booking, Testimonials, Policies & FAQ, Contact, Footer.
+- **No routing**: Simple anchor-link navigation within single page (React Router removed; no routing dependencies).
 - **Brand-consistent UI** using defined colors: `navy` (#0C1D2F), `red` (#C6423B), `cream` (#F6E3C7), `dark` (#142131).
 - **Reusable UI components**: PrimaryButton, SecondaryButton, TrustBadge, PaymentNotice, PricingCard.
 - **CTA flow**: "View Classes" and "Book a Session".
 - **Centralized course catalog**: Course data and pricing managed in `src/data/courses.ts` as single source of truth.
 - **Pricing transparency**: AHA-aligned pricing table with detailed course descriptions, badges (Popular, Best Value), transparent rates, durations, and Family & Friends pricing.
 - **Fee disclosure**: High-contrast white text fee notice above "AHA-Aligned Training" section showing 3.00% + $0.15 processing fee for online/card payments; cash has no fee.
+- **Policies & FAQ**: Comprehensive FAQ section covering class logistics, payment policy (cash vs card fees), refund/reschedule policies, age requirements, class sizes, what to bring, and certification details.
 - **Compact design**: Global font-size reduction (15px base) for a tighter, more efficient layout across all sections.
+- **SEO optimized**: Open Graph and Twitter Card meta tags for enhanced social sharing previews.
 - **Online booking**: Booky Buzz widget embedded with secure postMessage communication.
 - **Payment processing**: Troute payment disclosure in Booking component with fee policy.
 - **Contact details**: Address, phone, and email visible and linked; social media links in footer.
@@ -90,14 +92,17 @@ npm run preview
   - Booky Buzz booking widget integrated with secure messaging.
   - Logo and favicon display correctly on all devices.
   - Fee disclosure prominently displayed in Pricing section.
+  - Policies & FAQ section with comprehensive content (class logistics, payment policy, refunds).
+  - SEO meta tags (Open Graph, Twitter Cards) configured.
   - Deployed to GitHub Pages: https://jadenmaciel.github.io/wesleys-cpr/
 - Not implemented / Removed:
   - Waiver UI removed (components and routes deleted).
-  - React Router removed (simple SPA without routing).
+  - React Router removed (simple SPA without routing; dependency removed from package.json).
   - No backend form handling.
   - No analytics or tracking.
   - No automated tests.
   - Lambda backend code exists but is unused (excluded from app build).
+  - Note: `public/images/og.jpg` (1200×630) needs to be created for social sharing previews.
 
 ### Git Hygiene
 - `.gitignore`: Node modules, build artifacts, env files, IDE cruft, `.cursor/` folder.
