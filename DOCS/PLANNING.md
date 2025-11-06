@@ -40,10 +40,10 @@ Prospects need a credible, clear way to discover and book CPR and safety trainin
   - Minimal retention aligned with privacy.
 
 ## Integration Points
-- Current: None.
+- Current: Booky.buzz booking widget (iframe with secure postMessage).
 - Future candidates:
-  - Booking/scheduling embed (e.g., Calendly).
   - Email service for contact form (e.g., SES, Mailgun) via serverless function.
+  - Waiver capture via PandaDoc or serverless backend (Lambda/infra code exists but unused).
   - Privacy-preserving analytics.
 
 ## Risks / Constraints / Pain Points
@@ -56,6 +56,8 @@ Prospects need a credible, clear way to discover and book CPR and safety trainin
 - TODO: Do we want a backend for contact submissions or mailto-only?
 - TODO: Approved analytics vendor and consent approach?
 - ✅ Compliance: AHA note added to Footer and Pricing sections.
+- ✅ Payment fee disclosure: 3.00% + $0.15 processing fee displayed above "AHA-Aligned Training" section.
+- ✅ Waiver flow: Removed from UI; backend code exists but unused. Future: PandaDoc or serverless when ready.
 
 ## Deployment Status
 - Current: GitHub Pages at https://jadenmaciel.github.io/wesleys-cpr/
