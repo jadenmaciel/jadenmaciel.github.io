@@ -20,5 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src/**/*", "src/vite-env.d.ts"],
+  "exclude": ["src/lambda/**", "node_modules"]
 }
