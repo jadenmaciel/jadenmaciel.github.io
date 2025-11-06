@@ -6,9 +6,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b tsconfig.app.json && vite build",
     "preview": "vite preview --port 4173",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit -p tsconfig.app.json",
+    "build:lambda": "tsc -p src/lambda/tsconfig.json",
     "lambda:build": "cd src/lambda && npm install && npm run build",
     "lambda:package": "cd src/lambda && npm run package",
     "lambda:deploy": "npm run lambda:package && cd infra && terraform apply"
