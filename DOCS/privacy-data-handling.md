@@ -1,6 +1,8 @@
 # Privacy & Data Handling
 
-This document outlines how Wesley's CPR handles personal information collected through the waiver submission process.
+This document outlines how Wesley's CPR handles personal information. 
+
+**Note**: Waiver capture is currently disabled. The waiver submission flow has been removed from the UI. Any Lambda/infra code in the repo (`src/lambda/`, `infra/`) exists for future use but is not currently active or called by the application.
 
 ## Data Minimization
 
@@ -10,9 +12,9 @@ We collect only the information necessary for:
 - Legal compliance (waiver requirements)
 - Communication about training sessions
 
-## Data Collected
+## Data Collected (Future Waiver Implementation)
 
-The waiver form collects:
+If waiver capture is re-enabled in the future, the form would collect:
 - **Participant Information**: Name, email, phone number
 - **Emergency Contact**: Name and phone number
 - **Class Information**: Course name, date/time, location
@@ -21,12 +23,17 @@ The waiver form collects:
 - **Electronic Signature**: Typed name as signature
 - **Payment Acknowledgment**: Confirmation of fee disclosure understanding
 
-## Data Storage
+**Current Status**: No waiver data is currently collected. Waiver UI has been removed from the site.
 
+## Data Storage (Future Implementation)
+
+If waiver capture is re-enabled:
 - **Location**: AWS S3 (private bucket, encrypted at rest)
 - **Format**: JSON files organized by date (`waivers/YYYY/MM/DD/{uuid}.json`)
 - **Access**: Private bucket with no public access; only authorized AWS services can write
 - **Versioning**: Enabled for audit trail and recovery
+
+**Current Status**: No data storage active. Infrastructure code exists but is not deployed or used.
 
 ## Data Retention
 
@@ -66,9 +73,10 @@ To request a copy of your waiver data:
 
 ## Third-Party Services
 
-- **AWS Services**: S3 (storage), Lambda (processing), SES (email), SSM (configuration)
+- **Current**: Booky.buzz booking widget (iframe integration)
+- **Future (if waiver re-enabled)**: AWS Services - S3 (storage), Lambda (processing), SES (email), SSM (configuration)
 - **No Analytics**: No tracking, cookies, or marketing pixels
-- **No Data Sharing**: Waiver data is not shared with third parties
+- **No Data Sharing**: No personal data is currently shared with third parties
 
 ## Compliance
 
@@ -86,4 +94,3 @@ For privacy questions or data requests:
 ## Updates
 
 This policy may be updated to reflect changes in data handling practices. Last updated: 2024.
-

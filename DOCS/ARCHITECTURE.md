@@ -1,8 +1,9 @@
 ## High-Level Architecture
 - Static single-page application (SPA) built with React and Vite.
-- No routing (removed React Router); simple anchor-link navigation within SPA.
+- No routing (React Router removed; dependency removed from package.json); simple anchor-link navigation within SPA.
 - No active backend; Lambda/infra code exists in repo but is unused and excluded from app build.
 - Tailwind CSS provides utility-first styling with brand colors.
+- SEO optimized with Open Graph and Twitter Card meta tags.
 
 ```
 Browser → Vite-built static bundle → React SPA renders sections
@@ -18,7 +19,7 @@ Browser → Vite-built static bundle → React SPA renders sections
   - `Services.tsx`: Grid of training programs with policy details (class size, age, location, certification).
   - `Pricing.tsx`: AHA-aligned pricing table with detailed descriptions, badges, transparent rates, durations, Family & Friends pricing, booking CTA, and fee disclosure notice above "AHA-Aligned Training" section (uses CSS Modules for styling).
   - `Booking.tsx`: Booky Buzz widget embed with auto-resize messaging, instructor list, same-day booking policy, and payment reminders.
-  - `Policies.tsx`: Comprehensive policy information (age, class size, location, payment, deposit, cancellation, certification, waiver).
+  - `Policies.tsx`: Comprehensive Policies & FAQ section with class logistics, payment policy (cash vs card with 3.00% + $0.15 fee disclosure), refund/reschedule policies, age requirements, class sizes, what to bring, and certification details.
   - `Testimonials.tsx`: Social proof (static data).
   - `Contact.tsx`: Contact info and client-only form.
   - `Footer.tsx`: Business info, AHA note, quick links, social media links.
@@ -102,6 +103,9 @@ Browser → Vite-built static bundle → React SPA renders sections
 - Future: Migrate to AWS S3/CloudFront with Route 53 domain.
 
 ## SEO Assets (Static)
-- Social share image: `public/images/og.jpg` referenced via Open Graph/Twitter meta.
+- Social share image: `public/images/og.jpg` (1200×630 JPG) referenced via Open Graph/Twitter meta tags.
+- Open Graph meta tags: Title, description, image, URL, type configured in `index.html`.
+- Twitter Card meta tags: Summary large image card with title, description, image.
+- Apple touch icon: `public/images/logo.png` (180×180) for iOS home screen.
 - Robots: `public/robots.txt` allowing all and pointing to sitemap.
 - Sitemap: `public/sitemap.xml` with homepage URL.

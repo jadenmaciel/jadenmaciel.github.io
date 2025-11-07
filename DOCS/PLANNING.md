@@ -7,11 +7,12 @@ Prospects need a credible, clear way to discover and book CPR and safety trainin
 
 ## Core Functional Requirements
 - Present training programs with clear descriptions and certification details.
-- Display policies and important information (age requirements, class sizes, payment terms, cancellation policies).
+- Display comprehensive Policies & FAQ section covering class logistics, payment policy (including 3.00% + $0.15 fee disclosure), refund/reschedule policies, age requirements, class sizes, and what to bring.
 - Provide clear calls to action to book classes directly.
 - Provide contact info with actionable links (call, email).
 - Maintain brand consistency and accessible UI.
 - Booking integration via Booky Buzz widget.
+- SEO optimization with Open Graph and Twitter Card meta tags for social sharing.
 
 ## Non-Functional Requirements
 - Static, fast, and reliable delivery.
@@ -66,6 +67,9 @@ Prospects need a credible, clear way to discover and book CPR and safety trainin
 - Asset handling: All images and icons use proper BASE_URL resolution.
 
 ## SEO Polish (Current)
-- Open Graph/Twitter image configured (`public/images/og.jpg`).
+- Open Graph meta tags: Title, description, image, URL, type configured in `index.html`.
+- Twitter Card meta tags: Summary large image card with title, description, image.
+- Apple touch icon: 180×180 icon configured for iOS home screen.
+- Social share image: `public/images/og.jpg` (1200×630 JPG) referenced in meta tags (needs to be created).
 - `robots.txt` added with sitemap reference.
 - `sitemap.xml` published with homepage entry.

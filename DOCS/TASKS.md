@@ -11,6 +11,18 @@
   - Priority: Mid
 
 ## Recently Completed
+- Policies & FAQ Enhancement & SEO Improvements
+  - Enhanced Policies component with comprehensive FAQ-style content organized into sections:
+    - Class Logistics: Age requirements, class size, location, duration, what to bring, late arrival policy.
+    - Payment Policy: Cash vs online/card payment methods, 3.00% + $0.15 fee disclosure, payment timing, deposit info.
+    - Refund & Reschedule Policy: Rescheduling rules, refund terms, no-call/no-show policy.
+  - Added "Policies & FAQ" link to Header navigation and Footer Quick Links.
+  - Added Open Graph and Twitter Card meta tags to `index.html` for enhanced social sharing.
+  - Added apple-touch-icon meta tag for iOS home screen.
+- Dependency Cleanup
+  - Removed unused `react-router-dom` and `@types/react-router-dom` from dependencies.
+  - Confirmed no imports of react-router-dom in codebase (safe to remove).
+  - Reduced bundle size by removing unused routing library.
 - Fee Disclosure Visibility & Waiver Removal
   - Removed waiver UI components and routes (Waiver.tsx, WaiverForm.tsx).
   - Removed React Router (back to simple SPA without routing).
@@ -69,10 +81,14 @@
   - All asset paths use proper BASE_URL handling.
   - Site live at: https://jadenmaciel.github.io/wesleys-cpr/
 
-- SEO Polish
-  - Open Graph/Twitter image configured (`public/images/og.jpg`).
+- SEO Polish (Initial)
   - `robots.txt` added with sitemap reference.
   - `sitemap.xml` published with homepage entry.
+- SEO Enhancement (Latest)
+  - Open Graph meta tags added (title, description, image, URL, type).
+  - Twitter Card meta tags added (summary_large_image with title, description, image).
+  - Apple touch icon meta tag added for iOS home screen.
+  - Note: `public/images/og.jpg` (1200×630 JPG) needs to be created for social sharing previews.
 
 - Git Hygiene
   - `.gitignore`, `.editorconfig`, `.env.example` added.
