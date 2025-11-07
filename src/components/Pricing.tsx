@@ -14,13 +14,13 @@ const rows: Row[] = [
   {
     name: "HSV-First Aid",
     price: "$85",
-    desc: "AHA-aligned certification • 2-year validity • 4-hour comprehensive training (AHA minimum)",
+    desc: "AHA-aligned certification • 2-year validity • 6-hour comprehensive training (AHA minimum)",
     badge: "Popular",
   },
   {
     name: "HSV-CPR-AED",
     price: "$85",
-    desc: "CPR & AED training • 2-year certification • 4-hour comprehensive training (AHA minimum) • Hands-on practice",
+    desc: "CPR & AED training • 2-year certification • 6-hour comprehensive training (AHA minimum) • Hands-on practice",
   },
   {
     name: "HSV-First Aid, CPR-AED Combo",
