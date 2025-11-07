@@ -11,6 +11,10 @@
   - Priority: Mid
 
 ## Recently Completed
+- Course Duration Updates
+  - Updated First Aid and CPR-AED course durations from 4 hours to 6 hours in Pricing and Services components.
+  - Updated course descriptions to reflect 6-hour comprehensive training for HSV-First Aid and HSV-CPR-AED.
+  - Verified combo course already shows correct 6-hour duration.
 - Policies & FAQ Enhancement & SEO Improvements
   - Enhanced Policies component with comprehensive FAQ-style content organized into sections:
     - Class Logistics: Age requirements, class size, location, duration, what to bring, late arrival policy.
@@ -36,7 +40,7 @@
   - Created Policies component with comprehensive policy information (age requirements, class sizes, payment terms, deposit, cancellation, late arrival, certification details, waiver).
   - Updated all "Book Now" CTAs to point to booking section instead of contact form.
   - Added Family & Friends pricing ($25/person) with Min 6/Max 12 constraints and certification upgrade path.
-  - Updated Pricing component with durations (4h AHA minimum, 6h Heartsaver combo) and ARC surcharge notes.
+  - Updated Pricing component with durations (6h First Aid/CPR-AED, 6h Heartsaver combo) and ARC surcharge notes.
   - Enhanced Booking component with instructor list (Jacqueline, Debbie Scott, Tum Poston) and same-day booking policy.
   - Updated Services component with policy details (class size, age limits, location, certification options).
 - Pricing Section Redesign & Global Compact Sizing
