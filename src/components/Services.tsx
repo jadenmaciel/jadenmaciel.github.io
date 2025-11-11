@@ -1,4 +1,5 @@
 import { Heart, Briefcase, Users, Stethoscope, Home, Building2 } from 'lucide-react';
+import WeeklySchedule from "./WeeklySchedule";
 
 export default function Services() {
   const services = [
@@ -99,6 +100,7 @@ export default function Services() {
             </div>
           ))}
         </div>
+        <WeeklySchedule />
       </div>
     </section>
   );
