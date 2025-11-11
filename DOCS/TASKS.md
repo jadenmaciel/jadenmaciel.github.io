@@ -11,10 +11,11 @@
   - Priority: Mid
 
 ## Recently Completed
-- Course Duration Updates
+- Course Duration Updates (Verified Complete)
   - Updated First Aid and CPR-AED course durations from 4 hours to 6 hours in Pricing and Services components.
   - Updated course descriptions to reflect 6-hour comprehensive training for HSV-First Aid and HSV-CPR-AED.
   - Verified combo course already shows correct 6-hour duration.
+  - Verification completed: Pricing.tsx lines 17 and 23 confirm 6-hour duration; Services.tsx shows consistent 6-hour duration for related courses.
 - Policies & FAQ Enhancement & SEO Improvements
   - Enhanced Policies component with comprehensive FAQ-style content organized into sections:
     - Class Logistics: Age requirements, class size, location, duration, what to bring, late arrival policy.

@@ -31,12 +31,12 @@ const rows: Row[] = [
   {
     name: "HSV Skill Only Session",
     price: "$75",
-    desc: "Skills validation only • Online course pre-required • 90-minute session",
+    desc: "Skills validation only • Online course pre-required • 4-hour session",
   },
   {
     name: "Heartcode BLS (Skills only)",
     price: "$70",
-    desc: "Proof of online certification required • Healthcare provider level • 2-hour skills check",
+    desc: "Proof of online certification required • Healthcare provider level • 4-hour skills check",
   },
   {
     name: "BLS Provider",

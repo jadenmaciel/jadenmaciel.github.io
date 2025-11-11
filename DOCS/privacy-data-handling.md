@@ -1,6 +1,6 @@
 # Privacy & Data Handling
 
-This document outlines how Wesley's CPR handles personal information. 
+This document outlines how Wesley's CPR handles personal information.
 
 **Note**: Waiver capture is currently disabled. The waiver submission flow has been removed from the UI. Any Lambda/infra code in the repo (`src/lambda/`, `infra/`) exists for future use but is not currently active or called by the application.
 
