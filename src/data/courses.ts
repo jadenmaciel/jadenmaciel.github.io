@@ -21,12 +21,6 @@ export const COURSES: Course[] = [
     badge: "Popular",
   },
   {
-    code: "HSV-CPR-AED",
-    name: "HSV-CPR-AED",
-    price: 85,
-    desc: "CPR & AED training • 2-year certification • 6-hour comprehensive training (AHA minimum) • Hands-on practice",
-  },
-  {
     code: "HSV-COMBO",
     name: "HSV-First Aid, CPR-AED Combo",
     price: 130,
@@ -59,12 +53,7 @@ export const COURSES: Course[] = [
     desc: "Returning customers receive a 10% discount • Refresher course • 4-hour comprehensive training (AHA minimum)",
     notes: ["Returning customers receive a 10% discount"],
   },
-  {
-    code: "HEART-SAVER",
-    name: "Heartsaver",
-    price: 125,
-    desc: "Comprehensive training • First Aid + CPR + AED • 4-hour comprehensive training (AHA minimum)",
-  },
+
   {
     code: "ARC-BLS",
     name: "American Red Cross BLS",
@@ -72,9 +61,17 @@ export const COURSES: Course[] = [
     desc: "Red Cross certification • 2-year validity • Professional credential • +$12 surcharge per certification (ARC charges us $42/card)",
   },
   {
+    code: "N95-FIT-TESTING",
+    name: "N95 Fit Testing",
+    price: "Contact for pricing",
+    desc: "Appointment-only service with Tum Poston. Instructor assigned by owner after booking.",
+    notes: ["Appointment-only", "Provided by Tum Poston", "Instructor assigned by owner after booking"],
+    priceNote: "Contact for pricing",
+  },
+  {
     code: "HEARTSAVER-CPR-AED",
-    name: "Heartsaver CPR AED",
-    price: 130,
+    name: "American Red Cross Heartsaver Course – $125",
+    price: 125,
     desc: "Essential life-saving skills • 2-year certification • 4-hour comprehensive training (AHA minimum)",
   },
   {

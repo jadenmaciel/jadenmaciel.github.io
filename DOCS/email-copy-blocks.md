@@ -35,8 +35,8 @@ Fresno, CA 93710
 - `{{class_datetime}}` - Class date and time (e.g., "January 15, 2024 at 6:00 PM")
 - `{{location}}` - Training location (e.g., "1477 E. Shaw Ave. Suite 126D, Fresno, CA 93710")
 - `{{frontend_base_url}}` - Frontend URL (e.g., "https://jadenmaciel.github.io/wesleys-cpr")
-- `{{card_fee_percent}}` - The credit card processing fee percentage (e.g., "3.00")
-- `{{card_fee_fixed}}` - The fixed credit card processing fee (e.g., "0.15")
+- `{{card_fee_percent}}` - The credit card processing fee percentage (source: `FEES.card_fee_percent * 100` from `src/lib/fees.ts`, e.g., "3.00")
+- `{{card_fee_fixed}}` - The fixed credit card processing fee (source: `FEES.card_fee_fixed` from `src/lib/fees.ts`, e.g., "0.15")
 
 ## Payment Reminder Email (Optional)
 
@@ -71,3 +71,4 @@ Wesley's CPR
 3. **Fee Disclosure**: Always include fee disclosure language in payment-related emails
 4. **Consistency**: Use consistent contact information and branding across all emails
 5. **Accessibility**: Keep emails simple, clear, and mobile-friendly
+6. **Fee Values Source**: Fee values (`{{card_fee_percent}}` and `{{card_fee_fixed}}`) are sourced from `src/lib/fees.ts` (`FEES.card_fee_percent * 100` and `FEES.card_fee_fixed`). When updating fees, modify the `FEES` constant in `src/lib/fees.ts` and update these email templates accordingly to reflect the new values.
