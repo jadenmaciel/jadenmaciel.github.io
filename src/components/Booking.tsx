@@ -35,7 +35,7 @@ export default function Booking() {
             href={PUBLIC_BOOKING_URL}
             className="text-red font-semibold underline underline-offset-2 ml-1"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             open the booking page directly.
           </a>
@@ -47,6 +47,8 @@ export default function Booking() {
             id="buzz-widget"
             style={{ width: '100%', minWidth: 320, border: 0, height: 720 }}
             loading="lazy"
+            sandbox="allow-scripts allow-forms allow-popups allow-same-origin"
+            allow="payment"
           />
         </div>
         <p className="mt-4 text-xs text-navy/70 text-center">

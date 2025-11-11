@@ -1,17 +1,37 @@
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { useState } from 'react';
+import { z } from 'zod';
+
+const contactSchema = z.object({
+  name: z.string().min(1, { message: 'Full name is required' }),
+  email: z.string().email({ message: 'Invalid email address' }),
+  phone: z.string().optional(),
+  message: z.string().min(1, { message: 'Message is required' }),
+});
+
+type ContactForm = z.infer<typeof contactSchema>;
+type FormErrors = z.ZodError<ContactForm>['formErrors']['fieldErrors'];
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactForm>({
     name: '',
     email: '',
     phone: '',
     message: '',
   });
+  const [errors, setErrors] = useState<FormErrors>({});
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const result = contactSchema.safeParse(formData);
+    if (!result.success) {
+      setErrors(result.error.formErrors.fieldErrors);
+      return;
+    }
     // TODO: Implement form submission logic (e.g., send to an API endpoint)
+    console.log('Form submitted successfully:', result.data);
+    setErrors({});
+    setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -112,10 +132,10 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  required
                   className="w-full px-4 py-3 border border-red rounded-lg outline-none transition focus:ring-2 focus:ring-red text-dark"
                   placeholder="John Doe"
                 />
+                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name[0]}</p>}
               </div>
 
               <div>
@@ -128,10 +148,10 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  required
                   className="w-full px-4 py-3 border border-red rounded-lg outline-none transition focus:ring-2 focus:ring-red text-dark"
                   placeholder="john@example.com"
                 />
+                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email[0]}</p>}
               </div>
 
               <div>
@@ -158,11 +178,11 @@ export default function Contact() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  required
                   rows={5}
                   className="w-full px-4 py-3 border border-red rounded-lg outline-none transition resize-none focus:ring-2 focus:ring-red text-dark"
                   placeholder="Tell us about your training needs..."
                 />
+                {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message[0]}</p>}
               </div>
 
               <button
