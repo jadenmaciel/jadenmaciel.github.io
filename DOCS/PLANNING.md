@@ -7,69 +7,38 @@ Prospects need a credible, clear way to discover and book CPR and safety trainin
 
 ## Core Functional Requirements
 - Present training programs with clear descriptions and certification details.
-- Display comprehensive Policies & FAQ section covering class logistics, payment policy (including 3.00% + $0.15 fee disclosure), refund/reschedule policies, age requirements, class sizes, and what to bring.
-- Provide clear calls to action to book classes directly.
+- Display a comprehensive Policies & FAQ section.
+- Provide clear calls to action to book classes.
 - Provide contact info with actionable links (call, email).
-- Maintain brand consistency and accessible UI.
-- Booking integration via Booky Buzz widget.
-- SEO optimization with Open Graph and Twitter Card meta tags for social sharing.
+- Integrate booking via the Booky.buzz widget.
 
 ## Non-Functional Requirements
-- Static, fast, and reliable delivery.
+- Static, fast, and reliable delivery via GitHub Pages.
 - Mobile-first responsive design.
 - Accessibility best practices (semantic HTML, contrast, focus management).
-- SEO-friendly titles/meta; clear headings.
+- SEO-friendly titles and meta descriptions.
 
 ## Security & Compliance
-- No secrets in client code.
-- No third-party trackers by default; if added, must be privacy-aware and disclosed.
-- If form backend is added:
+- No secrets in client-side code.
+- Client-side form validation using Zod.
+- Iframe sandboxing for the booking widget.
+- Basic CSP via meta tag.
+- If a backend is added in the future:
   - Validate and sanitize input server-side.
   - Avoid storing PII unless required; if stored, document retention and access.
-  - Do not log sensitive content; mask emails/phones in logs.
-  - Rate-limit and bot-protect endpoints.
-
-## Performance / SLA
-- Page interactive under 2s on standard mobile network for initial load.
-- Lighthouse performance score target: 90+.
-
-## Observability / Audit Logging
-- Current: None (static site).
-- If backend endpoints are added later:
-  - Request logging without sensitive payloads.
-  - Error monitoring and alerting (e.g., hosted logs/metrics).
-  - Minimal retention aligned with privacy.
+  - Do not log sensitive content.
 
 ## Integration Points
-- Current: Booky.buzz booking widget (iframe with secure postMessage).
-- Future candidates:
-  - Email service for contact form (e.g., SES, Mailgun) via serverless function.
-  - Waiver capture via PandaDoc or serverless backend (Lambda/infra code exists but unused).
-  - Privacy-preserving analytics.
+- **Current**: Booky.buzz booking widget (iframe with secure `postMessage`).
+- **Future**:
+  - Email service for contact form (e.g., AWS SES) via a serverless function.
+  - Waiver capture system.
 
-## Risks / Constraints / Pain Points
-- No working backend for form submission; potential lead loss if users expect in-page confirmation.
-- No tests; risk of regressions.
-- Asset placeholders (favicon, images) may look unbranded.
-
-## Open Questions
-- ✅ Hosting provider: GitHub Pages (current), AWS S3/CloudFront (planned).
-- TODO: Do we want a backend for contact submissions or mailto-only?
-- TODO: Approved analytics vendor and consent approach?
-- ✅ Compliance: AHA note added to Footer and Pricing sections.
-- ✅ Payment fee disclosure: 3.00% + $0.15 processing fee displayed above "AHA-Aligned Training" section.
-- ✅ Waiver flow: Removed from UI; backend code exists but unused. Future: PandaDoc or serverless when ready.
+## Risks / Constraints
+- The contact form relies on a `mailto:` link, which may not be ideal for all users.
+- The project lacks a comprehensive test suite, increasing the risk of regressions.
 
 ## Deployment Status
-- Current: GitHub Pages at https://jadenmaciel.github.io/wesleys-cpr/
-- Automation: GitHub Actions workflow on push to main.
-- Base path: `/wesleys-cpr/` configured in Vite.
-- Asset handling: All images and icons use proper BASE_URL resolution.
-
-## SEO Polish (Current)
-- Open Graph meta tags: Title, description, image, URL, type configured in `index.html`.
-- Twitter Card meta tags: Summary large image card with title, description, image.
-- Apple touch icon: 180×180 icon configured for iOS home screen.
-- Social share image: `public/images/og.jpg` (1200×630 JPG) referenced in meta tags (needs to be created).
-- `robots.txt` added with sitemap reference.
-- `sitemap.xml` published with homepage entry.
+- **Current**: Deployed on GitHub Pages at [https://jadenmaciel.github.io/wesleys-cpr/](https://jadenmaciel.github.io/wesleys-cpr/).
+- **Automation**: A GitHub Actions workflow handles deployment on every push to the `main` branch.
+- **Base Path**: The Vite configuration is set with a `base` path of `/wesleys-cpr/`.

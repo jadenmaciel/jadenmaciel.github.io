@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -70,19 +68,14 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#schedule" className="hover:text-cream/80 transition-colors">
-                  Schedule
-                </a>
-              </li>
-              <li>
                 <a href="#contact" className="hover:text-cream/80 transition-colors">
                   Contact
                 </a>
               </li>
               <li>
-                <Link to="/privacy" className="hover:text-cream/80 transition-colors">
+                <a href="#privacy" className="hover:text-cream/80 transition-colors">
                   Privacy & Data Handling
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

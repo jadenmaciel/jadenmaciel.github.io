@@ -1,133 +1,101 @@
-## Wesley's CPR — Marketing Site
-A static marketing website for Wesley's CPR built with React, Vite, and Tailwind CSS.
+# Wesley's CPR — Marketing Site
 
-### Overview
-- **What it is**: A single-page marketing site showcasing CPR and safety training services.
-- **Who uses it**: Prospective customers in the Central Valley seeking CPR/BLS/First Aid training.
-- **Why it exists**: Promote services, convey credibility (AHA), and provide clear contact info and calls to action.
+A static marketing website for Wesley's CPR built with React, Vite, and Tailwind CSS, deployed via GitHub Pages.
 
-### Key Features
-- **Responsive SPA** with semantic sections: SkipLink, Header, Hero, About, Services, Pricing, Booking, Policies, Testimonials, Contact, Footer.
-- **Brand-consistent UI** using defined colors: `navy` (#0C1D2F), `red` (#C6423B), `cream` (#F6E3C7), `dark` (#142131).
-- **Reusable UI components**: PrimaryButton, SecondaryButton, TrustBadge, PaymentNotice, PricingCard.
-- **CTA flow**: "View Classes" and "Book a Session".
-- **Centralized course catalog**: Course data and pricing managed in `src/data/courses.ts` as single source of truth.
-- **Pricing transparency**: AHA-aligned pricing table with detailed course descriptions, badges (Popular, Best Value), transparent rates, and Family & Friends group pricing.
-- **Fee disclosures**: Clear disclosure of 3.00% + $0.15 processing fee for online/card payments; cash has no fee. Fee calculation utility and components show grand totals.
-- **Policies section**: Comprehensive policy information including age requirements (12+), class sizes (Min 3/Max 19), payment terms, deposit, cancellation policies, and certification details.
-- **Compact design**: Global font-size reduction (15px base) for a tighter, more efficient layout across all sections.
-- **Online booking**: Booky Buzz widget embedded with secure postMessage communication; all booking CTAs direct to booking section.
-- **Payment processing**: Troute payment disclosure in Booking component with payment and deposit reminders.
-- **Contact details**: Address, phone, and email visible and linked; social media links in footer.
-- **Accessibility**: Skip link, semantic landmarks, keyboard navigation, mobile menu, focus management, reduced motion support, error summaries with anchors.
-- **Simple contact form** (client-side only; logs to console, no backend submission) with waiver reminder.
+## Current State
 
-### Tech Stack
-- **Framework**: React 18, Vite 5
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS 3 + CSS Modules (for component-specific styles like Pricing table)
-- **Icons**: lucide-react
-- **Deployment target**: Static hosting (e.g., Vercel, Netlify, S3/CloudFront, GitHub Pages)
+- **Framework**: React 18 / Vite 5 SPA (Single-Page Application).
+- **Deployment**: Static site hosted on GitHub Pages at [jadenmaciel.github.io/wesleys-cpr/](https://jadenmaciel.github.io/wesleys-cpr/).
+- **Routing**: No client-side router (e.g., `react-router-dom`). Navigation is handled by simple anchor links (`#section`).
+- **Backend**: No active backend. The contact form uses a `mailto:` link as a fallback. AWS Lambda and Terraform code exist in the repository (`src/lambda/`, `infra/`) for a future serverless waiver system, but they are **inactive and excluded** from the production build.
+- **Booking**: Booking is handled by an embedded Booky.buzz iframe.
 
-### Architecture
-For a detailed explanation of the project's architecture, see [`ARCHITECTURE.md`](ARCHITECTURE.md).
+## Key Features
 
-### Auth Model
-- No authentication or authorization is implemented or required for this static site.
-- No JWTs, API keys, HMAC, or session handling present.
-- Multi-tenant context is not applicable.
+- **Responsive SPA** with semantic sections for accessibility.
+- **Brand-consistent UI** using Tailwind CSS.
+- **Centralized Course Catalog**: All course data and pricing are managed in `src/data/courses.ts` as the single source of truth.
+- **Transparent Pricing**: A detailed pricing table is dynamically generated from the course catalog.
+- **Online Booking**: A `Booky.buzz` widget is embedded for course registration.
+- **Contact Form**: A client-side validated form (using Zod) that falls back to a `mailto:` link.
 
-### Local Development
+## Pricing Source of Truth
 
-#### Prerequisites
-- Node.js 18+ and npm
-- No databases, queues, or external services are required.
+All pricing and course details are defined in a single file:
+**`src/data/courses.ts`**
 
-#### Setup
-```bash
-npm install
-npm run dev
-# Open http://localhost:5173
-```
+Any changes to course offerings or prices should be made in this file. The UI will update automatically.
 
-#### Build & Preview
-```bash
-npm run build
-npm run preview
-# Open the preview URL shown in the terminal
-```
+## Local Development
 
-### Environment Variables / Secrets
-- **Frontend**: `VITE_WAIVER_API_URL` - API Gateway endpoint URL for waiver submissions (set at build time)
-  - Example: `https://abc123.execute-api.us-west-2.amazonaws.com`
-  - Set in `.env` file or build environment
-- **Backend**: Configuration stored in AWS SSM Parameter Store (not in client code)
-- Security note: Do not embed private keys, tokens, or PII in the client code.
+### Prerequisites
 
-### Tests
-- No test suite is present.
-- Recommendation: Add component/UI snapshot tests and accessibility checks (TODO: see TASKS.md).
+- Node.js v18+
+- npm (or your preferred package manager)
 
-### Deployment
+### Setup
 
-#### Frontend (GitHub Pages)
-- **Current**: Live on GitHub Pages at https://jadenmaciel.github.io/wesleys-cpr/
-- **Automation**: GitHub Actions workflow builds and deploys on push to main.
-- **Configuration**: Base path `/wesleys-cpr/` configured in `vite.config.ts`.
-- **Environment**: Set `VITE_WAIVER_API_URL` in GitHub Actions secrets or `.env` file before building.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/jadenmaciel/wesleys-cpr.git
+    cd wesleys-cpr
+    ```
 
-#### Backend (AWS Serverless)
-- **Infrastructure**: Terraform configuration in `infra/` directory
-- **Components**: API Gateway HTTP API, Lambda (Node 20), S3 (waiver storage), SES (email notifications)
-- **Deployment**: See `infra/README.md` for detailed deployment steps
-- **Prerequisites**: AWS CLI configured, SES email addresses verified, unique S3 bucket name
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-**Quick Deploy Steps:**
-1. Build and package Lambda: `npm run lambda:package`
-2. Configure Terraform: Copy `infra/terraform.tfvars.example` to `infra/terraform.tfvars` and edit
-3. Deploy: `cd infra && terraform init && terraform apply`
-4. Get API URL from Terraform outputs and set `VITE_WAIVER_API_URL` for frontend builds
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+    The site will be available at `http://localhost:5173`.
 
-**Future**: Migrate frontend to AWS S3/CloudFront with Route 53 custom domain.
+### Build and Preview
 
-### SEO
-- **Open Graph/Twitter image**: `public/images/og.jpg` (1200×630) referenced via meta tags.
-- **Robots**: `public/robots.txt` allows all and points to sitemap.
-- **Sitemap**: `public/sitemap.xml` includes homepage URL.
+To create a production build and preview it locally:
 
-### Status
-- **Production-ready**:
-  - All visual sections render with brand colors and responsive layout.
-  - Pricing section redesigned with modern table layout, badges, detailed descriptions, and Family & Friends pricing.
-  - Policies section provides comprehensive policy information (age, class size, payment, cancellation, certification).
-  - All booking CTAs direct to booking section with instructor selection and payment reminders.
-  - Global compact sizing implemented (15px base font) for improved space efficiency.
-  - Logo and favicon display correctly on all devices.
-  - Navigation anchors, CTAs, and contact links function.
-  - Mobile-responsive navigation with accessible hamburger menu.
-  - Keyboard navigation and focus management.
-  - Skip link for screen readers.
-  - Contact form captures inputs and logs to console with waiver reminder.
-  - Booky Buzz booking widget integrated with secure messaging.
-- **Future enhancements**:
-  - Backend form handling or email service integration.
-  - Privacy-respectful analytics.
-  - Automated accessibility and performance tests.
+1.  **Build the application:**
+    ```bash
+    npm run build
+    ```
+    This command bundles the static assets into the `dist/` directory.
 
-### Payment Processing Fee
+2.  **Preview the build:**
+    ```bash
+    npm run preview
+    ```
+    This command serves the `dist/` directory at `http://localhost:4173`.
 
-- The site shows a fee notice below the main booking CTA in the pricing section (above "AHA-Aligned Training").
-- Copy: "Online/card payments add **3.00% + $0.15**; cash has **no fee**. You'll see any fee and your grand total before paying online."
+## Security Posture
 
-### Waiver Flow
+### Quick Wins Implemented
 
-**Note**: Waiver capture is currently disabled. Any Lambda/infra added earlier (`src/lambda/`, `infra/`) remains in the repo but is not called by the UI.
+- **Client-Side Validation**: The contact form uses `zod` for schema validation to prevent malformed data submission.
+- **Console Guard**: In production builds, `console.log` statements are removed to prevent leaking information.
+- **Link Hygiene**: All external links use `rel="noopener noreferrer"` to prevent tab-nabbing.
+- **Iframe Security**: The Booky.buzz iframe is sandboxed with a strict `allow` list to limit its capabilities.
+- **CSP Meta Tag**: A basic Content Security Policy is implemented via a `<meta>` tag in `index.html` to mitigate cross-site scripting (XSS) risks.
 
-### Maintainers' Notes
+### CI/CD Hardening
 
-For operational decisions, owner policies, and source-of-truth documentation, see [`DOCS/OWNER_NOTES.md`](DOCS/OWNER_NOTES.md).
+- **`npm audit`**: The CI pipeline includes a job to check for vulnerabilities in dependencies.
+- **OWASP ZAP Scan**: A ZAP baseline scan is run against the live GitHub Pages URL to check for common web vulnerabilities.
+  - **Target**: `https://jadenmaciel.github.io/wesleys-cpr/`
+  - **Configuration**: `fail_action` is set to `false` to prevent the build from failing on informational findings. The report is uploaded as an artifact named `zap-baseline-report`.
 
-### Ownership / Contact
-- **Business**: Wesley's CPR, Fresno, CA
-- **Contact**: j.wes@wesleyscprfresno.com, (559) 360-1016
-- **Live Site**: https://jadenmaciel.github.io/wesleys-cpr/
+### Known Limitations
+
+- **GitHub Pages Headers**: It is not possible to set custom security headers (like a full CSP or `X-Frame-Options`) on GitHub Pages. The current security model relies on meta tags and application-level hardening.
+- **404 Spiders**: The site is a Single-Page Application, and the project path (`/wesleys-cpr/`) can sometimes cause automated scanners to report false 404 errors.
+
+## Deployment
+
+The site is deployed automatically to GitHub Pages on every push to the `main` branch. The workflow is defined in `.github/workflows/gh-pages.yml`.
+
+## Next Actions
+
+- **Serverless Backend**: Re-introduce the AWS Lambda backend for the contact form and waiver submissions.
+- **Security Checklist**: Implement further security hardening measures based on a standard security checklist.
+- **Testing**: Add a comprehensive test suite, including unit, integration, and accessibility tests.
