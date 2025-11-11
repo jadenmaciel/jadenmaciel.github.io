@@ -3,7 +3,7 @@ import { FEES } from "../lib/fees";
 
 export default function Policies() {
   return (
-    <section id="policies" className="bg-dark text-cream py-16">
+    <section id="policies" className="bg-dark text-cream py-16 pb-8">
       <div className="container mx-auto px-6 max-w-5xl">
         <div className="flex items-center gap-3 mb-8">
           <ShieldCheck className="w-6 h-6" aria-hidden />
@@ -110,6 +110,23 @@ export default function Policies() {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+        
+        {/* Subtle footer with Privacy link */}
+        <div 
+          className="mt-8 pt-4 border-t border-cream/20"
+          style={{ opacity: 0.75 }}
+        >
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-cream/60 text-sm">
+            <span>Policies & FAQ</span>
+            <span className="hidden sm:inline text-cream/40">·</span>
+            <a 
+              href="#privacy" 
+              className="text-cream/60 hover:text-cream/80 underline underline-offset-2 transition-colors"
+            >
+              Privacy & Data Handling
+            </a>
           </div>
         </div>
       </div>

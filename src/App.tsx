@@ -7,7 +7,6 @@ import Pricing from './components/Pricing';
 import Booking from './components/Booking';
 import Testimonials from './components/Testimonials';
 import Policies from './components/Policies';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Privacy from './routes/Privacy';
 
@@ -23,11 +22,10 @@ function App() {
         <Pricing />
         <Booking />
         <Testimonials />
-        <Policies />
-        <Contact />
         <div id="privacy">
           <Privacy />
         </div>
+        <Policies />
       </main>
       <Footer />
     </div>

@@ -12,7 +12,7 @@ export default function Header() {
     { name: 'Pricing', href: '#pricing' },
     { name: 'Policies & FAQ', href: '#policies' },
     { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Contact', href: 'mailto:j.wes@wesleyscpr.com' },
   ];
 
   const logoSrc = `${import.meta.env.BASE_URL}images/logo.png`;
