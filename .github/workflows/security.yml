@@ -2,12 +2,12 @@ name: Security Audit
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, security ]
   schedule:
     - cron: '0 0 * * 0'
 
 jobs:
-  audit:
+  npm-audit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -16,4 +16,13 @@ jobs:
         with:
           node-version: '18.x'
       - run: npm ci
-      - run: npm audit
+      - run: npm audit --audit-level=high
+
+  zap-baseline-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ZAP Scan
+        uses: zaproxy/action-baseline@v0.11.0
+        with:
+          target: 'https://jadenmaciel.github.io/wesleys-cpr/'
+          fail_action: true
