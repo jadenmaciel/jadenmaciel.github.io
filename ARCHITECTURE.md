@@ -1,111 +1,66 @@
-## High-Level Architecture
-- Static single-page application (SPA) built with React and Vite.
-- No routing (React Router removed; dependency removed from package.json); simple anchor-link navigation within SPA.
-- No active backend; Lambda/infra code exists in repo but is unused and excluded from app build.
-- Tailwind CSS provides utility-first styling with brand colors.
-- SEO optimized with Open Graph and Twitter Card meta tags.
+# Architecture
+
+This document provides a high-level overview of the technical architecture for the Wesley's CPR static site.
+
+## System Overview
+
+The application is a **Static Single-Page Application (SPA)** built with React and Vite. It is designed to be fast, secure, and easily maintainable. There is no active backend; all content is pre-built and served statically.
 
 ```
-Browser → Vite-built static bundle → React SPA renders sections
+User Browser --> GitHub Pages CDN --> Static Assets (HTML, CSS, JS) --> React SPA
 ```
 
-## Modules / Components
-- `src/App.tsx`: Composes top-level sections with SkipLink, Header, main content, Footer (no routing).
-- `src/components/`:
-  - `SkipLink.tsx`: Keyboard-accessible skip to main content link.
-  - `Header.tsx`: Fixed header with logo, navigation, mobile menu, and "Book Now" CTA (links to booking section).
-  - `Hero.tsx`: Headline, subheadline, primary/secondary CTAs, hero image, trust badges.
-  - `About.tsx`: Feature highlights with icons.
-  - `Services.tsx`: Grid of training programs with policy details (class size, age, location, certification).
-  - `Pricing.tsx`: AHA-aligned pricing table with detailed descriptions, badges, transparent rates, durations, Family & Friends pricing, booking CTA, and fee disclosure notice above "AHA-Aligned Training" section (uses CSS Modules for styling).
-  - `Booking.tsx`: Booky Buzz widget embed with auto-resize messaging, instructor list, same-day booking policy, and payment reminders.
-  - `Policies.tsx`: Comprehensive Policies & FAQ section with class logistics, payment policy (cash vs card with 3.00% + $0.15 fee disclosure), refund/reschedule policies, age requirements, class sizes, what to bring, and certification details.
-  - `Testimonials.tsx`: Social proof (static data).
-  - `Contact.tsx`: Contact info and client-only form.
-  - `Footer.tsx`: Business info, AHA note, quick links, social media links.
-  - `PaymentNotice.tsx`: Reusable fee disclosure component with high-contrast white text for dark backgrounds.
-  - `PricingCard.tsx`: Pricing card component with fee disclosure (for future use).
-- `src/components/ui/`:
-  - `PrimaryButton.tsx`: Red CTA button component.
-  - `SecondaryButton.tsx`: Cream CTA button component.
-  - `TrustBadge.tsx`: Trust indicator pill badge.
-- `src/lib/`:
-  - `fees.ts`: Fee calculation utility (3.00% + $0.15 for online/card payments).
-- `src/lambda/`: AWS Lambda handler code (unused, excluded from app build).
-- `infra/`: Terraform infrastructure code (unused, for future waiver backend).
+## Frontend
 
-## Request / Data Flow
-- Initial load:
-  - `index.html` → loads `src/main.tsx` → renders `App.tsx`.
-- Internal navigation:
-  - Anchor links jump to sections within the SPA.
-  - All "Book Now" CTAs direct to booking section (#booking).
-- Contact form (current):
-  - Submit → prevents default → console.log form data → no network request.
-  - No stateful backend, no storage, no API calls.
+- **Framework**: React 18 with TypeScript.
+- **Build Tool**: Vite 5, configured for a static build.
+- **Styling**: Tailwind CSS for utility-first styling, with some component-specific styles using CSS Modules.
+- **State Management**: Local component state (`useState`, `useEffect`). No global state manager is used.
+- **Routing**: None. The application is a single page, and navigation is handled with HTML anchor links (e.g., `#pricing`).
 
-## Multi-Tenant Model
-- Not applicable. Static site with no auth or tenant separation.
+### Key Directories
 
-## Security Model
-- No JWTs, API keys, or HMAC in use.
-- No secrets or tokens stored client-side.
-- Logging:
-  - Only console logging of the contact form data in `Contact.tsx`.
-  - Recommendation: If backend added, ensure sensitive fields are not logged; implement server-side validation and rate limiting.
+- **`src/`**: Contains all the application source code.
+- **`src/components/`**: Reusable React components that make up the UI.
+- **`src/data/`**: Contains the single source of truth for course and pricing data (`courses.ts`).
+- **`public/`**: Static assets that are copied directly to the build output directory.
+- **`dist/`**: The output directory for the production build, containing the optimized static assets.
+
+## Backend
+
+There is **no active backend**.
+
+- The repository contains code for a future serverless backend in `src/lambda/` (AWS Lambda) and `infra/` (Terraform).
+- This code is **explicitly excluded** from the frontend build process via `tsconfig.app.json`.
+- The contact form currently uses a `mailto:` link and does not make any API calls.
 
 ## External Integrations
-- Icons: `lucide-react`.
-- Booking: Booky Buzz widget embedded via iframe with secure postMessage communication.
-  - Origin validation for `https://booky.buzz`.
-  - Auto-resize height updates based on widget content.
-  - Fallback link to public booking page.
-- Social Links: Facebook, Instagram, Yelp (opens in new tab with security headers).
-- No third-party API clients or token storage.
 
-## Caching Strategy
-- Default static file caching by hosting provider/CDN (recommended).
-- No client-side state persistence beyond React component state.
+- **Booking**: An `iframe` is used to embed the **Booky.buzz** booking widget.
+  - The `iframe` is sandboxed with the `allow-scripts`, `allow-same-origin`, and `allow-forms` permissions.
+  - Communication with the iframe for resizing is handled via `postMessage`, with strict origin checks to ensure messages are only accepted from `https://booky.buzz`.
 
-## Persistence / Data Model
-- None. All data shown is static within components.
-- Lambda backend infrastructure exists (`src/lambda/`, `infra/`) but is unused and not called by the UI.
+## Security
 
-## Testing Strategy
-- Current coverage: None.
-- Gaps:
-  - No unit tests for components.
-  - No accessibility tests.
-  - No visual regression tests.
-- Recommendations:
-  - Add component tests for rendering and interactions (e.g., contact form).
-  - Add basic a11y checks (axe) in CI.
-  - Consider snapshot tests for critical sections.
+### Implementation Status
 
-## Build & Tooling
-- `vite` for dev and build; TypeScript configured with project references.
-- `tsconfig.app.json` excludes `src/lambda/**` from app build (Lambda code remains but unused).
-- Tailwind configured in `tailwind.config.js` with brand colors.
-- CSS Modules used for component-specific styles (e.g., `PricingTable.module.css`).
-- Global compact sizing via root font-size reduction (15px base, responsive breakpoints).
-- Base path configured for GitHub Pages: `/wesleys-cpr/`.
-- Scripts:
-  - `npm run dev` — start dev server on http://localhost:5173
-  - `npm run build` — type-check (app only) then bundle to `dist/`
-  - `npm run preview` — preview built app on http://localhost:4173
-  - `npm run typecheck` — run TypeScript checks without building (app only)
-  - `npm run build:lambda` — type-check Lambda code separately (optional)
+- **Input Validation**: The contact form uses **Zod** for client-side schema validation.
+- **Iframe Sandboxing**: The Booky.buzz `iframe` is restricted to prevent it from performing privileged actions.
+- **Content Security Policy (CSP)**: A basic CSP is delivered via a `<meta>` tag in `index.html` to help prevent XSS attacks.
+- **Link Security**: External links use `rel="noopener noreferrer"` to protect against tab-nabbing.
 
-## Deployment
-- Output: `dist/` static assets.
-- Current: GitHub Pages at https://jadenmaciel.github.io/wesleys-cpr/
-- GitHub Actions workflow: `.github/workflows/gh-pages.yml` builds and deploys on push to main.
-- Future: Migrate to AWS S3/CloudFront with Route 53 domain.
+### CI/CD Security
 
-## SEO Assets (Static)
-- Social share image: `public/images/og.jpg` (1200×630 JPG) referenced via Open Graph/Twitter meta tags.
-- Open Graph meta tags: Title, description, image, URL, type configured in `index.html`.
-- Twitter Card meta tags: Summary large image card with title, description, image.
-- Apple touch icon: `public/images/logo.png` (180×180) for iOS home screen.
-- Robots: `public/robots.txt` allowing all and pointing to sitemap.
-- Sitemap: `public/sitemap.xml` with homepage URL.
+- **Dependency Scanning**: `npm audit` is run as part of the CI pipeline to check for known vulnerabilities in dependencies.
+- **Dynamic Application Security Testing (DAST)**: An **OWASP ZAP baseline scan** is run against the live GitHub Pages URL on each deployment to identify common security issues.
+  - The scan is configured with `fail_action: false` to avoid blocking deployments on informational findings.
+
+### Known Limitations
+
+- **HTTP Headers on GitHub Pages**: GitHub Pages does not allow for the configuration of custom HTTP security headers (e.g., a full `Content-Security-Policy`, `Strict-Transport-Security`, `X-Frame-Options`). Security is therefore focused on application-level measures.
+
+## Build & Deployment
+
+- **Build Process**: `npm run build` uses Vite to compile the TypeScript/React code and bundle it into static HTML, CSS, and JavaScript files in the `dist/` directory.
+- **Deployment**: The site is deployed to **GitHub Pages** automatically on every push to the `main` branch using a GitHub Actions workflow defined in `.github/workflows/gh-pages.yml`.
+- **Base Path**: The Vite configuration includes a `base` path of `/wesleys-cpr/` to ensure that all asset links work correctly on GitHub Pages.

@@ -1,74 +1,7 @@
 import React from "react";
 import s from "./PricingTable.module.css";
 import PaymentNotice from "./PaymentNotice";
-
-type Row = {
-  name: string;
-  price?: string;           // "—" or "$85"
-  desc: string;
-  badge?: "Popular" | "Best Value" | string;
-  priceNote?: string;       // e.g., "Contact for pricing"
-};
-
-const rows: Row[] = [
-  {
-    name: "HSV-First Aid",
-    price: "$85",
-    desc: "AHA-aligned certification • 2-year validity • 6-hour comprehensive training (AHA minimum)",
-    badge: "Popular",
-  },
-  {
-    name: "HSV-CPR-AED",
-    price: "$85",
-    desc: "CPR & AED training • 2-year certification • 6-hour comprehensive training (AHA minimum) • Hands-on practice",
-  },
-  {
-    name: "HSV-First Aid, CPR-AED Combo",
-    price: "$130",
-    desc: "Complete certification package • Save $40 with combo • 6-hour comprehensive course (reflects real pacing for groups)",
-    badge: "Best Value",
-  },
-  {
-    name: "HSV Skill Only Session",
-    price: "$75",
-    desc: "Skills validation only • Online course pre-required • 4-hour session",
-  },
-  {
-    name: "Heartcode BLS (Skills only)",
-    price: "$70",
-    desc: "Proof of online certification required • Healthcare provider level • 4-hour skills check",
-  },
-  {
-    name: "BLS Provider",
-    price: "$100",
-    desc: "Healthcare professionals • 2-year certification • 4-hour comprehensive training (AHA minimum) • In-depth clinical training",
-  },
-  {
-    name: "BLS Renewal",
-    price: "$100",
-    desc: "Returning customers receive a 10% discount • Refresher course • 4-hour comprehensive training (AHA minimum)",
-  },
-  {
-    name: "Heartsaver",
-    price: "$125",
-    desc: "Comprehensive training • First Aid + CPR + AED • 4-hour comprehensive training (AHA minimum)",
-  },
-  {
-    name: "American Red Cross BLS",
-    price: "$110",
-    desc: "Red Cross certification • 2-year validity • Professional credential • +$12 surcharge per certification (ARC charges us $42/card)",
-  },
-  {
-    name: "Heartsaver CPR AED",
-    price: "$130",
-    desc: "Essential life-saving skills • 2-year certification • 4-hour comprehensive training (AHA minimum)",
-  },
-  {
-    name: "Friends and Family",
-    price: "$25 / person",
-    desc: "Non-certification group training • Min 6 / Max 12 • Ages 12+ may upgrade to certification at standard course rates (AHA e-card required)",
-  },
-];
+import { COURSES } from "../data/courses"; // Import the single source of truth
 
 const Pricing: React.FC = () => {
   return (
@@ -92,22 +25,22 @@ const Pricing: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {rows.map((r, i) => (
+              {COURSES.map((course, i) => (
                 <tr
-                  key={r.name}
-                  className={`${s.tr} ${i === rows.length - 1 ? s.trLast : ""}`}
+                  key={course.code}
+                  className={`${s.tr} ${i === COURSES.length - 1 ? s.trLast : ""}`}
                 >
                   <td className={s.td}>
                     <div className={s.name}>
-                      {r.name}
-                      {r.badge ? <span className={s.badge}>{r.badge}</span> : null}
+                      {course.name}
+                      {course.badge ? <span className={s.badge}>{course.badge}</span> : null}
                     </div>
-                    <div className={s.desc}>{r.desc}</div>
+                    <div className={s.desc}>{course.desc}</div>
                   </td>
                   <td className={s.td}>
                     <div className={s.price}>
-                      {r.price ?? "—"}
-                      {r.priceNote ? <span className={s.priceNote}>{r.priceNote}</span> : null}
+                      {typeof course.price === 'number' ? `$${course.price}` : course.price}
+                      {course.priceNote ? <span className={s.priceNote}>{course.priceNote}</span> : null}
                     </div>
                   </td>
                 </tr>
