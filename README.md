@@ -19,12 +19,22 @@ A static marketing website for Wesley's CPR built with React, Vite, and Tailwind
 - **Online Booking**: A `Booky.buzz` widget is embedded for course registration.
 - **Contact Form**: A client-side validated form (using Zod) that falls back to a `mailto:` link.
 
-## Pricing Source of Truth
+## Pricing and Fees
+
+### Course Pricing Source of Truth
 
 All pricing and course details are defined in a single file:
 **`src/data/courses.ts`**
 
 Any changes to course offerings or prices should be made in this file. The UI will update automatically.
+
+### Payment Processing Fee Disclosure
+
+All payment processing fees are defined in `src/lib/fees.ts` as a single source of truth. The current fees are:
+- **Card Fee (Percentage):** 3.0%
+- **Card Fee (Fixed):** $0.15
+
+This information is interpolated into all relevant UI components and documentation.
 
 ## Local Development
 
