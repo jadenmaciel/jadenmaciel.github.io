@@ -94,7 +94,7 @@ To create a production build and preview it locally:
 - **OWASP ZAP Scan**: A ZAP baseline scan is run against the live GitHub Pages URL to check for common web vulnerabilities.
   - **Target**: `https://jadenmaciel.github.io/wesleys-cpr/`
   - **Configuration**: `fail_action` is set to `false` to prevent the build from failing on informational findings.
-  - **Artifact**: The scan report is uploaded as an artifact named `zap-baseline-report`.
+  - **Artifact**: The scan report is uploaded as an artifact named `zap_scan_report`.
 
 ### Known Limitations
 
