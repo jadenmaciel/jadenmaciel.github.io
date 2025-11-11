@@ -1,4 +1,5 @@
 import { ShieldCheck, HelpCircle } from "lucide-react";
+import { FEES } from "../lib/fees";
 
 export default function Policies() {
   return (
@@ -65,7 +66,7 @@ export default function Policies() {
                     <strong>Cash:</strong> No processing fee. Pay at the training location.
                   </li>
                   <li>
-                    <strong>Online/Card:</strong> Processed securely via Troute. A processing fee of <strong>3.00% + $0.15</strong> applies to all online/card payments.
+                    <strong>Online/Card:</strong> Processed securely via Troute. A processing fee of <strong>{FEES.card_fee_percent.toFixed(2)}% + ${FEES.card_fee_fixed.toFixed(2)}</strong> applies to all online/card payments.
                   </li>
                 </ul>
               </div>

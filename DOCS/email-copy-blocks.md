@@ -11,7 +11,7 @@ Copy-paste ready email templates for Booky.buzz booking confirmations and commun
 ```
 You're booked for {{class_datetime}} at {{location}}.
 
-Fee disclosure: Online/card payments add 3.00% + $0.15; cash has no fee. You'll see any fee and your grand total before paying online.
+Fee disclosure: Online/card payments add {{card_fee_percent}}% + ${{card_fee_fixed}}; cash has no fee. You'll see any fee and your grand total before paying online.
 
 What to bring:
 - Valid ID
@@ -22,7 +22,7 @@ Payment is due within 24 hours to hold your seat. 20% deposit is non-refundable.
 
 If you have any questions, please contact us:
 Phone: (559) 360-1016
-Email: j.wes@wesleyscprfresno.com
+Email: j.wes@wesleyscpr.com
 
 We look forward to training with you!
 
@@ -35,6 +35,8 @@ Fresno, CA 93710
 - `{{class_datetime}}` - Class date and time (e.g., "January 15, 2024 at 6:00 PM")
 - `{{location}}` - Training location (e.g., "1477 E. Shaw Ave. Suite 126D, Fresno, CA 93710")
 - `{{frontend_base_url}}` - Frontend URL (e.g., "https://jadenmaciel.github.io/wesleys-cpr")
+- `{{card_fee_percent}}` - The credit card processing fee percentage (e.g., "3.00")
+- `{{card_fee_fixed}}` - The fixed credit card processing fee (e.g., "0.15")
 
 ## Payment Reminder Email (Optional)
 
@@ -48,7 +50,7 @@ This is a reminder that payment is due within 24 hours to hold your seat for:
 Class: {{class_datetime}} at {{location}}
 
 Payment Options:
-- Online/Card: Processed securely via Troute. A processing fee of 3.00% + $0.15 applies.
+- Online/Card: Processed securely via Troute. A processing fee of {{card_fee_percent}}% + ${{card_fee_fixed}} applies.
 - Cash: No processing fee. Pay at the training location.
 
 You'll see any fee and your grand total before paying online.
@@ -57,7 +59,7 @@ You'll see any fee and your grand total before paying online.
 
 If you have questions or need to make payment arrangements, please contact us:
 Phone: (559) 360-1016
-Email: j.wes@wesleyscprfresno.com
+Email: j.wes@wesleyscpr.com
 
 Wesley's CPR
 ```
@@ -69,4 +71,3 @@ Wesley's CPR
 3. **Fee Disclosure**: Always include fee disclosure language in payment-related emails
 4. **Consistency**: Use consistent contact information and branding across all emails
 5. **Accessibility**: Keep emails simple, clear, and mobile-friendly
-

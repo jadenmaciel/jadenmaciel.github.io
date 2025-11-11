@@ -64,7 +64,7 @@ export default function Privacy() {
             <h2>Data Export</h2>
             <p>To request a copy of your waiver data:</p>
             <ol>
-              <li>Contact: <a href="mailto:j.wes@wesleyscprfresno.com">j.wes@wesleyscprfresno.com</a> or <a href="tel:5593601016">(559) 360-1016</a></li>
+              <li>Contact: <a href="mailto:j.wes@wesleyscpr.com">j.wes@wesleyscpr.com</a> or <a href="tel:5593601016">(559) 360-1016</a></li>
               <li>Provide: Your name, email, and approximate submission date</li>
               <li>Timeline: Export provided within 5 business days</li>
               <li>Format: JSON or PDF (as requested)</li>
@@ -105,7 +105,7 @@ export default function Privacy() {
             <h2>Contact</h2>
             <p>For privacy questions or data requests:</p>
             <ul>
-              <li><strong>Email:</strong> <a href="mailto:j.wes@wesleyscprfresno.com">j.wes@wesleyscprfresno.com</a></li>
+              <li><strong>Email:</strong> <a href="mailto:j.wes@wesleyscpr.com">j.wes@wesleyscpr.com</a></li>
               <li><strong>Phone:</strong> <a href="tel:5593601016">(559) 360-1016</a></li>
               <li><strong>Address:</strong> 1477 E. Shaw Ave. Suite 126D, Fresno, CA 93710</li>
             </ul>
