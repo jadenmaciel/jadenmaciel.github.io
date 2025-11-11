@@ -40,7 +40,7 @@ export default function Privacy() {
             <p>If waiver capture is re-enabled:</p>
             <ul>
               <li><strong>Location:</strong> AWS S3 (private bucket, encrypted at rest)</li>
-              <li><strong>Format:</strong> JSON files organized by date (<code>waivers/YYYY/MM/DD/{uuid}.json</code>)</li>
+              <li><strong>Format:</strong> JSON files organized by date (<code>{'waivers/YYYY/MM/DD/{uuid}.json'}</code>)</li>
               <li><strong>Access:</strong> Private bucket with no public access; only authorized AWS services can write</li>
               <li><strong>Versioning:</strong> Enabled for audit trail and recovery</li>
             </ul>
