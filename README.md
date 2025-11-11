@@ -29,6 +29,9 @@ A static marketing website for Wesley's CPR built with React, Vite, and Tailwind
 - **Icons**: lucide-react
 - **Deployment target**: Static hosting (e.g., Vercel, Netlify, S3/CloudFront, GitHub Pages)
 
+### Architecture
+For a detailed explanation of the project's architecture, see [`ARCHITECTURE.md`](ARCHITECTURE.md).
+
 ### Auth Model
 - No authentication or authorization is implemented or required for this static site.
 - No JWTs, API keys, HMAC, or session handling present.
