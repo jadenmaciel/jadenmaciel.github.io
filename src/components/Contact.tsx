@@ -135,7 +135,7 @@ export default function Contact() {
                   className="w-full px-4 py-3 border border-red rounded-lg outline-none transition focus:ring-2 focus:ring-red text-dark"
                   placeholder="John Doe"
                 />
-                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name[0]}</p>}
+                {errors.name && <p className="text-red-500 text-sm mt-1">{String(errors.name[0])}</p>}
               </div>
 
               <div>
@@ -151,7 +151,7 @@ export default function Contact() {
                   className="w-full px-4 py-3 border border-red rounded-lg outline-none transition focus:ring-2 focus:ring-red text-dark"
                   placeholder="john@example.com"
                 />
-                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email[0]}</p>}
+                {errors.email && <p className="text-red-500 text-sm mt-1">{String(errors.email[0])}</p>}
               </div>
 
               <div>
@@ -182,7 +182,7 @@ export default function Contact() {
                   className="w-full px-4 py-3 border border-red rounded-lg outline-none transition resize-none focus:ring-2 focus:ring-red text-dark"
                   placeholder="Tell us about your training needs..."
                 />
-                {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message[0]}</p>}
+                {errors.message && <p className="text-red-500 text-sm mt-1">{String(errors.message[0])}</p>}
               </div>
 
               <button
