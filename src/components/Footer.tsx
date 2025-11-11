@@ -30,10 +30,10 @@ export default function Footer() {
             <p className="text-sm">
               Email:{' '}
               <a
-                href="mailto:j.wes@wesleyscprfresno.com"
+                href="mailto:j.wes@wesleyscpr.com"
                 className="text-cream underline-offset-2 hover:underline"
               >
-                j.wes@wesleyscprfresno.com
+                j.wes@wesleyscpr.com
               </a>
             </p>
           </div>

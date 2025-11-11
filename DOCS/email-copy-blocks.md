@@ -22,7 +22,7 @@ Payment is due within 24 hours to hold your seat. 20% deposit is non-refundable.
 
 If you have any questions, please contact us:
 Phone: (559) 360-1016
-Email: j.wes@wesleyscprfresno.com
+Email: j.wes@wesleyscpr.com
 
 We look forward to training with you!
 
@@ -57,7 +57,7 @@ You'll see any fee and your grand total before paying online.
 
 If you have questions or need to make payment arrangements, please contact us:
 Phone: (559) 360-1016
-Email: j.wes@wesleyscprfresno.com
+Email: j.wes@wesleyscpr.com
 
 Wesley's CPR
 ```
@@ -69,4 +69,3 @@ Wesley's CPR
 3. **Fee Disclosure**: Always include fee disclosure language in payment-related emails
 4. **Consistency**: Use consistent contact information and branding across all emails
 5. **Accessibility**: Keep emails simple, clear, and mobile-friendly
-
