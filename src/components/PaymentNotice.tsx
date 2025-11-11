@@ -17,7 +17,7 @@ export default function PaymentNotice({ className = '' }: Props) {
       ].join(' ')}
     >
       <span className="font-semibold !text-white">Payment Processing:</span>{' '}
-      Online/card payments add <span className="font-semibold">{FEES.card_fee_percent.toFixed(2)}% + ${FEES.card_fee_fixed.toFixed(2)}</span> processing fee; cash has{' '}
+      Online/card payments add <span className="font-semibold">{(FEES.card_fee_percent * 100).toFixed(2)}% + ${FEES.card_fee_fixed.toFixed(2)}</span> processing fee; cash has{' '}
       <span className="font-semibold">no fee</span>. You'll see any fee and your grand total before paying online.
     </p>
   );

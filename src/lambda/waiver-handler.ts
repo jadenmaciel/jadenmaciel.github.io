@@ -264,7 +264,7 @@ What to bring:
 
 If you have any questions, please contact us:
 Phone: (559) 360-1016
-Email: j.wes@wesleyscprfresno.com
+Email: j.wes@wesleyscpr.com
 
 We look forward to training with you!
 

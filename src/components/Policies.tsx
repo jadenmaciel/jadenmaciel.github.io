@@ -17,6 +17,9 @@ export default function Policies() {
               <HelpCircle className="w-5 h-5" aria-hidden />
               Class Logistics
             </h3>
+            <p className="text-sm leading-6 mb-4 text-cream/90">
+              Students must complete the required AHA or ARC online portion and bring the certificate before attending skills sessions.
+            </p>
             <div className="grid md:grid-cols-2 gap-6 text-sm leading-6">
               <ul className="space-y-3">
                 <li>
@@ -66,7 +69,7 @@ export default function Policies() {
                     <strong>Cash:</strong> No processing fee. Pay at the training location.
                   </li>
                   <li>
-                    <strong>Online/Card:</strong> Processed securely via Troute. A processing fee of <strong>{FEES.card_fee_percent.toFixed(2)}% + ${FEES.card_fee_fixed.toFixed(2)}</strong> applies to all online/card payments.
+                    <strong>Online/Card:</strong> Processed securely via Troute. A processing fee of <strong>{(FEES.card_fee_percent * 100).toFixed(2)}% + ${FEES.card_fee_fixed.toFixed(2)}</strong> applies to all online/card payments.
                   </li>
                 </ul>
               </div>

@@ -21,12 +21,6 @@ export const COURSES: Course[] = [
     badge: "Popular",
   },
   {
-    code: "HSV-CPR-AED",
-    name: "HSV-CPR-AED",
-    price: 85,
-    desc: "CPR & AED training • 2-year certification • 6-hour comprehensive training (AHA minimum) • Hands-on practice",
-  },
-  {
     code: "HSV-COMBO",
     name: "HSV-First Aid, CPR-AED Combo",
     price: 130,
@@ -70,8 +64,8 @@ export const COURSES: Course[] = [
     code: "N95-FIT-TESTING",
     name: "N95 Fit Testing",
     price: "Contact for pricing",
-    desc: "Appointment-only service with Tum Poston.",
-    notes: ["Appointment-only", "Provided by Tum Poston"],
+    desc: "Appointment-only service with Tum Poston. Instructor assigned by owner after booking.",
+    notes: ["Appointment-only", "Provided by Tum Poston", "Instructor assigned by owner after booking"],
     priceNote: "Contact for pricing",
   },
   {

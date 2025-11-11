@@ -126,6 +126,9 @@ export default function Footer() {
           <p>© {currentYear} Wesley&apos;s CPR. All rights reserved.</p>
           <p>Confidence starts with training.</p>
         </div>
+        <div className="text-center mt-4 text-xs text-cream/50">
+          Aligned with AHA and ARC
+        </div>
       </div>
     </footer>
   );

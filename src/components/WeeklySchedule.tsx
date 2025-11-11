@@ -2,18 +2,73 @@ import React from "react";
 
 const WeeklySchedule: React.FC = () => {
   return (
-    <div className="weekly-schedule mt-8 p-6 bg-gray-100 rounded-lg shadow-md">
-      <h3 className="text-2xl font-bold text-gray-800 mb-4">Weekly Schedule</h3>
-      <p className="text-gray-600 mb-4">
-        Our classes run weekly. Please check the booking page for specific dates and times.
-      </p>
-      <ul className="list-disc list-inside text-gray-700">
-        <li><strong>Mondays:</strong> 9:00 AM - 1:00 PM (CPR/AED)</li>
-        <li><strong>Wednesdays:</strong> 10:00 AM - 2:00 PM (First Aid)</li>
-        <li><strong>Fridays:</strong> 9:00 AM - 1:00 PM (BLS Provider)</li>
-        <li><strong>Saturdays:</strong> 9:00 AM - 3:00 PM (Combo Courses)</li>
+    <div style={{
+      marginTop: '32px',
+      padding: '24px',
+      background: 'rgba(255, 255, 255, 0.05)',
+      backdropFilter: 'blur(10px)',
+      border: '1px solid rgba(255, 255, 255, 0.1)',
+      borderRadius: '20px',
+      color: '#fff'
+    }}>
+      <h3 style={{
+        fontSize: '1.5rem',
+        fontWeight: '700',
+        marginBottom: '20px',
+        color: '#fff'
+      }}>
+        Weekly Schedule
+      </h3>
+      <ul style={{
+        listStyle: 'none',
+        padding: 0,
+        margin: 0,
+        display: 'grid',
+        gap: '12px'
+      }}>
+        <li style={{
+          padding: '12px',
+          background: 'rgba(231, 76, 60, 0.1)',
+          borderRadius: '8px',
+          borderLeft: '4px solid #e74c3c'
+        }}>
+          <strong style={{ color: '#e74c3c' }}>Mon/Wed/Thu – 9:00 AM:</strong>{' '}
+          <span style={{ color: '#cbd5e1' }}>BLS Provider</span>
+        </li>
+        <li style={{
+          padding: '12px',
+          background: 'rgba(231, 76, 60, 0.1)',
+          borderRadius: '8px',
+          borderLeft: '4px solid #e74c3c'
+        }}>
+          <strong style={{ color: '#e74c3c' }}>Mon/Wed/Thu – 1:30 PM:</strong>{' '}
+          <span style={{ color: '#cbd5e1' }}>BLS Renewal</span>
+        </li>
+        <li style={{
+          padding: '12px',
+          background: 'rgba(231, 76, 60, 0.1)',
+          borderRadius: '8px',
+          borderLeft: '4px solid #e74c3c'
+        }}>
+          <strong style={{ color: '#e74c3c' }}>Tue/Fri – 9:00 AM:</strong>{' '}
+          <span style={{ color: '#cbd5e1' }}>Heartsaver First Aid CPR AED</span>
+        </li>
+        <li style={{
+          padding: '12px',
+          background: 'rgba(231, 76, 60, 0.1)',
+          borderRadius: '8px',
+          borderLeft: '4px solid #e74c3c'
+        }}>
+          <strong style={{ color: '#e74c3c' }}>Tue/Fri – 1:30 PM:</strong>{' '}
+          <span style={{ color: '#cbd5e1' }}>HeartCode BLS & HSV CPR Skills Testing</span>
+        </li>
       </ul>
-      <p className="text-sm text-gray-500 mt-4">
+      <p style={{
+        fontSize: '0.85rem',
+        color: '#94a3b8',
+        marginTop: '16px',
+        fontStyle: 'italic'
+      }}>
         *Schedule is subject to change. Please confirm availability when booking.
       </p>
     </div>
