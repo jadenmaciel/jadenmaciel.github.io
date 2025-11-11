@@ -10,7 +10,7 @@ const contactSchema = z.object({
 });
 
 type ContactForm = z.infer<typeof contactSchema>;
-type FormErrors = z.ZodError<ContactForm>['formErrors']['fieldErrors'];
+type FormErrors = ReturnType<z.ZodError<ContactForm>['flatten']>['fieldErrors'];
 
 export default function Contact() {
   const [formData, setFormData] = useState<ContactForm>({
@@ -25,7 +25,7 @@ export default function Contact() {
     e.preventDefault();
     const result = contactSchema.safeParse(formData);
     if (!result.success) {
-      setErrors(result.error.formErrors.fieldErrors);
+      setErrors(result.error.flatten().fieldErrors);
       return;
     }
     // TODO: Implement form submission logic (e.g., send to an API endpoint)
