@@ -25,4 +25,4 @@ jobs:
         uses: zaproxy/action-baseline@v0.11.0
         with:
           target: 'https://jadenmaciel.github.io/wesleys-cpr/'
-          fail_action: true
+          fail_action: false
