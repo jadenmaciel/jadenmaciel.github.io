@@ -24,7 +24,7 @@ const Pricing: React.FC = () => {
                 <th className={`${s.th} ${s.thLast}`}>Price</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className={s.tbody}>
               {COURSES.map((course, i) => (
                 <tr
                   key={course.code}
