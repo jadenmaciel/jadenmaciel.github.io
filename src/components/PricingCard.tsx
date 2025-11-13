@@ -1,4 +1,4 @@
-import { calcOnlineFee } from '../lib/fees';
+import { calcOnlineFee, FEES } from '../lib/fees';
 
 type PricingCardProps = {
   name: string;
@@ -30,7 +30,7 @@ export default function PricingCard({ name, price, description, badge, className
       </div>
       <div className="mb-4 p-3 rounded-lg bg-cream/50 border border-navy/10">
         <p className="text-xs text-navy">
-          <strong>Payment Processing:</strong> Online/card payments add <strong>3.00% + $0.15</strong> processing fee; cash has <strong>no fee</strong>. You'll see any fee and your grand total before paying online.
+          <strong>Payment Processing:</strong> Online/card payments add <strong>{(FEES.card_fee_percent * 100).toFixed(2)}% + ${FEES.card_fee_fixed.toFixed(2)}</strong> processing fee; cash has <strong>no fee</strong>. You'll see any fee and your grand total before paying online.
         </p>
       </div>
       <div className="pt-4 border-t border-navy/10">
@@ -39,7 +39,7 @@ export default function PricingCard({ name, price, description, badge, className
           <span className="text-lg font-semibold text-navy">${total.toFixed(2)}</span>
         </div>
         <div className="flex justify-between items-center text-xs text-navy/60">
-          <span>Processing fee (3.00% + $0.15):</span>
+          <span>Processing fee ({(FEES.card_fee_percent * 100).toFixed(2)}% + ${FEES.card_fee_fixed.toFixed(2)}):</span>
           <span>${fee.toFixed(2)}</span>
         </div>
       </div>
