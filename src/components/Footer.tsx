@@ -73,7 +73,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#privacy" className="hover:text-cream/80 transition-colors">
+                <a href="#policies" className="hover:text-cream/80 transition-colors">
                   Privacy & Data Handling
                 </a>
               </li>

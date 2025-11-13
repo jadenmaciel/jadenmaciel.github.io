@@ -1,5 +1,3 @@
-import React from "react";
-
 type Props = {
   email?: string;
   phone?: string;
@@ -15,7 +13,7 @@ export default function ContactInfo({
 }: Props) {
   // Format phone number for tel: link (remove non-digits, add country code if needed)
   const phoneLink = `tel:+1${phone.replace(/\D/g, '')}`;
-  
+
   return (
     <section aria-labelledby="contact-heading" className="contact-block">
       <h2 id="contact-heading">Contact</h2>
