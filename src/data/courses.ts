@@ -69,6 +69,13 @@ export const COURSES: Course[] = [
     priceNote: "Contact for pricing",
   },
   {
+    code: "FA-AED-INSPECTIONS",
+    name: "First Aid & AED Inspections and Supply",
+    price: "Call or email for pricing information",
+    desc: "On-site First Aid and AED inspection and restocking to help keep you aligned with OSHA workplace safety expectations.",
+    priceNote: "Call or email for pricing information",
+  },
+  {
     code: "HEARTSAVER-CPR-AED",
     name: "American Red Cross Heartsaver Course – $125",
     price: 125,
