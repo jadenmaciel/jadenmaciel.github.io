@@ -32,3 +32,6 @@ logs/
 
 # TypeScript
 *.tsbuildinfo
+
+# AI/LLM temporary artifacts
+.gemini_tmp/

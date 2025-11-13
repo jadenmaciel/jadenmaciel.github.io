@@ -4,17 +4,19 @@ Last updated: 11/13/2025 9:53am
 
 ## Next Up
 
+
+## Recently Completed
 - **Testing Suite**
   - **Why**: To prevent regressions and ensure code quality.
   - **Scope**: Add unit tests for critical components and utility functions. Implement accessibility checks (e.g., with `axe-core`).
   - **Priority**: Medium
-  - **Progress**: ✅ Initial testing setup completed with Vitest, React Testing Library, and vitest-axe. `PoliciesSection` component now has comprehensive unit and accessibility tests covering rendering, interactions, keyboard navigation, and ARIA attributes. Test infrastructure is in place for expanding to other components.
+  - **Progress**: Initial testing setup completed with Vitest, React Testing Library, and vitest-axe. `PoliciesSection` component now has comprehensive unit and accessibility tests covering rendering, interactions, keyboard navigation, and ARIA attributes. Test infrastructure is in place for expanding to other components.
 
 - **New Services**
   - **Why**: Owner wants to implement these services
   - **Scope**: Add "First Aid & AED Inspections and Supply" services to website and Booky.buzz software to meet OSHA standards. Use "Call or email for pricing information."
   - **Priority**: High
-  - **Progress**: ✅ Website implementation complete. Service added to `src/data/courses.ts` with proper pricing messaging. Appears in pricing table. Booky.buzz configuration pending (separate task).
+  - **Progress**: Website implementation complete. Service added to `src/data/courses.ts` with proper pricing messaging. Appears in pricing table. Booky.buzz configuration pending (separate task).
 
 - **Update 'Policies & FAQ' Section**
   - **Why**: Privacy & Data Handling as a separate block above Policies & FAQ makes the page feel disjointed. The new accordion-style design provides a cleaner, unified experience and keeps all policies together.
@@ -34,8 +36,6 @@ Last updated: 11/13/2025 9:53am
       - Use appropriate ARIA attributes (`aria-expanded`, `aria-controls`, etc.).
       - Ensure headings and contrast remain accessible in the dark theme.
   - **Priority**: High
-
-## Recently Completed
 
 - **Image Optimization**: Optimized all images with WebP format and responsive images:
   - **Hero image (cpr-stock.png)**: Optimized from 2.3 MB to 14-67 KB (97-99% reduction) with responsive sizes (400w, 600w, 800w, 1200w WebP variants)

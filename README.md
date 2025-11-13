@@ -1,40 +1,74 @@
 # Wesley's CPR — Marketing Site
 
-A static marketing website for Wesley's CPR built with React, Vite, and Tailwind CSS, deployed via GitHub Pages.
+A static marketing website for Wesley's CPR built with React, Vite, TypeScript, and Tailwind CSS, deployed via GitHub Pages.
 
-## Current State
+## Overview
 
-- **Framework**: React 18 / Vite 5 SPA (Single-Page Application).
-- **Deployment**: Static site hosted on GitHub Pages at [jadenmaciel.github.io/wesleys-cpr/](https://jadenmaciel.github.io/wesleys-cpr/).
-- **Routing**: No client-side router (e.g., `react-router-dom`). Navigation is handled by simple anchor links (`#section`).
-- **Backend**: No active backend. The contact form uses client-side validation with Zod and falls back to a `mailto:` link.
-- **Booking**: Booking is handled by an embedded Booky.buzz iframe with sandbox restrictions and origin checks for security.
+This is a production-ready static Single-Page Application (SPA) that provides course information, pricing, policies, and online booking for Wesley's CPR training services. The site is optimized for performance, accessibility, and security.
+
+## Live URLs
+
+- **GitHub Pages**: [https://jadenmaciel.github.io/wesleys-cpr/](https://jadenmaciel.github.io/wesleys-cpr/)
+- **Custom Domain**: [https://wesleyscpr.com/](https://wesleyscpr.com/) (AWS deployment)
+
+## Tech Stack
+
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite 5
+- **Styling**: Tailwind CSS
+- **Routing**: Single-page application with anchor-based navigation
+- **State Management**: Local component state (no global state manager)
+- **Testing**: Vitest with React Testing Library
 
 ## Key Features
 
-- **Responsive SPA** with semantic sections for accessibility.
-- **Brand-consistent UI** using Tailwind CSS.
-- **Centralized Course Catalog**: All course data and pricing are managed in `src/data/courses.ts` as the single source of truth.
-- **Transparent Pricing**: A detailed pricing table is dynamically generated from the course catalog.
-- **Online Booking**: A `Booky.buzz` widget is embedded for course registration.
-- **Contact Form**: A client-side validated form using Zod schema validation. No PII is logged in production builds. Falls back to a `mailto:` link for form submission.
+### Courses & Pricing
 
-## Pricing and Fees
+All course data and pricing are managed in a single source of truth: **`src/data/courses.ts`**
 
-### Course Pricing Source of Truth
+The catalog includes:
+- **HSV-First Aid** — AHA-aligned certification
+- **HSV-First Aid, CPR-AED Combo** — Complete certification package
+- **HSV Skill Only Session** — Skills validation for pre-completed online courses
+- **Heartcode BLS (Skills only)** — Healthcare provider level skills check
+- **BLS Provider** — Full healthcare professional certification
+- **BLS Renewal** — Refresher course with 10% discount for returning customers
+- **American Red Cross BLS** — Red Cross certification option
+- **N95 Fit Testing** — Appointment-only service (contact for pricing)
+- **First Aid & AED Inspections and Supply** — On-site OSHA-aligned inspections and restocking (contact for pricing)
+- **American Red Cross Heartsaver Course**
+- **Friends and Family** — Non-certification group training
+- **AHA e-Learning** — Link-out to official AHA online courses
 
-All pricing and course details are defined in a single file:
-**`src/data/courses.ts`**
+Any changes to course offerings or prices should be made in `src/data/courses.ts`. The UI will update automatically.
 
-Any changes to course offerings or prices should be made in this file. The UI will update automatically.
+### Policies & FAQ Accordion
 
-### Payment Processing Fee Disclosure
+A comprehensive accordion-based policies section (`PoliciesSection` component) with four collapsible panels:
 
-All payment processing fees are defined in `src/lib/fees.ts` as a single source of truth. The current fees are:
+1. **Privacy & Data Handling** — Data collection, usage, and user rights
+2. **Class Logistics** — Age requirements, class size, duration, certification details, waiver requirements
+3. **Payment Policy** — Payment methods, processing fees, deposit requirements, and fee disclosure
+4. **Refund & Reschedule Policy** — Rescheduling rules, refund terms, and cancellation policies
+
+All policies use dynamic fee references from `src/lib/fees.ts` to ensure consistency.
+
+### Booking Integration
+
+- **Booky.buzz iframe** — Embedded booking widget with secure sandbox restrictions
+- **Security**: CSP meta tag restricts frame sources to `https://booky.buzz`
+- **Communication**: `postMessage` API with strict origin checks for iframe resizing
+- **Fallback**: Direct link to Booky.buzz booking page if widget fails to load
+- **No local contact form** — Contact information is display-only (phone, email, address)
+
+### Payment Processing Fees
+
+All payment processing fees are defined in **`src/lib/fees.ts`** as a single source of truth:
+
 - **Card Fee (Percentage):** 3.00% (stored as `0.03` in `FEES.card_fee_percent`)
 - **Card Fee (Fixed):** $0.15 (stored as `0.15` in `FEES.card_fee_fixed`)
 
-This information is interpolated into all relevant UI components and documentation. To update fees, modify the `FEES` constant in `src/lib/fees.ts`; all components and documentation will reflect the changes.
+These fees are dynamically interpolated into UI components (pricing tables, policies) and documentation. To update fees, modify the `FEES` constant in `src/lib/fees.ts`.
 
 ## Local Development
 
@@ -45,68 +79,93 @@ This information is interpolated into all relevant UI components and documentati
 
 ### Setup
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/jadenmaciel/wesleys-cpr.git
-    cd wesleys-cpr
-    ```
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/jadenmaciel/wesleys-cpr.git
+   cd wesleys-cpr
+   ```
 
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-3.  **Run the development server:**
-    ```bash
-    npm run dev
-    ```
-    The site will be available at `http://localhost:5173`.
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+   The site will be available at `http://localhost:5173`.
 
-### Build and Preview
+### Available Scripts
 
-To create a production build and preview it locally:
+- `npm run dev` — Start development server
+- `npm run build` — Build for production (outputs to `dist/`)
+- `npm run preview` — Preview production build locally (serves `dist/` at `http://localhost:4173`)
+- `npm run typecheck` — Run TypeScript type checking
+- `npm test` — Run tests with Vitest
+- `npm run test:watch` — Run tests in watch mode
+- `npm run test:ui` — Open Vitest UI
 
-1.  **Build the application:**
-    ```bash
-    npm run build
-    ```
-    This command bundles the static assets into the `dist/` directory.
+## Security & CI
 
-2.  **Preview the build:**
-    ```bash
-    npm run preview
-    ```
-    This command serves the `dist/` directory at `http://localhost:4173`.
+### Security Audit Workflow
 
-## Security Posture
+The repository includes a GitHub Actions workflow (`.github/workflows/security.yml`) that runs security checks:
 
-### Quick Wins Implemented
+1. **`npm audit`** — Checks for known vulnerabilities in dependencies with `--audit-level=high`
+2. **OWASP ZAP Baseline Scan** — Dynamic security testing against the live GitHub Pages deployment
+   - **Target URL**: `https://jadenmaciel.github.io/wesleys-cpr/`
+   - **Configuration**: `fail_action: false` (prevents blocking deployments on informational findings)
+   - **Artifact**: ZAP scan report uploaded as `zap-scan-report-{run_id}`
 
-- **Client-Side Validation**: The contact form uses `zod` for schema validation to prevent malformed data submission. No PII is logged in production builds.
-- **Console Guard**: In production builds, `console.log` statements are removed to prevent leaking information.
-- **Link Hygiene**: All external links use `rel="noopener noreferrer"` to prevent tab-nabbing.
-- **Iframe Security**: The Booky.buzz iframe is sandboxed with strict `allow` permissions (`allow-scripts`, `allow-forms`, `allow-popups`, `allow-same-origin`) and uses origin checks on `postMessage` events to ensure messages are only accepted from `https://booky.buzz`.
-- **CSP Meta Tag**: A Content Security Policy is implemented via a `<meta>` tag in `index.html` to mitigate cross-site scripting (XSS) risks. The CSP restricts frame sources to `https://booky.buzz` and enforces other security boundaries.
+The workflow runs:
+- On every push to `main` and `security` branches
+- Weekly via scheduled cron job (Sunday at midnight UTC)
 
-### CI/CD Hardening
+### Security Features
 
-- **`npm audit`**: The CI pipeline includes an `npm audit` step that checks for vulnerabilities in dependencies with `--audit-level=high`.
-- **OWASP ZAP Scan**: A ZAP baseline scan is run against the live GitHub Pages URL to check for common web vulnerabilities.
-  - **Target**: `https://jadenmaciel.github.io/wesleys-cpr/`
-  - **Configuration**: `fail_action` is set to `false` to prevent the build from failing on informational findings.
-  - **Artifact**: The scan report is uploaded as an artifact named `zap_scan_report`.
+- **Input Validation**: Zod schema validation for form inputs (if forms are added)
+- **Iframe Sandboxing**: Booky.buzz iframe restricted with `sandbox` attributes
+- **Content Security Policy**: CSP meta tag in `index.html` restricts frame sources and mitigates XSS
+- **Origin Checks**: `postMessage` handlers validate message origins
+- **Link Security**: External links use `rel="noopener noreferrer"` to prevent tab-nabbing
+- **No Secrets**: No API keys, secrets, or sensitive data in client-side code
 
 ### Known Limitations
 
-- **GitHub Pages Headers**: It is not possible to set custom security headers (like a full CSP or `X-Frame-Options`) on GitHub Pages. The current security model relies on meta tags and application-level hardening.
-- **404 Spiders**: The site is a Single-Page Application, and the project path (`/wesleys-cpr/`) can sometimes cause automated scanners to report false 404 errors.
+- **GitHub Pages Headers**: Custom HTTP security headers (e.g., full CSP, HSTS) cannot be configured on GitHub Pages
+- **404 Spiders**: As a SPA, automated scanners may report false 404 errors for the project path (`/wesleys-cpr/`)
+
+## Project Structure
+
+```
+wesleys-cpr/
+├── src/
+│   ├── components/          # React components (Header, Hero, Pricing, Policies, etc.)
+│   ├── data/
+│   │   └── courses.ts       # Single source of truth for course catalog
+│   ├── lib/
+│   │   └── fees.ts          # Payment processing fee constants
+│   ├── lambda/              # Future serverless backend (not active)
+│   └── routes/              # Route components (Privacy page)
+├── infra/                   # Terraform infrastructure code (parked/future use)
+├── public/                  # Static assets (images, robots.txt, sitemap.xml)
+├── .github/workflows/       # CI/CD workflows
+│   └── security.yml         # Security audit workflow
+└── dist/                    # Production build output (gitignored)
+```
+
+### Important Notes
+
+- **Backend/Infra**: `src/lambda/` and `infra/` directories contain code for a future serverless backend but are not part of the current production deployment. They are explicitly excluded from the frontend build via `tsconfig.app.json`.
+- **Temporary Artifacts**: The `.gemini_tmp/` directory (if present) contains temporary AI-generated artifacts and is ignored by Git. It is not part of the project architecture.
 
 ## Deployment
 
-The site is deployed automatically to GitHub Pages on every push to the `main` branch. The workflow is defined in `.github/workflows/gh-pages.yml`.
+The site is deployed automatically to GitHub Pages on every push to the `main` branch via the workflow defined in `.github/workflows/gh-pages.yml`.
 
-## Next Actions
+The Vite configuration includes a `base` path of `/wesleys-cpr/` to ensure all asset links work correctly on GitHub Pages.
 
-- **Security Checklist**: Implement further security hardening measures based on a standard security checklist.
-- **Testing**: Add a comprehensive test suite, including unit, integration, and accessibility tests.
-- **Contact Form Backend**: Consider adding a serverless backend for contact form submission if email delivery becomes a priority.
+## License
+
+MIT
