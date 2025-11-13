@@ -6,10 +6,8 @@ import Services from './components/Services';
 import Pricing from './components/Pricing';
 import Booking from './components/Booking';
 import Testimonials from './components/Testimonials';
-import Policies from './components/Policies';
-import Contact from './components/Contact';
+import PoliciesSection from './components/PoliciesSection';
 import Footer from './components/Footer';
-import Privacy from './routes/Privacy';
 
 function App() {
   return (
@@ -23,11 +21,7 @@ function App() {
         <Pricing />
         <Booking />
         <Testimonials />
-        <Policies />
-        <Contact />
-        <div id="privacy">
-          <Privacy />
-        </div>
+        <PoliciesSection />
       </main>
       <Footer />
     </div>

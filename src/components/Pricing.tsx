@@ -1,7 +1,6 @@
 import React from "react";
 import s from "./PricingTable.module.css";
 import PaymentNotice from "./PaymentNotice";
-import WeeklySchedule from "./WeeklySchedule";
 import { COURSES } from "../data/courses"; // Import the single source of truth
 
 const Pricing: React.FC = () => {
@@ -60,7 +59,6 @@ const Pricing: React.FC = () => {
         <div className="relative z-10 opacity-100">
           <PaymentNotice className="mt-8" />
         </div>
-        <WeeklySchedule />
 
         <div className={s.trust}>
           <h3 style={{ marginBottom: 10, fontSize: "2rem" }}>AHA-Aligned Training</h3>

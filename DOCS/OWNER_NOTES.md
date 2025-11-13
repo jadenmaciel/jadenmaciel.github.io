@@ -13,8 +13,9 @@ This document contains operational notes for the business owner.
 ## Payment Processing
 
 - **Processor**: Troute
-- **Fees**: $25/mo + 2.7% + $0.15 per transaction.
+- **Fees**: $25/mo + 3.00% + $0.15 per transaction.
 - **Funding Speed**: 24h for in-person; 24h or 2-day for online.
+- **Note**: The card processing fee values (3.00% + $0.15) are defined in `src/lib/fees.ts` as the single source of truth. All UI components and email templates reference these values dynamically.
 
 ## Service Area
 

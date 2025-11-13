@@ -26,3 +26,4 @@ jobs:
         with:
           target: 'https://jadenmaciel.github.io/wesleys-cpr/'
           fail_action: false
+          artifact_name: zap_scan_report

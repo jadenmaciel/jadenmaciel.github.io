@@ -30,10 +30,9 @@ export default function Booking() {
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold mb-4">Book a Class Online</h2>
         <p className="mb-6 text-navy/80">
-          Choose your preferred date/time. You can also select an instructor: <strong>Jacqueline</strong>, <strong>Debbie Scott</strong>, <strong>Tum Poston</strong>. We prefer no same-day bookings; if you need today, <a href="#contact" className="text-red font-semibold underline underline-offset-2">contact us</a> to check availability. If the widget does not load,
-          <a
+          Choose your preferred date/time. You can also select an instructor: Jacqueline, Debbie, Tum. We prefer no same-day bookings; if you need today, contact us to check availability. If the widget does not load, <a
             href={PUBLIC_BOOKING_URL}
-            className="text-red font-semibold underline underline-offset-2 ml-1"
+            className="text-red font-semibold underline underline-offset-2"
             target="_blank"
             rel="noopener noreferrer"
           >
