@@ -4,11 +4,6 @@ Last updated: 11/13/2025 9:53am
 
 ## Next Up
 
-- **Image Optimization**
-  - **Why**: Large images slow down page load times.
-  - **Scope**: Compress all images in the repository, especially the hero image. Consider using modern formats like WebP.
-  - **Priority**: Medium
-
 - **Testing Suite**
   - **Why**: To prevent regressions and ensure code quality.
   - **Scope**: Add unit tests for critical components and utility functions. Implement accessibility checks (e.g., with `axe-core`).
@@ -41,6 +36,16 @@ Last updated: 11/13/2025 9:53am
 
 ## Recently Completed
 
+- **Image Optimization**: Optimized all images with WebP format and responsive images:
+  - **Hero image (cpr-stock.png)**: Optimized from 2.3 MB to 14-67 KB (97-99% reduction) with responsive sizes (400w, 600w, 800w, 1200w WebP variants)
+  - **Logo (logo.png)**: Optimized from 300 KB to 1-6 KB (97-99% reduction) with retina-ready sizes (48w, 96w, 192w WebP variants)
+  - **OG image (og.jpg)**: Created optimized 1200x630px Open Graph image at 86 KB for social media sharing
+  - Updated `Hero.tsx` to use `<picture>` element with WebP srcSet for responsive images
+  - Updated `Header.tsx` to use optimized logo with WebP srcSet
+  - Changed hero image loading from `lazy` to `eager` (above the fold)
+  - Updated `index.html` preload tags to use optimized WebP images
+  - Created optimization scripts (`scripts/optimize-images.mjs` and `scripts/create-og-image.mjs`) using Sharp for future use
+  - All images maintain quality while significantly reducing file sizes for improved page load performance
 - **Contact Form Removal & Info-Only Contact**: Removed the contact form and replaced it with a simple info-only Contact component. Created a reusable `ContactInfo` component for consistent contact information display.
 - **Privacy Page Redesign**: Restructured the Privacy page with card-based layout, removed Waivers section, consolidated contact info to a single location, and updated styling with custom CSS.
 - **Policies Section Positioning**: Moved Policies & FAQ section to the bottom of the page (immediately above Footer) with subtle muted links for better information hierarchy.

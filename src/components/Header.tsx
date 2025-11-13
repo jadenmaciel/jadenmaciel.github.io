@@ -15,7 +15,12 @@ export default function Header() {
     { name: 'Contact', href: 'mailto:j.wes@wesleyscpr.com' },
   ];
 
-  const logoSrc = `${import.meta.env.BASE_URL}images/logo.png`;
+  const baseUrl = import.meta.env.BASE_URL;
+  const logoSrc = `${baseUrl}images/logo.png`;
+  const logoSrcSet = [
+    `${baseUrl}images/logo-48w.webp 1x`,
+    `${baseUrl}images/logo-96w.webp 2x`,
+  ].join(', ');
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 shadow-md bg-navy">
@@ -26,15 +31,18 @@ export default function Header() {
             className="inline-flex items-center gap-3 group focus:outline-none focus:ring-0 focus-visible:outline-none"
             aria-label="Go to top of page"
           >
-            <img
-              src={logoSrc}
-              width={48}
-              height={48}
-              alt="Wesley's CPR logo"
-              className="h-12 w-12 rounded-full object-contain bg-transparent"
-              loading="eager"
-              decoding="async"
-            />
+            <picture>
+              <source srcSet={logoSrcSet} type="image/webp" />
+              <img
+                src={logoSrc}
+                width={48}
+                height={48}
+                alt="Wesley's CPR logo"
+                className="h-12 w-12 rounded-full object-contain bg-transparent"
+                loading="eager"
+                decoding="async"
+              />
+            </picture>
             <div>
               <h1 className="text-xl font-bold text-cream group-hover:text-cream/90 transition-colors">Wesley's CPR</h1>
               <p className="text-xs text-cream">Central Valley, CA</p>

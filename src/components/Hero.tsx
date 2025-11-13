@@ -9,7 +9,14 @@ export default function Hero() {
     'Mobile / On-Site Available',
   ];
 
-  const heroImgSrc = `${import.meta.env.BASE_URL}images/cpr-stock.png`;
+  const baseUrl = import.meta.env.BASE_URL;
+  const heroImgSrc = `${baseUrl}images/cpr-stock.png`;
+  const heroImgSrcSet = [
+    `${baseUrl}images/cpr-stock-400w.webp 400w`,
+    `${baseUrl}images/cpr-stock-600w.webp 600w`,
+    `${baseUrl}images/cpr-stock-800w.webp 800w`,
+    `${baseUrl}images/cpr-stock-1200w.webp 1200w`,
+  ].join(', ');
 
   return (
     <section id="home" className="pt-24 pb-16 bg-navy">
@@ -35,14 +42,19 @@ export default function Hero() {
           </div>
 
           <div className="w-full">
-            <img
-              src={heroImgSrc}
-              alt="CPR training with AED pads attached on a mannequin"
-              className="w-full h-64 md:h-80 lg:h-[420px] rounded-xl object-cover"
-              loading="lazy"
-              decoding="async"
-              sizes="(min-width: 1024px) 560px, (min-width: 768px) 480px, 100vw"
-            />
+            <picture>
+              <source srcSet={heroImgSrcSet} sizes="(min-width: 1024px) 560px, (min-width: 768px) 480px, 100vw" type="image/webp" />
+              <img
+                src={heroImgSrc}
+                alt="CPR training with AED pads attached on a mannequin"
+                className="w-full h-64 md:h-80 lg:h-[420px] rounded-xl object-cover"
+                loading="eager"
+                decoding="async"
+                width={800}
+                height={533}
+                sizes="(min-width: 1024px) 560px, (min-width: 768px) 480px, 100vw"
+              />
+            </picture>
           </div>
         </div>
       </div>
