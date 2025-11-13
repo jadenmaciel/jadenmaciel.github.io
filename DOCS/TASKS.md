@@ -14,6 +14,7 @@ Last updated: 11/13/2025 9:53am
   - **Why**: Owner wants to implement these services
   - **Scope**: Add "First Aid & AED Inspections and Supply" services to website and Booky.buzz software to meet OSHA standards. Use "Call or email for pricing information."
   - **Priority**: High
+  - **Progress**: ✅ Website implementation complete. Service added to `src/data/courses.ts` with proper pricing messaging. Appears in pricing table. Booky.buzz configuration pending (separate task).
 
 - **Update 'Policies & FAQ' Section**
   - **Why**: Privacy & Data Handling as a separate block above Policies & FAQ makes the page feel disjointed. The new accordion-style design provides a cleaner, unified experience and keeps all policies together.
