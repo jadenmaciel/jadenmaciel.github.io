@@ -21,9 +21,18 @@ jobs:
   zap-baseline-scan:
     runs-on: ubuntu-latest
     steps:
+      - name: Pre-check site availability
+        run: |
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://jadenmaciel.github.io/wesleys-cpr/)
+          if [ "$HTTP_STATUS" != "200" ]; then
+            echo "❌ Site returned HTTP status $HTTP_STATUS, expected 200. Aborting ZAP scan."
+            exit 1
+          fi
+          echo "✅ Site is available (HTTP 200). Proceeding with ZAP scan."
       - name: ZAP Scan
-        uses: zaproxy/action-baseline@v0.11.0
+        uses: zaproxy/action-baseline@v0.15.0
         with:
           target: 'https://jadenmaciel.github.io/wesleys-cpr/'
           fail_action: false
-          artifact_name: zap_scan_report
+          artifact_name: zap-scan-report-${{ github.run_id }}
+          token: ${{ secrets.GITHUB_TOKEN }}
