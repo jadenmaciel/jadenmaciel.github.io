@@ -61,10 +61,17 @@
   border-collapse: separate;
   border-spacing: 0;
   margin-bottom: 40px;
+  table-layout: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .thead {
   background: rgba(231, 76, 60, 0.1);
+}
+
+.tbody {
+  /* Default styles - will be overridden on mobile */
 }
 
 .th {
@@ -91,7 +98,11 @@
 
 .trLast { border-bottom: none; }
 
-.td { padding: 10px 12px; }
+.td { 
+  padding: 10px 12px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
 
 .name {
   font-size: 1rem;
@@ -125,6 +136,8 @@
   color: #e74c3c;
   text-align: right;
   white-space: nowrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .priceNote {
@@ -133,6 +146,8 @@
   font-weight: 400;
   display: block;
   margin-top: 4px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .cta {
@@ -223,12 +238,94 @@
 
 @media (max-width: 768px) {
   .h1 { font-size: 2rem; }
-  .card { padding: 20px; }
-  .table { font-size: 0.9rem; }
-  .th, .td { padding: 10px 10px; }
-  .name { font-size: 0.98rem; }
-  .desc { font-size: 0.8rem; }
-  .price { font-size: 1.3rem; }
-  .btn { padding: 12px 28px; font-size: 0.95rem; }
+  .card { 
+    padding: 16px;
+    overflow-x: hidden;
+  }
+  .wrap {
+    padding: 36px 12px;
+    overflow-x: hidden;
+  }
+  .container {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  .table { 
+    font-size: 0.9rem;
+    display: block;
+    width: 100%;
+  }
+  .thead {
+    display: none;
+  }
+  .tbody {
+    display: block;
+    width: 100%;
+  }
+  .tr {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .tr:hover {
+    background: rgba(231, 76, 60, 0.05);
+    transform: none;
+  }
+  .trLast {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 0;
+  }
+  .td {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    text-align: left;
+    border: none;
+    max-width: 100%;
+  }
+  .td:first-child {
+    padding-top: 0;
+  }
+  .td:last-child {
+    padding-bottom: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 8px;
+    padding-top: 12px;
+  }
+  .name { 
+    font-size: 0.98rem;
+    margin-bottom: 8px;
+  }
+  .desc { 
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+  .price { 
+    font-size: 1.1rem;
+    text-align: left;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.4;
+  }
+  .priceNote {
+    font-size: 0.75rem;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+  .btn { 
+    padding: 12px 28px; 
+    font-size: 0.95rem;
+  }
+  .stats {
+    gap: 30px;
+  }
+  .statNum {
+    font-size: 1.5rem;
+  }
 }
 
