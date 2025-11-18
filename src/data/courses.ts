@@ -64,8 +64,8 @@ export const COURSES: Course[] = [
     code: "N95-FIT-TESTING",
     name: "N95 Fit Testing",
     price: "Contact for pricing",
-    desc: "Appointment-only service with Tum Poston. Instructor assigned by owner after booking.",
-    notes: ["Appointment-only", "Provided by Tum Poston", "Instructor assigned by owner after booking"],
+    desc: "Appointment-only service with Tim Poston. Instructor assigned by owner after booking.",
+    notes: ["Appointment-only", "Provided by Tim Poston", "Instructor assigned by owner after booking"],
     priceNote: "Contact for pricing",
   },
   {

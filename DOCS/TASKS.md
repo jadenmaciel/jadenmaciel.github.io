@@ -1,4 +1,4 @@
-Last updated: 11/13/2025 9:53am
+Last updated: 11/13/2025 2:45pm
 
 # Task Tracker
 
@@ -50,7 +50,7 @@ Last updated: 11/13/2025 9:53am
 - **Contact Form Removal & Info-Only Contact**: Removed the contact form and replaced it with a simple info-only Contact component. Created a reusable `ContactInfo` component for consistent contact information display.
 - **Privacy Page Redesign**: Restructured the Privacy page with card-based layout, removed Waivers section, consolidated contact info to a single location, and updated styling with custom CSS.
 - **Policies Section Positioning**: Moved Policies & FAQ section to the bottom of the page (immediately above Footer) with subtle muted links for better information hierarchy.
-- **Booking Component Updates**: Updated booking section text with instructor names (Jacqueline, Debbie, Tum) and improved messaging about same-day bookings.
+- **Booking Component Updates**: Updated booking section text with instructor names (Jacqueline, Debbie, Tim) and improved messaging about same-day bookings.
 - **Documentation Overhaul**: Consolidated and updated all project documentation, including `README.md` and `ARCHITECTURE.md`.
 - **Pricing Single Source of Truth**: Refactored the application to use `src/data/courses.ts` as the single source of truth for all pricing and course information.
 - **Security Enhancements**: Implemented Zod for contact form validation and configured a ZAP scan in the CI/CD pipeline.
