@@ -9,6 +9,16 @@ export default {
         cream: '#F6E3C7',
         dark: '#142131',
       },
+      keyframes: {
+        'scroll-x': {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        'scroll-x-slow': 'scroll-x 50s linear infinite', // desktop/tablet
+        'scroll-x-fast': 'scroll-x 30s linear infinite', // mobile
+      },
     },
   },
   plugins: [],

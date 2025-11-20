@@ -32,7 +32,7 @@ User Browser --> GitHub Pages CDN --> Static Assets (HTML, CSS, JS) --> React SP
   - `PricingCard.tsx` — Reusable pricing card component
   - `Booking.tsx` — Booky.buzz iframe integration with `postMessage` handling
   - `PoliciesSection.tsx` — Accordion-based policies component (Privacy, Logistics, Payment, Refund)
-  - `Testimonials.tsx` — Customer testimonials
+  - `Testimonials.tsx` — Multi-card testimonials carousel with Tailwind-driven auto-scroll animation on the track (duplicated lists for infinite looping). The animation is active on both mobile and desktop with tuned speeds (faster on mobile, slower on desktop), pauses on hover, and includes a hidden horizontal scrollbar.
   - `Contact.tsx` — Contact information display (info-only, no form)
   - `ContactInfo.tsx` — Reusable contact info component
   - `Footer.tsx` — Site footer with links and compliance note

@@ -6,6 +6,11 @@ Last updated: 11/13/2025 2:45pm
 
 
 ## Recently Completed
+- **Testimonials Experience (Data → Carousel → Interactions)**
+  - **Why**: Authentic social proof is critical for conversion; the previous AI filler undermined trust.
+  - **Scope**: Replaced testimonials with verified reviews, built a responsive horizontal carousel, added motion-safe infinite scroll + hover pause, and implemented accessible inline expand/collapse with focus management. Enhanced with hidden scrollbar (via `no-scrollbar` utility) and responsive animation speeds (faster on mobile, slower on desktop).
+  - **Priority**: High
+  - **Progress**: Complete. Auto-scroll animation has been verified and is active in production views. The scrollbar is hidden and the animation uses faster speed on mobile while keeping a slower, readable pace on desktop. Hover-to-pause and reduced-motion support remain intact.
 - **Testing Suite**
   - **Why**: To prevent regressions and ensure code quality.
   - **Scope**: Add unit tests for critical components and utility functions. Implement accessibility checks (e.g., with `axe-core`).

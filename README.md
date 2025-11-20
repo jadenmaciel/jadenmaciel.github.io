@@ -61,6 +61,10 @@ All policies use dynamic fee references from `src/lib/fees.ts` to ensure consist
 - **Fallback**: Direct link to Booky.buzz booking page if widget fails to load
 - **No local contact form** — Contact information is display-only (phone, email, address)
 
+### Testimonials
+
+Real student testimonials displayed in a responsive, multi-card carousel with smooth auto-scroll (active on mobile and desktop), hover pause, and motion-safe behavior. The scrollbar is hidden for a clean layout, and the scroll speed is tuned for mobile (faster) vs desktop (slower).
+
 ### Payment Processing Fees
 
 All payment processing fees are defined in **`src/lib/fees.ts`** as a single source of truth:

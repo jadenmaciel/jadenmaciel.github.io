@@ -1,4 +1,4 @@
-Last updated: 11/13/2025 9:53am
+Last updated: 11/13/2025 2:45pm
 
 ## Problem & Business Value
 Prospects need a credible, clear way to discover and book CPR and safety training in the Central Valley. The site should instill trust, clarify offerings, and drive conversions to calls or bookings.
@@ -34,6 +34,9 @@ Prospects need a credible, clear way to discover and book CPR and safety trainin
 - **Current**: Booky.buzz booking widget (iframe with secure `postMessage`).
 - **Future**:
   - Waiver capture system (currently disabled in UI).
+
+## Upcoming Enhancements
+- **Testimonials Refresh (Complete)**: Verified reviews now power the carousel with responsive cards, motion-safe auto-scroll (faster on mobile, slower on desktop), hover pause, hidden scrollbar via `no-scrollbar` utility, and inline expand/collapse (focus + aria support). Future polish items (e.g., richer theming, video testimonials) can build on this stable foundation.
 
 ## Risks / Constraints
 - Contact information uses `mailto:` and `tel:` links only (no contact form). Users must use their default email/phone apps.

@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## [Unreleased]
+
+### UI
+
+- **testimonials**: Tuned the auto-scrolling carousel for mobile vs desktop speeds and hid the horizontal scrollbar while preserving hover-to-pause and motion-safe behavior.
+
 ## [1.0.0] - 2025-11-11
 
 ### Features
