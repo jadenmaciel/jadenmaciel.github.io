@@ -54,6 +54,10 @@
     "vitest-axe": "^0.1.0"
   },
   "overrides": {
-    "esbuild": "^0.25.0"
+    "esbuild": "^0.25.0",
+    "glob": "10.4.6"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

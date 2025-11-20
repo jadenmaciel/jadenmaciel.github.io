@@ -3,7 +3,11 @@ Last updated: 11/13/2025 2:45pm
 # Task Tracker
 
 ## Next Up
-
+- **CI Security Update**
+  - **Why**: Fix GHSA-5j98-mcp5-4vw2 vulnerability and update Node version.
+  - **Scope**: Update CI workflow to Node 20, pin `glob` to 10.4.6, and regenerate lockfile.
+  - **Priority**: High
+  - **Progress**: In Progress.
 
 ## Recently Completed
 - **Testimonials Experience (Data → Carousel → Interactions)**

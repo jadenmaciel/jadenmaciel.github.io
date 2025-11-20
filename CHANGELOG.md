@@ -10,6 +10,10 @@ The format is based on [Conventional Commits](https://www.conventionalcommits.or
 
 - **testimonials**: Tuned the auto-scrolling carousel for mobile vs desktop speeds and hid the horizontal scrollbar while preserving hover-to-pause and motion-safe behavior.
 
+### CI
+
+- **security**: switched audit workflow to Node 20 and pinned `glob@10.4.6`, clearing GHSA-5j98-mcp5-4vw2.
+
 ## [1.0.0] - 2025-11-11
 
 ### Features
