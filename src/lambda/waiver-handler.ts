@@ -12,6 +12,43 @@ const s3Client = new S3Client({});
 const sesClient = new SESClient({});
 const ssmClient = new SSMClient({});
 
+// Timezone configuration for Fresno, CA
+const TIMEZONE = 'America/Los_Angeles';
+
+/**
+ * Format a date in Pacific Time for display
+ */
+function formatInPacificTime(date: Date | string, options: Intl.DateTimeFormatOptions = {}): string {
+  const dateObj = typeof date === 'string' ? new Date(date) : date;
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: TIMEZONE,
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+    ...options,
+  }).format(dateObj);
+}
+
+/**
+ * Get current date in Pacific Time for S3 path generation
+ * Returns date components in Pacific Time
+ */
+function getPacificDateComponents(): { year: number; month: number; day: number } {
+  const now = new Date();
+  const pacificDateString = new Intl.DateTimeFormat('en-US', {
+    timeZone: TIMEZONE,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(now);
+
+  const [month, day, year] = pacificDateString.split('/').map(Number);
+  return { year, month, day };
+}
+
 interface WaiverPayload {
   participantName: string;
   email: string;
@@ -121,10 +158,10 @@ export const handler = async (
       const path = err.instancePath || err.schemaPath;
       return `${path} ${err.message}`;
     }) || ['Validation failed'];
-    
+
     // Log validation errors without PII
     console.error('Validation errors:', errors);
-    
+
     return {
       statusCode: 400,
       headers,
@@ -146,7 +183,10 @@ export const handler = async (
   // Generate unique ID and prepare storage
   const waiverId = uuidv4();
   const now = new Date();
-  const datePath = `${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2, '0')}/${String(now.getDate()).padStart(2, '0')}`;
+
+  // Use Pacific Time for S3 path organization
+  const { year, month, day } = getPacificDateComponents();
+  const datePath = `${year}/${String(month).padStart(2, '0')}/${String(day).padStart(2, '0')}`;
   const s3Key = `waivers/${datePath}/${waiverId}.json`;
 
   const storedWaiver: StoredWaiver = {
@@ -205,6 +245,10 @@ export const handler = async (
   // Send owner notification email
   if (sesFrom && sesTo) {
     try {
+      // Format classDateTime in Pacific Time for display
+      const classDateTimeFormatted = formatInPacificTime(payload.classDateTime);
+      const receivedAtFormatted = formatInPacificTime(now);
+
       const ownerEmailBody = `
 New Waiver Submission
 
@@ -212,12 +256,12 @@ Participant: ${payload.participantName}
 Email: ${payload.email}
 Phone: ${maskPII(payload.phone)}
 Class: ${payload.classCourse}
-Date/Time: ${payload.classDateTime}
+Date/Time: ${classDateTimeFormatted} (Pacific Time)
 Location: ${payload.location}
 
 Waiver ID: ${waiverId}
 S3 Key: ${s3Key}
-Received: ${storedWaiver.meta.receivedAt}
+Received: ${receivedAtFormatted} (Pacific Time)
 
 View in S3: s3://${bucketName}/${s3Key}
       `.trim();
@@ -248,13 +292,16 @@ View in S3: s3://${bucketName}/${s3Key}
   // Send participant receipt email (optional)
   if (sesFrom && payload.email) {
     try {
+      // Format classDateTime in Pacific Time for display
+      const classDateTimeFormatted = formatInPacificTime(payload.classDateTime);
+
       const participantEmailBody = `
 Thank you for completing your waiver for Wesley's CPR training.
 
 Your waiver has been received and processed.
 
 Class: ${payload.classCourse}
-Date/Time: ${payload.classDateTime}
+Date/Time: ${classDateTimeFormatted} (Pacific Time)
 Location: ${payload.location}
 
 What to bring:

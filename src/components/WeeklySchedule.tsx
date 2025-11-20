@@ -1,6 +1,9 @@
 import React from "react";
+import { getPacificTimeAbbreviation } from "../lib/timezone";
 
 const WeeklySchedule: React.FC = () => {
+  const timezoneAbbr = getPacificTimeAbbreviation();
+
   return (
     <div style={{
       marginTop: '32px',
@@ -19,6 +22,14 @@ const WeeklySchedule: React.FC = () => {
       }}>
         Weekly Schedule
       </h3>
+      <p style={{
+        fontSize: '0.875rem',
+        color: '#94a3b8',
+        marginBottom: '16px',
+        fontStyle: 'italic'
+      }}>
+        All times shown in {timezoneAbbr} (Pacific Time)
+      </p>
       <ul style={{
         listStyle: 'none',
         padding: 0,
@@ -32,7 +43,7 @@ const WeeklySchedule: React.FC = () => {
           borderRadius: '8px',
           borderLeft: '4px solid #e74c3c'
         }}>
-          <strong style={{ color: '#e74c3c' }}>Mon/Wed/Thu – 9:00 AM:</strong>{' '}
+          <strong style={{ color: '#e74c3c' }}>Mon/Wed/Thu – 9:00 AM {timezoneAbbr}:</strong>{' '}
           <span style={{ color: '#cbd5e1' }}>BLS Provider</span>
         </li>
         <li style={{
@@ -41,7 +52,7 @@ const WeeklySchedule: React.FC = () => {
           borderRadius: '8px',
           borderLeft: '4px solid #e74c3c'
         }}>
-          <strong style={{ color: '#e74c3c' }}>Mon/Wed/Thu – 1:30 PM:</strong>{' '}
+          <strong style={{ color: '#e74c3c' }}>Mon/Wed/Thu – 1:30 PM {timezoneAbbr}:</strong>{' '}
           <span style={{ color: '#cbd5e1' }}>BLS Renewal</span>
         </li>
         <li style={{
@@ -50,7 +61,7 @@ const WeeklySchedule: React.FC = () => {
           borderRadius: '8px',
           borderLeft: '4px solid #e74c3c'
         }}>
-          <strong style={{ color: '#e74c3c' }}>Tue/Fri – 9:00 AM:</strong>{' '}
+          <strong style={{ color: '#e74c3c' }}>Tue/Fri – 9:00 AM {timezoneAbbr}:</strong>{' '}
           <span style={{ color: '#cbd5e1' }}>Heartsaver First Aid CPR AED</span>
         </li>
         <li style={{
@@ -59,7 +70,7 @@ const WeeklySchedule: React.FC = () => {
           borderRadius: '8px',
           borderLeft: '4px solid #e74c3c'
         }}>
-          <strong style={{ color: '#e74c3c' }}>Tue/Fri – 1:30 PM:</strong>{' '}
+          <strong style={{ color: '#e74c3c' }}>Tue/Fri – 1:30 PM {timezoneAbbr}:</strong>{' '}
           <span style={{ color: '#cbd5e1' }}>HeartCode BLS & HSV CPR Skills Testing</span>
         </li>
       </ul>
