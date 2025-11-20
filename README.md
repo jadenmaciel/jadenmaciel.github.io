@@ -147,12 +147,12 @@ wesleys-cpr/
 ├── src/
 │   ├── components/          # React components (Header, Hero, Pricing, Policies, etc.)
 │   ├── data/
-│   │   └── courses.ts       # Single source of truth for course catalog
+│   │   ├── courses.ts       # Single source of truth for course catalog
+│   │   └── reviews.ts       # Testimonials data
 │   ├── lib/
 │   │   └── fees.ts          # Payment processing fee constants
-│   ├── lambda/              # Future serverless backend (not active)
-│   └── routes/              # Route components (Privacy page)
-├── infra/                   # Terraform infrastructure code (parked/future use)
+│   ├── main.tsx             # App entry point
+│   └── App.tsx              # Main App component
 ├── public/                  # Static assets (images, robots.txt, sitemap.xml)
 ├── .github/workflows/       # CI/CD workflows
 │   └── security.yml         # Security audit workflow
@@ -161,7 +161,6 @@ wesleys-cpr/
 
 ### Important Notes
 
-- **Backend/Infra**: `src/lambda/` and `infra/` directories contain code for a future serverless backend but are not part of the current production deployment. They are explicitly excluded from the frontend build via `tsconfig.app.json`.
 - **Temporary Artifacts**: The `.gemini_tmp/` directory (if present) contains temporary AI-generated artifacts and is ignored by Git. It is not part of the project architecture.
 
 ## Deployment

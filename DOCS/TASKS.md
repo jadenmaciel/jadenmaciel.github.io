@@ -1,20 +1,36 @@
-Last updated: 11/13/2025 2:45pm
+Last updated: 11/20/2025 12:15pm
 
 # Task Tracker
 
 ## Next Up
-- **CI Security Update**
-  - **Why**: Fix GHSA-5j98-mcp5-4vw2 vulnerability and update Node version.
-  - **Scope**: Update CI workflow to Node 20, pin `glob` to 10.4.6, and regenerate lockfile.
-  - **Priority**: High
-  - **Progress**: In Progress.
+- **Test Coverage Expansion**
+  - **Why**: Ensure critical paths (booking, waiver) are tested.
+  - **Scope**: Add integration tests for the booking flow.
+  - **Priority**: Medium
 
 ## Recently Completed
+- **Spring Clean: Deep Repo Maintenance**
+  - **Why**: Remove dead code, align docs, prune dependencies, and ensure project health.
+  - **Scope**: 
+    - Inventory & Prune: Removed `src/lambda`, `infra`, `src/routes/Privacy.tsx`.
+    - Dependencies: Removed `react-router-dom`, cleaned `package.json`, installed ESLint.
+    - CI/CD: Verified workflows, added `lint` script.
+    - Docs: Updated `README.md`, `ARCHITECTURE.md`, `CHANGELOG.md` (v1.1.0).
+  - **Priority**: High
+  - **Progress**: Complete. All checks passed.
+
+- **CI Security Update**
+  - **Why**: Fix GHSA-5j98-mcp5-4vw2 vulnerability and update Node version.
+  - **Scope**: Updated CI workflow to Node 20, pinned `glob` to 10.4.6, and regenerated lockfile.
+  - **Priority**: High
+  - **Progress**: Complete. `npm audit` passes with 0 vulnerabilities. Node 20 is enforced.
+
 - **Testimonials Experience (Data → Carousel → Interactions)**
   - **Why**: Authentic social proof is critical for conversion; the previous AI filler undermined trust.
   - **Scope**: Replaced testimonials with verified reviews, built a responsive horizontal carousel, added motion-safe infinite scroll + hover pause, and implemented accessible inline expand/collapse with focus management. Enhanced with hidden scrollbar (via `no-scrollbar` utility) and responsive animation speeds (faster on mobile, slower on desktop).
   - **Priority**: High
   - **Progress**: Complete. Auto-scroll animation has been verified and is active in production views. The scrollbar is hidden and the animation uses faster speed on mobile while keeping a slower, readable pace on desktop. Hover-to-pause and reduced-motion support remain intact.
+
 - **Testing Suite**
   - **Why**: To prevent regressions and ensure code quality.
   - **Scope**: Add unit tests for critical components and utility functions. Implement accessibility checks (e.g., with `axe-core`).

@@ -4,7 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-## [Unreleased]
+## [1.1.0] - 2025-11-20
+
+### Maintenance
+
+- **cleanup**: Removed dead code and unused directories (`src/lambda`, `infra`, `src/routes/Privacy.tsx`).
+- **deps**: Uninstalled `react-router-dom` and audited dependencies.
+- **scripts**: Added `lint` script (ESLint 9) and removed stale lambda build scripts.
+
+### Refactor
+
+- **testimonials**: Moved review data to `src/data/reviews.ts` to fix HMR lint warning.
+- **types**: Fixed `any` usage in `vitest.d.ts`.
 
 ### Fixes
 
