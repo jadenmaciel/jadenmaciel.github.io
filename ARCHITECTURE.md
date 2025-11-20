@@ -40,8 +40,6 @@ User Browser --> GitHub Pages CDN --> Static Assets (HTML, CSS, JS) --> React SP
   - **`courses.ts`** — Course catalog with pricing, descriptions, badges, and metadata
 - **`src/lib/`**: Utility functions and shared constants
   - **`fees.ts`** — Payment processing fee constants (`FEES.card_fee_percent`, `FEES.card_fee_fixed`) and calculation utility
-- **`src/routes/`**: Route components for standalone pages
-  - `Privacy.tsx` — Privacy page (standalone route, if using router)
 - **`public/`**: Static assets that are copied directly to the build output directory
   - `images/` — Optimized WebP images with responsive srcSets
   - `robots.txt` — Search engine crawler instructions
@@ -141,22 +139,7 @@ export const FEES = {
 
 ### Current Status: No Active Backend
 
-There is **no active backend** in the current production deployment.
-
-### Parked/Future Use
-
-The repository contains code for a future serverless backend:
-
-- **`src/lambda/`**: AWS Lambda function code
-  - `waiver-handler.ts` — Waiver capture and storage handler
-  - `schemas/waiver.json` — JSON schema for waiver validation
-  - Explicitly excluded from frontend build via `tsconfig.app.json`
-- **`infra/`**: Terraform infrastructure code
-  - `main.tf`, `variables.tf`, `outputs.tf`, `providers.tf` — Terraform configuration
-  - `terraform.tfvars.example` — Example configuration
-  - Not part of current deployment pipeline
-
-These directories are maintained for future use but are not integrated into the current static site deployment.
+There is **no active backend**. All content is pre-built and served statically.
 
 ## Security
 
@@ -249,14 +232,11 @@ export default defineConfig({
 
 ### Build Exclusions
 
-- **`src/lambda/`**: Excluded from frontend build via `tsconfig.app.json` `exclude` patterns
-- **`infra/`**: Not part of frontend build process
 - **`node_modules/`**: Ignored by Git and excluded from builds
 - **`dist/`**: Build output directory, gitignored
 
 ## Future Considerations
 
 - **Waiver Flow**: Re-implement waiver capture system (serverless or third-party service like PandaDoc)
-- **Backend Integration**: Activate `src/lambda/` and `infra/` if backend functionality is needed
 - **Analytics**: Consider privacy-respecting analytics solution if traffic tracking becomes a priority
 - **Testing**: Expand test coverage beyond `PoliciesSection` component

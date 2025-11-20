@@ -7,16 +7,13 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b tsconfig.app.json && vite build",
+    "lint": "eslint .",
     "preview": "vite preview --port 4173",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
     "test": "vitest",
     "test:watch": "vitest --watch",
     "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage",
-    "build:lambda": "tsc -p src/lambda/tsconfig.json",
-    "lambda:build": "cd src/lambda && npm install && npm run build",
-    "lambda:package": "cd src/lambda && npm run package",
-    "lambda:deploy": "npm run lambda:package && cd infra && terraform apply"
+    "test:coverage": "vitest --coverage"
   },
   "keywords": [
     "react",
@@ -32,10 +29,10 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet-async": "^2.0.5",
-    "react-router-dom": "^7.9.5",
     "zod": "^4.1.12"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
@@ -44,11 +41,16 @@
     "@vitejs/plugin-react": "^4.3.1",
     "@vitest/ui": "^4.0.8",
     "autoprefixer": "^10.4.20",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
     "jsdom": "^27.2.0",
     "postcss": "^8.4.47",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.4.15",
     "typescript": "~5.6.2",
+    "typescript-eslint": "^8.47.0",
     "vite": "^5.4.10",
     "vitest": "^4.0.8",
     "vitest-axe": "^0.1.0"
