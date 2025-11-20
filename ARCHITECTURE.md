@@ -118,7 +118,7 @@ export const FEES = {
 **Integration Method**: Embedded `iframe` with secure sandbox restrictions
 
 **Implementation** (`src/components/Booking.tsx`):
-- **URL**: `https://booky.buzz/widget/book/wesleyscpr`
+- **URL**: `https://booky.buzz/widget/book/wesleyscpr` (adds `timezone=America/Los_Angeles` query param to force Pacific Time in Booky.buzz emails)
 - **Sandbox Attributes**: `allow-scripts allow-forms allow-popups allow-same-origin`
 - **Communication**: `postMessage` API for dynamic iframe resizing
   - Only accepts messages from `https://booky.buzz` origin

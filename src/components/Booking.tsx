@@ -1,11 +1,13 @@
 import { useEffect, useRef } from 'react';
+import { getPacificTimeAbbreviation } from '../lib/timezone';
 
 const BOOKING_ORIGIN = 'https://booky.buzz';
-const BOOKING_URL = 'https://booky.buzz/widget/book/wesleyscpr';
-const PUBLIC_BOOKING_URL = 'https://booky.buzz/book/wesleyscpr';
+const BOOKING_URL = 'https://booky.buzz/widget/book/wesleyscpr?timezone=America%2FLos_Angeles';
+const PUBLIC_BOOKING_URL = 'https://booky.buzz/book/wesleyscpr?timezone=America%2FLos_Angeles';
 
 export default function Booking() {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
+  const timezoneAbbr = getPacificTimeAbbreviation();
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
@@ -30,7 +32,7 @@ export default function Booking() {
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold mb-4">Book a Class Online</h2>
         <p className="mb-6 text-navy/80">
-          Choose your preferred date/time. You can also select an instructor: Jacqueline, Debbie, Tim. We prefer no same-day bookings; if you need today, contact us to check availability. If the widget does not load, <a
+          Choose your preferred date/time ({timezoneAbbr} - Pacific Time). You can also select an instructor: Jacqueline, Debbie, Tim. We prefer no same-day bookings; if you need today, contact us to check availability. If the widget does not load, <a
             href={PUBLIC_BOOKING_URL}
             className="text-red font-semibold underline underline-offset-2"
             target="_blank"

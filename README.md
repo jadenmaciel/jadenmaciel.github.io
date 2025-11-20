@@ -55,7 +55,7 @@ All policies use dynamic fee references from `src/lib/fees.ts` to ensure consist
 
 ### Booking Integration
 
-- **Booky.buzz iframe** — Embedded booking widget with secure sandbox restrictions
+- **Booky.buzz iframe** — Embedded booking widget with secure sandbox restrictions. Widget URL now includes `?timezone=America/Los_Angeles` so emails / calendar invites always reflect Pacific Time.
 - **Security**: CSP meta tag restricts frame sources to `https://booky.buzz`
 - **Communication**: `postMessage` API with strict origin checks for iframe resizing
 - **Fallback**: Direct link to Booky.buzz booking page if widget fails to load

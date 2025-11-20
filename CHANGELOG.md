@@ -6,6 +6,10 @@ The format is based on [Conventional Commits](https://www.conventionalcommits.or
 
 ## [Unreleased]
 
+### Fixes
+
+- **booking**: added `timezone=America/Los_Angeles` param to widget & public links so confirmation emails display Pacific Time instead of Mountain.
+
 ### UI
 
 - **testimonials**: Tuned the auto-scrolling carousel for mobile vs desktop speeds and hid the horizontal scrollbar while preserving hover-to-pause and motion-safe behavior.
