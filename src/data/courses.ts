@@ -16,7 +16,7 @@ export const COURSES: Course[] = [
   {
     code: "HSV-FA",
     name: "HSV-First Aid",
-    price: 85,
+    price: 75,
     desc: "AHA-aligned certification • 2-year validity • 6-hour comprehensive training (AHA minimum)",
     badge: "Popular",
   },
